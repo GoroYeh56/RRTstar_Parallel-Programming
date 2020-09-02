@@ -1,2 +1,2 @@
-# RRTSTAR
+# RRT_STAR
  RRT*
