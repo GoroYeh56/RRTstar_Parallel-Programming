@@ -16,8 +16,9 @@ Description of RRT* algorithm:
 8. Add N_new to node list.
 9. Rewire the tree if possible. Search through nodes in "N_near" and see if changing their parent to "N_new" lowers the cost of the path. If so, rewire the tree and add them as the children of "N_new" and update the cost of the path.
 10. Continue until maximum number of nodes is reached or goal is hit.
+11. After returning an initial solution, the algorithm will iterate to improve the initial solution.
 
-In this implementation, it is assumed that the robot is dimensionless and the algorithm is not responsible for generating velocities and commanding wheels. After returning an initial solution, the algorithm will iterate to improve the initial solution.
+In this implementation, it is assumed that the robot is dimensionless and the algorithm is not responsible for generating velocities and commanding wheels. 
 
 A [MATLAB code](https://github.com/Ali-tp/RRTSTAR/blob/master/Mfiles/plot_path.m) has been written to plot the generated paths by the RRT* algorithm. A sample output of the implemented RRT* algorithm is shown below.
 
