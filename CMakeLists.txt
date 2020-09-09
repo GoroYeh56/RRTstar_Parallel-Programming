@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)  # CMake version check
-project(RRTSTAR)               # Create project "simple_example"
+project(RRTSTAR)               # Create project 
 set(CMAKE_CXX_STANDARD 14)            # Enable c++14 standard
 
 
