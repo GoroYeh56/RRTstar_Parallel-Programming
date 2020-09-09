@@ -26,7 +26,7 @@ A [MATLAB code](https://github.com/Ali-tp/RRTSTAR/blob/master/Mfiles/plot_path.m
 
 Note that in this figure, the top left point is the starting point and the bottom right point is the destination.
 
-### Installation:
+### Building:
 ```shell
 $ mkdir -p ~/RRTStar_ws/src
 $ cd RRTStar_ws/src
@@ -38,7 +38,7 @@ $ sudo cmake ../src/RRTSTAR
 $ sudo make
 ```
 
-### Run the RRT* algorithm:
+### Running the RRT* algorithm:
 ```shell
 $ cd ~/RRTStar_ws/src/RRTSTAR
 $ ./RRTstar
