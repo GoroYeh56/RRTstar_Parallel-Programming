@@ -30,6 +30,8 @@ RRTSTAR::RRTSTAR(Point start_pos, Point end_pos, float radius, float end_thresh)
     root->cost = 0.0;
     lastnode = root;
     nodes.push_back(root);
+    Available_Points.push_back(root->position);
+
     m_step_size = 10;
     m_max_iter = 5000;
     m_rrstar_radius = radius;
@@ -49,7 +51,7 @@ RRTSTAR::~RRTSTAR()
 
 
 std::vector<Point> RRTSTAR::planner() {
-
+    // while iter < MAX_Iterations
     while (this->m_num_itr<this->m_max_iter)
     {
         this->m_num_itr++;
@@ -73,11 +75,13 @@ std::vector<Point> RRTSTAR::planner() {
 
                     if (!this->bestpath.empty()) { //find more optimal paths
                         if (this->reached()) {
+                            // If we get a better path (lower cost)!
                             if (this->lastnode->cost < this->m_cost_bestpath) {
                                 return this->generatePlan(this->lastnode);
                             }
                         }
                         else {
+                            // Havent reach the goal, ??? Why here.
                             Node* Plan_NearNodeEnd = this->findNearest(this->destination);
                             if (Plan_NearNodeEnd->cost < this->m_cost_bestpath) {
                                 return this->generatePlan(Plan_NearNodeEnd);
@@ -137,6 +141,8 @@ Node* RRTSTAR::findNearest(const Point point) {
             fn_closest = this->nodes[i];
         }
     }
+
+    // TODO: should modify here since dependencies: 有4個threads的話，要比較4個中最近的neighbor!
     return fn_closest;
 }
 
@@ -193,11 +199,18 @@ Node* RRTSTAR::findParent(std::vector<Node*> v_n_near,Node* n_nearest, Node* n_n
 }
 
 
+std::vector<Point> RRTSTAR::get_available_points(){
+    return this->Available_Points;
+}
+
+
 void RRTSTAR::insertNode(Node* n_parent, Node* n_new) { //Append the new node to the tree.
     n_new->parent = n_parent; //update the parent of new node
     n_new->cost = n_parent->cost + this->pathCost(n_parent, n_new);//update the cost of new node
     n_parent->children.push_back(n_new); //update the children of the nearest node to the new node
     this->nodes.push_back(n_new);//add the new node to the tree
+    this->Available_Points.push_back(n_new->position); //Add one more availble point! 
+
     this->lastnode = n_new;//inform the tree which node is just added
 }
 
@@ -290,6 +303,7 @@ std::vector<Point> RRTSTAR::generatePlan(Node* n) {// generate shortest path to 
 
 std::vector<Point> RRTSTAR::planFromBestPath() { // Generate plan (vector of points) from the best plan so far.
     std::vector<Point> pfb_generated_plan;
+    // Accelerate I/O here. 
     for (size_t i = 0; i < this->bestpath.size(); i++) { // It goes from a node near destination to the root
         pfb_generated_plan.push_back(this->bestpath[i]->position);
     }

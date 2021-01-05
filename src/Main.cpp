@@ -28,6 +28,8 @@ std::string OPTIMIZE_PATH_FILE = "Mfiles//opt_path_c4.txt";
 // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
 std::string OBSTACLES_FILE = "Mfiles//Obstacles_c4.txt";
 
+std::string AVAILABLE_PATH_FILE = "Mfiles//available_c4.txt";
+
 
 //main function
 int main()
@@ -132,6 +134,9 @@ int main()
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
     }
    
+
+    // Save "Avalible point! .txt"
+    rrtstar->savePlanToFile(rrtstar->get_available_points(), AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
 
 
     #ifdef TIME 

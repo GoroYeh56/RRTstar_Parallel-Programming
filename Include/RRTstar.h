@@ -37,7 +37,11 @@ private:
     Point destination;
     std::vector<Node*> path;
     std::vector<Node*> bestpath;
-    std::vector<Node*> nodes;
+    std::vector<Node*> nodes; // can I traverse this vector?
+
+    // TODO: Add one more vector to record 'reachable workspace'
+    std::vector<Point> Available_Points;
+
     int m_num_itr;
     float m_rrstar_radius;
     float m_destination_threshhold;
@@ -62,6 +66,14 @@ public:
     //Destructor
     ~RRTSTAR();
     //Methods
+
+   /**
+   * @brief For visualization of RRT* reachable workspace
+   * @return std::vector<Point>  return available points.
+   */   
+    // return available points.
+    std::vector<Point> get_available_points();
+
 
    /**
    * @brief Main algorithm of RRT*
