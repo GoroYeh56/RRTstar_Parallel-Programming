@@ -209,7 +209,7 @@ void RRTSTAR::insertNode(Node* n_parent, Node* n_new) { //Append the new node to
     n_new->cost = n_parent->cost + this->pathCost(n_parent, n_new);//update the cost of new node
     n_parent->children.push_back(n_new); //update the children of the nearest node to the new node
     this->nodes.push_back(n_new);//add the new node to the tree
-    this->Available_Points.push_back(n_new->position); //Add one more availble point! 
+    // this->Available_Points.push_back(n_new->position); //Add one more availble point! 
 
     this->lastnode = n_new;//inform the tree which node is just added
 }
@@ -227,11 +227,12 @@ void RRTSTAR::reWire(Node* n_new, std::vector<Node*>& neighbor_nodes) { // Rewir
             rw_n_near->cost = this->getCost(n_new) + this->pathCost(n_new, rw_n_near);
             rw_n_near->parent = n_new;
             n_new->children.push_back(rw_n_near);
+            this->Available_Points.push_back(n_new->position);
             this->updateChildrenCost(rw_n_near, rw_costdifference);// Update the cost of all children of the near node 
         }
     }
 }
-
+// Here can I parallelize TOO.
 void RRTSTAR::updateChildrenCost(Node* n, const float costdifference) {//Update the cost of all children of a node after rewiring 
     for (size_t i = 0; i < n->children.size(); i++)
     {
