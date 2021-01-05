@@ -1,6 +1,23 @@
 # RRT_STAR
 C++ implementation of RRT* algorithm [1].
 
+## This project is forked from  [Ali-tp/RRTSTAR](https://github.com/Ali-tp/RRTSTAR)
+
+This repository is for running on `apollo` server.
+To build & run:
+
+```linux
+cd ~/RRTStar_ws/build && sudo cmake ../src/RRTSTAR && sudo make
+cd ~/RRTStar_ws/src/RRTSTAR && ./RRTstar
+```
+
+## Parallelize version:
+===
+1. Add `-fopenmp` CXXFLAG at `Makefile`
+2. Parallelize
+===
+
+
 A rapidly exploring random tree (RRT) is an algorithm planned to search non-convex high-dimensional spaces by randomly building a tree. The tree is constructed by random samples drawn from the search space and is influenced to grow towards unsearched areas of the problem. The method grows a tree rooted in the starting configuration from the search space by using random samples. A connection is attempted between the sample and the nearest state in the tree, as and when each sample is drawn. Suppose the connection is feasible then the addition of the new state to the tree. RRT growth can be influenced by changing the probability of sampling states.
 
 RRT* modifies RRT to consider both the incoming and outgoing edges of new vertices to improve the costs-to-come of existing vertices. The algorithm finds those that locally minimize cost-to-come and maintains a tree. Both algorithms are probabilistically complete and almost-surely asymptotically optimal. RRT* maintains a tree through rewiring. Instead of connecting new vertices to the nearest vertex in the tree, it connects them to the nearby vertex that minimizes their cost-to-come. It then considers whether this new vertex can lower the costs-to-come of existing vertices. Any neighbouring vertices that can be improved are rewired to be descendants of the new vertex. This allows existing vertices to benefit from future samples and simultaneously enhances the tree while searching the problem domain.
