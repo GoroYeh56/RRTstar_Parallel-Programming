@@ -7,7 +7,7 @@ This repository is for running on `apollo` server.
 To build & run:
 
 ```linux
-cd ~/RRTStar_ws/build && sudo cmake ../src/RRTSTAR && sudo make
+cd ~/RRTStar_ws/build && cmake ../src/RRTSTAR && make
 cd ~/RRTStar_ws/src/RRTSTAR && ./RRTstar
 ```
 
