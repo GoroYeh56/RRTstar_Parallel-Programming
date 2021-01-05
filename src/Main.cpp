@@ -6,6 +6,12 @@
 
 #include"RRTstar.h"
 
+// Specify output file path and filename
+std::string FILE_PATH = "Mfiles//first_path_v1.txt";
+std::string OPTIMIZE_PATH_FILE = "Mfiles//opt_path_v1.txt";
+// std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
+std::string OBSTACLES_FILE = "Mfiles//Obstacles_v1.txt";
+
 
 //main function
 int main()
@@ -37,12 +43,25 @@ int main()
     Point ob2_1(150, 150.0); //position of the top left point of obstacle 2
     Point ob2_2(500, 100.0); //position of the bottom right point of obstacle 2
     rrtstar->world->addObstacle(ob2_1, ob2_2);//create obstacle 2
+
+    //Obstacle 3
+    Point ob3_1(30, 30); //position of the top left point of obstacle 3
+    Point ob3_2(60, 60); //position of the bottom right point of obstacle 3
+    rrtstar->world->addObstacle(ob3_1, ob3_2);//create obstacle 3
+    //Obstacle 4;
+    Point ob4_1(250, 200.0); //position of the top left point of obstacle 4
+    Point ob4_2(350, 300.0); //position of the bottom right point of obstacle 4
+
+    rrtstar->world->addObstacle(ob4_1, ob4_2);//create obstacle 4
     //Save obstacles to  file;
-    rrtstar->world->saveObsToFile("Mfiles//Obstacles.txt");
+    rrtstar->world->saveObsToFile(OBSTACLES_FILE);
 
     //clear saved paths from previous run
-    rrtstar->savePlanToFile({}, "Mfiles//first_viable_path.txt", {});
-    rrtstar->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", {});
+    // rrtstar->savePlanToFile({}, "Mfiles//first_viable_path.txt", {});
+    // rrtstar->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", {});
+    rrtstar->savePlanToFile({}, FILE_PATH, {});
+    rrtstar->savePlanToFile({}, OPTIMIZE_PATH_FILE, {});
+
 
 
     // RRT* Algorithm
@@ -84,7 +103,8 @@ int main()
         std::cout << "Cost is " << rrtstar->m_cost_bestpath << std::endl;
     }
     //save optimized solution
-    rrtstar->savePlanToFile(optimized_solution, "Mfiles//Path_after_MAX_ITER.txt", " Optimized Solution after maximum provided iteration.This file contains vector of points of the generated path.");
+    // "Mfiles//Path_after_MAX_ITER.txt"
+    rrtstar->savePlanToFile(optimized_solution, FILE_PATH, " Optimized Solution after maximum provided iteration.This file contains vector of points of the generated path.");
     if (!optimized_solution.empty()) {
         std::cout << "Exceeded max iterations!" << std::endl;
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
