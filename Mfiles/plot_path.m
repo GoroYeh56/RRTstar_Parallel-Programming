@@ -4,6 +4,14 @@
 
 clear
 clc
+
+%% Some parameters to set (Filename, output PNG name)
+
+OBSTACLE_FILE = 'Obstacles_v1.txt';
+FIRST_PATH = 'first_path_v1.txt';
+OPTIMIZE_PATH = 'opt_path_v1.txt';
+PNG_NAME = 'graph_v1.png';
+
 %% The width and height of the world need to be manually set
 WORLD_WIDTH = 500.0;
 WORLD_HEIGHT = 500.0;
@@ -13,7 +21,8 @@ WORLD_HEIGHT = 500.0;
  plot(pgon,'FaceAlpha',0.)
 hold on;
 %% Reads Obstacles.txt file and plot the obstacles.
-filename = 'Obstacles.txt';
+%filename = 'Obstacles.txt';
+filename = OBSTACLE_FILE;
 delimiterIn = '\t';
 headerlinesIn =2 ;
 obs = importdata(filename,delimiterIn,headerlinesIn);
@@ -28,7 +37,8 @@ end
 
 
 %% Reads first_viable_path.txt file and plot the first viable path that RRT* has generated
-filename = 'first_viable_path.txt';
+%filename = 'first_viable_path.txt';
+filename = FIRST_PATH;
 delimiterIn = '\t';
 headerlinesIn =2 ;
 Path1 = importdata(filename,delimiterIn,headerlinesIn);
@@ -37,7 +47,8 @@ if isfield(Path1,'data')
 end
 
 %% Reads Path_after_MAX_ITER.txt file and plot the optimized path after maximum iteration
-filename = 'Path_after_MAX_ITER.txt';
+%filename = 'Path_after_MAX_ITER.txt';
+filename = OPTIMIZE_PATH;
 delimiterIn = '\t';
 headerlinesIn =2 ;
 Path2 = importdata(filename,delimiterIn,headerlinesIn);
@@ -55,3 +66,9 @@ elseif exist('p1','var')&& ~exist('p2','var')
 elseif ~exist('p1','var')&& exist('p2','var')
     legend(p2,{'Path after MAX\_ITER'},'Location','best')
 end
+
+%% Save output plot to PNG image file.
+
+saveas(p1,PNG_NAME);
+
+disp('Done saving the image.');
