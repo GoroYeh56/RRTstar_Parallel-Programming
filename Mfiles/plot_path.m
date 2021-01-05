@@ -7,10 +7,11 @@ clc
 
 %% Some parameters to set (Filename, output PNG name)
 
-OBSTACLE_FILE = 'Obstacles_v1.txt';
-FIRST_PATH = 'first_path_v1.txt';
-OPTIMIZE_PATH = 'opt_path_v1.txt';
-PNG_NAME = 'graph_v1.png';
+OBSTACLE_FILE = 'Obstacles_c4.txt';
+FIRST_PATH = 'first_path_c4.txt';
+OPTIMIZE_PATH = 'opt_path_c4.txt';
+PNG_NAME = 'graph_c4.png';
+AVAILABLE_POINTS_FILE = 'available_c4.txt';
 
 %% The width and height of the world need to be manually set
 WORLD_WIDTH = 500.0;
@@ -58,14 +59,29 @@ if isfield(Path2,'data')
 end
 
 
+%% Reads available point available_c4.txt file and plot reachable workspace
+%filename = 'Path_after_MAX_ITER.txt';
+filename = AVAILABLE_POINTS_FILE;
+delimiterIn = '\t';
+headerlinesIn =2 ;
+avail_pts = importdata(filename,delimiterIn,headerlinesIn);
+    
+if isfield(avail_pts,'data')
+    p3=plot(avail_pts.data(:,1),avail_pts.data(:,2),'g--o');
+end
+
+
 %% Set the legends for the plot.
 if exist('p1','var') && exist('p2','var')
-    legend([p1 p2],{'First viable path','Path after MAX\_ITER'},'Location','best')
+    %legend([p1 p2],{'First viable path','Path after MAX\_ITER'},'Location','best')
+    legend([p1,p2,p3],{'First viable path','Path after MAX\_ITER','Reachable points after RRT* exploration'},'Location','best')
 elseif exist('p1','var')&& ~exist('p2','var')
     legend(p1,{'First viable path'},'Location','best')
 elseif ~exist('p1','var')&& exist('p2','var')
     legend(p2,{'Path after MAX\_ITER'},'Location','best')
 end
+
+%legend(p3,{'Reachable points after RRT* exploration'},'Location','best')
 
 %% Save output plot to PNG image file.
 
