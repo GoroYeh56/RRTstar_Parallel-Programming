@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/Include/RRTstar.h
+World.h
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/Include/World.h
+random
+-
+
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/Include/World.h
+iostream
+-
+vector
+-
+algorithm
+-
+fstream
+-
+float.h
+-
+
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/src/Main.cpp
+RRTstar.h
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/src/RRTstar.h
+
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/src/RRTstar.cpp
+RRTstar.h
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/src/RRTstar.h
+
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/src/World.cpp
+World.h
+/home/pp20/pp20s35/RRTStar_ws/src/RRTSTAR/src/World.h
+
