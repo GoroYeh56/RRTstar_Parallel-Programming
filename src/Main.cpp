@@ -4,18 +4,40 @@
  *  Next, it calls the RRT* algorithm on the previouslly built plan to optimize it.
  */
 
+
+// TODOs:
+
+// MPI, OpenMP(Pthread), CUDA
+
+// 0. Add openmp flag!
+// 1. Measure time & Parallelize
+// 2. Compare sequential time & Parallelize time
+// 3. Generate different test cases. (Size of the map)
+// 4. Visualize random exploration points. (Visible point)
+
+
+
 #include"RRTstar.h"
+#include"omp.h"
+
+#define TIME
 
 // Specify output file path and filename
-std::string FIRST_PATH_FILE = "Mfiles//first_path_v1.txt";
-std::string OPTIMIZE_PATH_FILE = "Mfiles//opt_path_v1.txt";
+std::string FIRST_PATH_FILE = "Mfiles//first_path_c4.txt";
+std::string OPTIMIZE_PATH_FILE = "Mfiles//opt_path_c4.txt";
 // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
-std::string OBSTACLES_FILE = "Mfiles//Obstacles_v1.txt";
+std::string OBSTACLES_FILE = "Mfiles//Obstacles_c4.txt";
 
 
 //main function
 int main()
 {
+
+    #ifdef TIME 
+        float total_time = 0;
+        float starttime, endtime;
+        starttime = omp_get_wtime();
+    #endif
     //define start and end positions
     Point start_pos(25,475);
     Point end_pos(475, 25);
@@ -110,6 +132,14 @@ int main()
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
     }
    
+
+
+    #ifdef TIME 
+        endtime = omp_get_wtime();
+        total_time = endtime - starttime;
+        printf("Execution time: %.6f seconds\n",total_time);
+    #endif
+
     //free up the memory
     delete rrtstar;
 }

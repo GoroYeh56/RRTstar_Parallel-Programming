@@ -5,6 +5,9 @@
 
 #include"RRTstar.h"
 
+
+#include "omp.h"
+
 Node::Node() {
     parent= nullptr;
     cost=0;
@@ -121,7 +124,13 @@ Node RRTSTAR::getRandomNode() {
 Node* RRTSTAR::findNearest(const Point point) {
     float fn_minDist = FLT_MAX;//set the minimum distance to the maximum number possible
     Node* fn_closest = NULL;
+
+    #pragma omp parallel for    
     for (size_t i = 0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
+        int omp_id = omp_get_thread_num();
+        if(omp_id == 0 && this->getCurrentIterations()%4000==0 ){
+            printf("iter: %d, thread %d, Total %d of threads\n",this->getCurrentIterations(), omp_id, omp_get_num_threads());
+        }
         float fn_dist = this->distance(point, this->nodes[i]->position);
         if (fn_dist < fn_minDist) {
             fn_minDist = fn_dist;
