@@ -7,7 +7,7 @@
 #include"RRTstar.h"
 
 // Specify output file path and filename
-std::string FILE_PATH = "Mfiles//first_path_v1.txt";
+std::string FIRST_PATH_FILE = "Mfiles//first_path_v1.txt";
 std::string OPTIMIZE_PATH_FILE = "Mfiles//opt_path_v1.txt";
 // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
 std::string OBSTACLES_FILE = "Mfiles//Obstacles_v1.txt";
@@ -59,7 +59,7 @@ int main()
     //clear saved paths from previous run
     // rrtstar->savePlanToFile({}, "Mfiles//first_viable_path.txt", {});
     // rrtstar->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", {});
-    rrtstar->savePlanToFile({}, FILE_PATH, {});
+    rrtstar->savePlanToFile({}, FIRST_PATH_FILE, {});
     rrtstar->savePlanToFile({}, OPTIMIZE_PATH_FILE, {});
 
 
@@ -86,7 +86,7 @@ int main()
     std::vector<Point> initial_solution =rrtstar->planner();
     
     //save initial solution
-    rrtstar->savePlanToFile(initial_solution, "Mfiles//first_viable_path.txt", "First viable solution . This file contains vector of points of the generated path.");
+    rrtstar->savePlanToFile(initial_solution, FIRST_PATH_FILE, "First viable solution . This file contains vector of points of the generated path.");
     if (!initial_solution.empty()) {
         std::cout << "First Viable Solution Obtained after " << rrtstar->getCurrentIterations() << " iterations" << std::endl;
         std::cout << "Cost is " << rrtstar->lastnode->cost << std::endl;
@@ -104,7 +104,7 @@ int main()
     }
     //save optimized solution
     // "Mfiles//Path_after_MAX_ITER.txt"
-    rrtstar->savePlanToFile(optimized_solution, FILE_PATH, " Optimized Solution after maximum provided iteration.This file contains vector of points of the generated path.");
+    rrtstar->savePlanToFile(optimized_solution, OPTIMIZE_PATH_FILE, " Optimized Solution after maximum provided iteration.This file contains vector of points of the generated path.");
     if (!optimized_solution.empty()) {
         std::cout << "Exceeded max iterations!" << std::endl;
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
