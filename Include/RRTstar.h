@@ -7,6 +7,8 @@
 #include "World.h"
 #include <random>
 
+// ======= 2 Classes : Node, RRTSTAR ============== //
+
 
 /**
  * @brief Class for storing node data
@@ -41,7 +43,8 @@ private:
 
     // TODO: Add one more vector to record 'reachable workspace'
     std::vector<Point> Available_Points;
-
+    // int goal_threshold; // how close are we to the goal.
+    
     int m_num_itr;
     float m_rrstar_radius;
     float m_destination_threshhold;
@@ -74,6 +77,13 @@ public:
     // return available points.
     std::vector<Point> get_available_points();
 
+   /**
+   * @brief RRT Exploration Tree.
+   * @param int K : number of points desired to sample. 
+   * @return std::vector<Point>  return available points.
+   */   
+    // return available points.
+    std::vector<Point> RRT_Explore(int K);
 
    /**
    * @brief Main algorithm of RRT*

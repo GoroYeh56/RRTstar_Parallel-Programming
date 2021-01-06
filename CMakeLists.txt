@@ -11,9 +11,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 # Add executable target with source files 
 add_executable(RRTstar src/Main.cpp src/RRTstar.cpp src/World.cpp) 
 
+add_executable(RRT src/RRT_Main.cpp src/RRT.cpp src/World.cpp) 
+
+
 # Link OpenMP library
 find_package(OpenMP REQUIRED)
 target_link_libraries(RRTstar PRIVATE OpenMP::OpenMP_CXX)
+target_link_libraries(RRT PRIVATE OpenMP::OpenMP_CXX)
+
 
 
 # add the include directories to the build

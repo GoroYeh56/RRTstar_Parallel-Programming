@@ -13,6 +13,8 @@
 #include <fstream>
 #include <float.h>
 
+// ======= 3 Classes : Point, Line, World ============== //
+
 
 /**
 * @brief Class for storing position of a point in the space
