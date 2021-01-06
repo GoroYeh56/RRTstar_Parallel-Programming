@@ -65,7 +65,7 @@ int main(int argc, char** argv)
     std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_v" + version + ".txt";
 
     //define start and end positions
-    Point start_pos(25,475);    // start point.
+    Point start_pos(425,475);    // start point.
     // Point end_pos(475, 25);     // goal point.
     Point end_pos(25, 150);
 
