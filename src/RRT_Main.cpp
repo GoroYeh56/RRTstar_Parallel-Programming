@@ -70,6 +70,7 @@ int main(int argc, char** argv)
     // set step size and max iterations. If the values are not set, the default values are max_iter=5000 and step_size=10.0
     // rrtstar->setMaxIterations(10000);
     rrtstar->setMaxIterations(100);
+    // rrtstar->setStepSize(10.0);
     rrtstar->setStepSize(10.0);
 
     //Create obstacles
