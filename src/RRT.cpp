@@ -92,6 +92,15 @@ std::vector<Point> RRTSTAR::RRT_Explore(int K) {
         
 }
 
+std::vector<Point> RRTSTAR::get_nodes_points(){
+    std::vector<Point> nodes_points;
+    // Accelerate I/O here. 
+    for (size_t i = 0; i < this->nodes.size(); i++) { // It goes from a node near destination to the root
+        nodes_points.push_back(this->nodes[i]->position);
+    }
+    return nodes_points;
+}
+ 
 
 Node RRTSTAR::getRandomNode() {
 

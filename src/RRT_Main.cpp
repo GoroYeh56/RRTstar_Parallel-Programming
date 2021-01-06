@@ -40,17 +40,21 @@ int main(int argc, char** argv)
     #endif
 
 
-    if(argc != 5){
-        std::cout<<"Error format, :=> ./RRT K <first_path_name> <opt_path_name> <available_pts_name>\n" ;
+    if(argc != 3){
+        std::cout<<"Error format, :=> ./RRT < K > < version >\n" ;
         return 0;
     }
 
+    // Read user input
     int K = atoi(argv[1]);
-    std::string FIRST_PATH_FILE = "Mfiles//FirstPath/" + std::string(argv[2]);
-    std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/" + std::string(argv[3]);
-    // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
-    std::string AVAILABLE_PATH_FILE =  "Mfiles//AvailablePts/" + std::string(argv[4]);
+    std::string version = argv[2];
 
+
+    std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_v"+ version + ".txt";
+    std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_v" + version + ".txt";
+    // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
+    std::string AVAILABLE_PATH_FILE =  "Mfiles//AvailablePts/avail_pts_v"+ version + ".txt";
+    std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_v" + version + ".txt";
 
     //define start and end positions
     Point start_pos(25,475);
@@ -165,6 +169,8 @@ int main(int argc, char** argv)
     // Save "Avalible point! .txt"
     rrtstar->savePlanToFile(Available_Points, AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
 
+    // Save "Nodes."
+    rrtstar->savePlanToFile(rrtstar->get_nodes_points(), NODES_PATH_FILE, "Saved a vector of rrt <nodes> points.");
 
     // rrtstar->savePlanToFile(rrtstar->get_available_points(), AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
 

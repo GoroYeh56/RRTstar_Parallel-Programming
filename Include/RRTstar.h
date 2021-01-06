@@ -77,6 +77,14 @@ public:
     // return available points.
     std::vector<Point> get_available_points();
 
+
+   /**
+   * @brief Return rrt node vector Points
+   * @return std::vector<Point> nodes->position;
+   */   
+    // return available points.
+    std::vector<Point> get_nodes_points();
+
    /**
    * @brief RRT Exploration Tree.
    * @param int K : number of points desired to sample. 
