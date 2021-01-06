@@ -15,6 +15,14 @@
 // 3. Generate different test cases. (Size of the map)
 // 4. Visualize random exploration points. (Visible point)
 
+// 0107:
+
+// 1. Random points: a probability : > : x_rand = x_goal else x_rand = random()
+// 2. Implement Parallel methods
+// 3. See PRM ?
+// 4. Bi-direction RRT
+// 5. Goal-based RRT
+// 6. PRT
 
 
 #include"RRTstar.h"
@@ -58,8 +66,9 @@ int main(int argc, char** argv)
 
     //define start and end positions
     Point start_pos(25,475);    // start point.
-    Point end_pos(475, 25);     // goal point.
-    
+    // Point end_pos(475, 25);     // goal point.
+    Point end_pos(25, 150);
+
     //define the raduis for RRT* algorithm (Within a radius of r, RRT* will find all neighbour nodes of a new node).
     float rrt_radius = 25;
     //define the radius to check if the last node in the tree is close to the end position
