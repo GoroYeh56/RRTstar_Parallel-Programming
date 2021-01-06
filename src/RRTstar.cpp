@@ -93,17 +93,17 @@ std::vector<Point> RRTSTAR::planner() {
         }
     }
     
-    // if (this->bestpath.empty()) {
-    //     // if not reached yet, no solution has found
-    //     std::cout << "Exceeded max iterations!" << std::endl;
-    //     std::cout << "Error: No solution found" << std::endl;
-    //     this->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", "Error: No solution found");
-    //     this->savePlanToFile({}, "Mfiles//first_viable_path.txt", "Error: No solution found");
-    //     return {};
-    // }
-    // else {
+    if (this->bestpath.empty()) {
+        // if not reached yet, no solution has found
+        std::cout << "Exceeded max iterations!" << std::endl;
+        std::cout << "Error: No solution found" << std::endl;
+        this->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", "Error: No solution found");
+        this->savePlanToFile({}, "Mfiles//first_viable_path.txt", "Error: No solution found");
+        return {};
+    }
+    else {
         return RRTSTAR::planFromBestPath(); //after reaching the maximum iteration number retun the path that has the lowest cost.
-    // }
+    }
         
 }
 

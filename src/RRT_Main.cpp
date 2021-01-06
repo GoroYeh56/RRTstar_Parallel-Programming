@@ -57,14 +57,17 @@ int main(int argc, char** argv)
     std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_v" + version + ".txt";
 
     //define start and end positions
-    Point start_pos(25,475);
-    Point end_pos(475, 25);
+    Point start_pos(25,475);    // start point.
+    Point end_pos(475, 25);     // goal point.
     
     //define the raduis for RRT* algorithm (Within a radius of r, RRT* will find all neighbour nodes of a new node).
     float rrt_radius = 25;
     //define the radius to check if the last node in the tree is close to the end position
     float end_thresh = 10;
     //instantiate RRTSTAR class
+
+    // This rrt is for exploration visualizatoin usage.
+    // RRTSTAR* rrt = new RRTSTAR(start_pos,end_pos, rrt_radius, end_thresh);
     RRTSTAR* rrtstar = new RRTSTAR(start_pos,end_pos, rrt_radius, end_thresh);
 
     //set the width and height of the world
@@ -73,7 +76,7 @@ int main(int argc, char** argv)
 
     // set step size and max iterations. If the values are not set, the default values are max_iter=5000 and step_size=10.0
     // rrtstar->setMaxIterations(10000);
-    rrtstar->setMaxIterations(100);
+    rrtstar->setMaxIterations(K);
     // rrtstar->setStepSize(10.0);
     rrtstar->setStepSize(10.0);
 
@@ -124,7 +127,7 @@ int main(int argc, char** argv)
     10. Continue until maximum number of nodes is reached or goal is hit.
     */
 
-/*
+
     std::cout << "Starting RRT* Algorithm..." << std::endl;
     //search for the first viable solution
     std::vector<Point> initial_solution =rrtstar->planner();
@@ -154,7 +157,6 @@ int main(int argc, char** argv)
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
     }
    
-*/
 
 
     /* ------------------------------------------------------
@@ -163,17 +165,15 @@ int main(int argc, char** argv)
 
     --------------------------------------------------------*/
 
-    std::cout<<"Start executing RRT algorithm...\n";
-    std::vector<Point> Available_Points = rrtstar->RRT_Explore(K);
+    // std::cout<<"Start executing RRT algorithm...\n";
+    // std::vector<Point> Available_Points = rrt->RRT_Explore(K);
 
     // Save "Avalible point! .txt"
-    rrtstar->savePlanToFile(Available_Points, AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
-
+    // rrt->savePlanToFile(Available_Points, AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
     // Save "Nodes."
     rrtstar->savePlanToFile(rrtstar->get_nodes_points(), NODES_PATH_FILE, "Saved a vector of rrt <nodes> points.");
 
     // rrtstar->savePlanToFile(rrtstar->get_available_points(), AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
-
 
     #ifdef TIME 
         endtime = omp_get_wtime();

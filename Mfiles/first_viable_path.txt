@@ -1,0 +1,2 @@
+Error: No solution found
+X	Y

@@ -8,6 +8,10 @@
 
 #include "omp.h"
 
+
+// #define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
+
+
 Node::Node() {
     parent= nullptr;
     cost=0;
@@ -92,6 +96,7 @@ std::vector<Point> RRTSTAR::RRT_Explore(int K) {
         
 }
 
+
 std::vector<Point> RRTSTAR::get_nodes_points(){
     std::vector<Point> nodes_points;
     // Accelerate I/O here. 
@@ -100,7 +105,72 @@ std::vector<Point> RRTSTAR::get_nodes_points(){
     }
     return nodes_points;
 }
- 
+
+
+
+
+std::vector<Point> RRTSTAR::planner() {
+    // while iter < MAX_Iterations
+    while (this->m_num_itr<this->m_max_iter)
+    {
+        this->m_num_itr++;
+        Node plan_n_rand = this->getRandomNode(); //Pick a random node
+        if (plan_n_rand.position.m_x!=0 && plan_n_rand.position.m_y!=0) {
+            
+            Node* plan_n_nearest = this->findNearest(plan_n_rand.position);  //Find the closest node to the new random node.
+            Point plan_p_new = this->steer(plan_n_rand, plan_n_nearest); //Steer from "N_Nearest" towards "N_rand": interpolate if node is too far away.
+            if (!this->world->checkObstacle(plan_p_new, plan_n_nearest->position)) { // Check if an obstacle is between new node and nearest nod.
+                    Node* plan_n_new = new Node; //create new node to store the position of the steered node.
+                    plan_n_new->position = plan_p_new; //create new node from the streered new point
+                    std::vector<Node*> plan_v_n_near; //create a vector for neighbor nodes
+                    this->findNearNeighbors(plan_n_new->position, this->m_rrstar_radius, plan_v_n_near); // Find nearest neighbors with a given radius from new node.
+                    Node* plan_n_parent=this->findParent(plan_v_n_near,plan_n_nearest,plan_n_new); //Find the parent of the given node (the node that is near and has the lowest path cost)
+                    this->insertNode(plan_n_parent, plan_n_new);//Add N_new to node list.
+                    this->reWire(plan_n_new, plan_v_n_near); //rewire the tree
+
+                    if (this->reached() && this->bestpath.empty()) { //find the first viable path
+                        return this->generatePlan(this->lastnode);
+                    }
+
+                    if (!this->bestpath.empty()) { //find more optimal paths
+                        if (this->reached()) {
+                            // If we get a better path (lower cost)!
+                            if (this->lastnode->cost < this->m_cost_bestpath) {
+                                return this->generatePlan(this->lastnode);
+                            }
+                        }
+                        else {
+                            // Havent reach the goal, ??? Why here.
+                            Node* Plan_NearNodeEnd = this->findNearest(this->destination);
+                            if (Plan_NearNodeEnd->cost < this->m_cost_bestpath) {
+                                return this->generatePlan(Plan_NearNodeEnd);
+                            }
+                        }
+                    }
+                    
+            }            
+        }
+    }
+    
+    if (this->bestpath.empty()) {
+        // if not reached yet, no solution has found
+        std::cout << "Exceeded max iterations!" << std::endl;
+        std::cout << "Error: No solution found" << std::endl;
+        this->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", "Error: No solution found");
+        this->savePlanToFile({}, "Mfiles//first_viable_path.txt", "Error: No solution found");
+        return {};
+    }
+    else {
+        return RRTSTAR::planFromBestPath(); //after reaching the maximum iteration number retun the path that has the lowest cost.
+    }
+        
+}
+
+
+
+
+
+
 
 Node RRTSTAR::getRandomNode() {
 
@@ -126,8 +196,8 @@ Node* RRTSTAR::findNearest(const Point point) {
     for (size_t i = 0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
         int omp_id = omp_get_thread_num();
         if(omp_id == 0 && this->getCurrentIterations()%500==0 ){
-            printf("iter: %d, thread %d, Total %d of threads\n",this->getCurrentIterations(), omp_id, omp_get_num_threads());
-            printf("Number of nodes: %d\n", this->nodes.size());
+            // printf("iter: %d, thread %d, Total %d of threads\n",this->getCurrentIterations(), omp_id, omp_get_num_threads());
+            // printf("Number of nodes: %d\n", this->nodes.size());
         }
         float fn_dist = this->distance(point, this->nodes[i]->position);
         if (fn_dist < fn_minDist) {
