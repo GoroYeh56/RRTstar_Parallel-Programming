@@ -23,16 +23,16 @@
 #define TIME
 
 // Specify output file path and filename
-std::string FIRST_PATH_FILE = "Mfiles//first_path_c4.txt";
-std::string OPTIMIZE_PATH_FILE = "Mfiles//opt_path_c4.txt";
-// std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
-std::string OBSTACLES_FILE = "Mfiles//Obstacles_c4.txt";
+// std::string FIRST_PATH_FILE = "Mfiles//first_path_c4.txt";
+// std::string OPTIMIZE_PATH_FILE = "Mfiles//opt_path_c4.txt";
+// // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
+// std::string OBSTACLES_FILE = "Mfiles//Obstacles_c4.txt";
 
-std::string AVAILABLE_PATH_FILE = "Mfiles//available_c4.txt";
+// std::string AVAILABLE_PATH_FILE = "Mfiles//available_c4.txt";
 
 
 //main function
-int main()
+int main(int argc, char** argv)
 {
 
     #ifdef TIME 
@@ -40,9 +40,25 @@ int main()
         float starttime, endtime;
         starttime = omp_get_wtime();
     #endif
+
+
+    if(argc != 4){
+        std::cout<<"Error format, :=> ./RRTstar <first_path_name> <opt_path_name> <available_pts_name>" ;
+        return 0;
+    }
+
+    std::string FIRST_PATH_FILE = argv[1];
+    std::string OPTIMIZE_PATH_FILE =  argv[2];
+    // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
+    std::string OBSTACLES_FILE = "Mfiles//Obstacles_c4.txt";
+
+    std::string AVAILABLE_PATH_FILE =  argv[3];
+
+
     //define start and end positions
     Point start_pos(25,475);
     Point end_pos(475, 25);
+    
     //define the raduis for RRT* algorithm (Within a radius of r, RRT* will find all neighbour nodes of a new node).
     float rrt_radius = 25;
     //define the radius to check if the last node in the tree is close to the end position
@@ -55,7 +71,8 @@ int main()
     rrtstar->world->setWorldHeight(500.0);
 
     // set step size and max iterations. If the values are not set, the default values are max_iter=5000 and step_size=10.0
-    rrtstar->setMaxIterations(10000);
+    // rrtstar->setMaxIterations(10000);
+    rrtstar->setMaxIterations(100);
     rrtstar->setStepSize(10.0);
 
     //Create obstacles

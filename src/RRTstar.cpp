@@ -93,17 +93,17 @@ std::vector<Point> RRTSTAR::planner() {
         }
     }
     
-    if (this->bestpath.empty()) {
-        // if not reached yet, no solution has found
-        std::cout << "Exceeded max iterations!" << std::endl;
-        std::cout << "Error: No solution found" << std::endl;
-        this->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", "Error: No solution found");
-        this->savePlanToFile({}, "Mfiles//first_viable_path.txt", "Error: No solution found");
-        return {};
-    }
-    else {
+    // if (this->bestpath.empty()) {
+    //     // if not reached yet, no solution has found
+    //     std::cout << "Exceeded max iterations!" << std::endl;
+    //     std::cout << "Error: No solution found" << std::endl;
+    //     this->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", "Error: No solution found");
+    //     this->savePlanToFile({}, "Mfiles//first_viable_path.txt", "Error: No solution found");
+    //     return {};
+    // }
+    // else {
         return RRTSTAR::planFromBestPath(); //after reaching the maximum iteration number retun the path that has the lowest cost.
-    }
+    // }
         
 }
 
@@ -209,7 +209,7 @@ void RRTSTAR::insertNode(Node* n_parent, Node* n_new) { //Append the new node to
     n_new->cost = n_parent->cost + this->pathCost(n_parent, n_new);//update the cost of new node
     n_parent->children.push_back(n_new); //update the children of the nearest node to the new node
     this->nodes.push_back(n_new);//add the new node to the tree
-    // this->Available_Points.push_back(n_new->position); //Add one more availble point! 
+    this->Available_Points.push_back(n_new->position); //Add one more availble point! 
 
     this->lastnode = n_new;//inform the tree which node is just added
 }
@@ -227,7 +227,7 @@ void RRTSTAR::reWire(Node* n_new, std::vector<Node*>& neighbor_nodes) { // Rewir
             rw_n_near->cost = this->getCost(n_new) + this->pathCost(n_new, rw_n_near);
             rw_n_near->parent = n_new;
             n_new->children.push_back(rw_n_near);
-            this->Available_Points.push_back(n_new->position);
+            // this->Available_Points.push_back(n_new->position);
             this->updateChildrenCost(rw_n_near, rw_costdifference);// Update the cost of all children of the near node 
         }
     }
