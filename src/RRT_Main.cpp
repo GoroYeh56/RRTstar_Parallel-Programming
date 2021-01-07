@@ -25,19 +25,57 @@
 // 6. PRT
 
 
+
+/* -----------------------  Description of RRT* algorithm: --------------------- * 
+    1. Pick a random node "N_rand".
+    2. Find the closest node "N_Nearest" from explored nodes to branch out towards "N_rand".
+    3. Steer from "N_Nearest" towards "N_rand": interpolate if node is too far away. The interpolated Node is "N_new"
+    4.  Check if an obstacle is between new node and nearest nod.
+    5. Update cost of reaching "N_new" from "N_Nearest", treat it as "cmin". For now, "N_Nearest" acts as the parent node of "N_new".
+    6. Find nearest neighbors with a given radius from "N_new", call them "N_near"
+    7. In all members of "N_near", check if "N_new" can be reached from a different parent node with cost lower than Cmin, and without colliding
+    with the obstacle. Select the node that results in the least cost and update the parent of "N_new".
+    8. Add N_new to node list.
+    9. Rewire the tree if possible. Search through nodes in "N_near" and see if changing their parent to "N_new" lowers the cost of the path. If so, rewire the tree and
+    add them as the children of "N_new" and update the cost of the path.
+    10. Continue until maximum number of nodes is reached or goal is hit.
+*   ---------------------------------------------------------------------------- */
+
+
+
+
 #include"RRTstar.h"
 #include"omp.h"
 #include <string> // string concatination.
-
-
 #define TIME
 
-/* ----------- Parameters --------------- */
+/* ---------- Global Variables (Parameters) --------------- */
+
 // const int K = 1000; // 1000 points.
+
+// Obstacle file name
 std::string OBSTACLES_FILE = "Mfiles//Obstacles_c4.txt";
 
+// World size
+const float WORLD_WIDTH = 1500.0;
+const float WORLD_HEIGHT = 1500.0;
 
-//main function
+// start & goal points.
+Point start_pos(0,975);    
+// Point end_pos(475, 25);   
+Point end_pos(850, 120);
+
+float rrt_radius = 25;  // findNearNeighbors :=> raduis for RRT* algorithm (Within a radius of r, RRT* will find all neighbour nodes of a new node).
+                        // This radius is for re-wiring RRT tree (re-assign parent node to minimize path cost (optimizing paths))
+float end_thresh = 10;  // goal_threshold :=> the radius to check if the last node in the tree is close to the end position
+
+
+/* -------------- Functions used ------------------ */
+void Initialize_Environment(RRTSTAR* rrtstar, int K);
+std::vector<Point> Generate_First_Path(RRTSTAR* rrtstar, std::string FIRST_PATH_FILE);
+void Generate_Optimized_Path(RRTSTAR* rrtstar, std::string OPTIMIZE_PATH_FILE, std::vector<Point> initial_solution);
+
+
 int main(int argc, char** argv)
 {
 
@@ -46,7 +84,6 @@ int main(int argc, char** argv)
         float starttime, endtime;
         starttime = omp_get_wtime();
     #endif
-
 
     if(argc != 3){
         std::cout<<"Error format, :=> ./RRT < K > < version >\n" ;
@@ -57,31 +94,39 @@ int main(int argc, char** argv)
     int K = atoi(argv[1]);
     std::string version = argv[2];
 
-
     std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_v"+ version + ".txt";
     std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_v" + version + ".txt";
-    // std::string OPTIMIZE_PATH_FILE = "Mfiles//Path_after_MAX_ITER.txt";
     std::string AVAILABLE_PATH_FILE =  "Mfiles//AvailablePts/avail_pts_v"+ version + ".txt";
     std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_v" + version + ".txt";
 
-    //define start and end positions
-    Point start_pos(425,475);    // start point.
-    // Point end_pos(475, 25);     // goal point.
-    Point end_pos(25, 150);
 
-    //define the raduis for RRT* algorithm (Within a radius of r, RRT* will find all neighbour nodes of a new node).
-    float rrt_radius = 25;
-    //define the radius to check if the last node in the tree is close to the end position
-    float end_thresh = 10;
     //instantiate RRTSTAR class
-
-    // This rrt is for exploration visualizatoin usage.
-    // RRTSTAR* rrt = new RRTSTAR(start_pos,end_pos, rrt_radius, end_thresh);
     RRTSTAR* rrtstar = new RRTSTAR(start_pos,end_pos, rrt_radius, end_thresh);
 
-    //set the width and height of the world
-    rrtstar->world->setWorldWidth(500.0);
-    rrtstar->world->setWorldHeight(500.0);
+    Initialize_Environment(rrtstar, K);
+
+    std::cout << "Starting RRT* Algorithm..." << std::endl;
+    
+    /* --------- First Path ------------- */
+    std::vector<Point> initial_solution = Generate_First_Path(rrtstar, FIRST_PATH_FILE);
+    /* --------- Optimize Path ------------- */
+    Generate_Optimized_Path(rrtstar, OPTIMIZE_PATH_FILE, initial_solution);
+    /* --------- Save RRT Tree(nodes) ------------- */
+    rrtstar->savePlanToFile(rrtstar->get_nodes_points(), NODES_PATH_FILE, "Saved a vector of rrt <nodes> points.");
+
+    #ifdef TIME 
+        endtime = omp_get_wtime();
+        total_time = endtime - starttime;
+        printf("Execution time: %.6f seconds\n",total_time);
+    #endif
+
+    //free up the memory
+    delete rrtstar;
+}
+
+void Initialize_Environment(RRTSTAR* rrtstar, int K){
+    rrtstar->world->setWorldWidth(WORLD_WIDTH);
+    rrtstar->world->setWorldHeight(WORLD_HEIGHT);
 
     // set step size and max iterations. If the values are not set, the default values are max_iter=5000 and step_size=10.0
     // rrtstar->setMaxIterations(10000);
@@ -90,6 +135,10 @@ int main(int argc, char** argv)
     rrtstar->setStepSize(10.0);
 
     //Create obstacles
+
+    // TODO : read a .txt file
+    //        and automatically set obstacles!
+
     //Obstacle 1
     Point ob1_1(0, 400); //position of the top left point of obstacle 1
     Point ob1_2(350, 350.0); //position of the bottom right point of obstacle 1
@@ -110,44 +159,27 @@ int main(int argc, char** argv)
     rrtstar->world->addObstacle(ob4_1, ob4_2);//create obstacle 4
     //Save obstacles to  file;
     rrtstar->world->saveObsToFile(OBSTACLES_FILE);
+}
 
-    //clear saved paths from previous run
-    // rrtstar->savePlanToFile({}, "Mfiles//first_viable_path.txt", {});
-    // rrtstar->savePlanToFile({}, "Mfiles//Path_after_MAX_ITER.txt", {});
-    rrtstar->savePlanToFile({}, FIRST_PATH_FILE, {});
-    rrtstar->savePlanToFile({}, OPTIMIZE_PATH_FILE, {});
+//search for the first viable solution
+std::vector<Point> Generate_First_Path(RRTSTAR* rrtstar, std::string FIRST_PATH_FILE){
 
-
-
-    // RRT* Algorithm
-    /*
-     Description of RRT* algorithm: 
-    1. Pick a random node "N_rand".
-    2. Find the closest node "N_Nearest" from explored nodes to branch out towards "N_rand".
-    3. Steer from "N_Nearest" towards "N_rand": interpolate if node is too far away. The interpolated Node is "N_new"
-    4.  Check if an obstacle is between new node and nearest nod.
-    5. Update cost of reaching "N_new" from "N_Nearest", treat it as "cmin". For now, "N_Nearest" acts as the parent node of "N_new".
-    6. Find nearest neighbors with a given radius from "N_new", call them "N_near"
-    7. In all members of "N_near", check if "N_new" can be reached from a different parent node with cost lower than Cmin, and without colliding
-    with the obstacle. Select the node that results in the least cost and update the parent of "N_new".
-    8. Add N_new to node list.
-    9. Rewire the tree if possible. Search through nodes in "N_near" and see if changing their parent to "N_new" lowers the cost of the path. If so, rewire the tree and
-    add them as the children of "N_new" and update the cost of the path.
-    10. Continue until maximum number of nodes is reached or goal is hit.
-    */
-
-
-    std::cout << "Starting RRT* Algorithm..." << std::endl;
+    /* --------- First Path ------------- */
     //search for the first viable solution
     std::vector<Point> initial_solution =rrtstar->planner();
-    
-    //save initial solution
     rrtstar->savePlanToFile(initial_solution, FIRST_PATH_FILE, "First viable solution . This file contains vector of points of the generated path.");
     if (!initial_solution.empty()) {
         std::cout << "First Viable Solution Obtained after " << rrtstar->getCurrentIterations() << " iterations" << std::endl;
         std::cout << "Cost is " << rrtstar->lastnode->cost << std::endl;
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
     }
+
+    return initial_solution;
+
+}
+
+void Generate_Optimized_Path(RRTSTAR* rrtstar, std::string OPTIMIZE_PATH_FILE, std::vector<Point> initial_solution){
+
     std::vector<Point> optimized_solution;
     //search for the optimized paths
     while (rrtstar->getCurrentIterations() < rrtstar->getMaxIterations() && !initial_solution.empty())
@@ -165,8 +197,11 @@ int main(int argc, char** argv)
         std::cout << "Exceeded max iterations!" << std::endl;
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
     }
-   
 
+}
+
+
+    // NOT USED  BELOW
 
     /* ------------------------------------------------------
 
@@ -179,17 +214,4 @@ int main(int argc, char** argv)
 
     // Save "Avalible point! .txt"
     // rrt->savePlanToFile(Available_Points, AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
-    // Save "Nodes."
-    rrtstar->savePlanToFile(rrtstar->get_nodes_points(), NODES_PATH_FILE, "Saved a vector of rrt <nodes> points.");
-
     // rrtstar->savePlanToFile(rrtstar->get_available_points(), AVAILABLE_PATH_FILE, "Saved a vector of reachable workspace points.");
-
-    #ifdef TIME 
-        endtime = omp_get_wtime();
-        total_time = endtime - starttime;
-        printf("Execution time: %.6f seconds\n",total_time);
-    #endif
-
-    //free up the memory
-    delete rrtstar;
-}

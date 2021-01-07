@@ -8,9 +8,8 @@
 
 #include "omp.h"
 
-
 // #define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
-
+const float EPSILON = 0.9; // epsilon-greedy for faster convergence
 
 Node::Node() {
     parent= nullptr;
@@ -55,7 +54,8 @@ RRTSTAR::~RRTSTAR()
 
 /* ---------------------
     RRT algorithm here.
-
+    No use, since found that RRT* already implement!
+    We just take RRTSTAR->nodes' position! vector of <Point>
 ----------------------- */
 
 std::vector<Point> RRTSTAR::RRT_Explore(int K) {
@@ -124,8 +124,11 @@ std::vector<Point> RRTSTAR::planner() {
                     plan_n_new->position = plan_p_new; //create new node from the streered new point
                     std::vector<Node*> plan_v_n_near; //create a vector for neighbor nodes
                     this->findNearNeighbors(plan_n_new->position, this->m_rrstar_radius, plan_v_n_near); // Find nearest neighbors with a given radius from new node.
+                    // ESSENCE of RRT* 1 :=> Re-assign edges (re assign the parent of a node)
                     Node* plan_n_parent=this->findParent(plan_v_n_near,plan_n_nearest,plan_n_new); //Find the parent of the given node (the node that is near and has the lowest path cost)
+                    // Re-allocate this edge (from parent->child(new_node))
                     this->insertNode(plan_n_parent, plan_n_new);//Add N_new to node list.
+                    // ESSENCE of RRT* 2 :=> Re-wire the RRT Tree!
                     this->reWire(plan_n_new, plan_v_n_near); //rewire the tree
 
                     if (this->reached() && this->bestpath.empty()) { //find the first viable path
@@ -167,9 +170,32 @@ std::vector<Point> RRTSTAR::planner() {
 }
 
 
+Node RRTSTAR::RamdomNode_Epsilon() {
+
+    float p = (float) rand()/RAND_MAX;
+
+    std::random_device rand_rd;  //Will be used to obtain a seed for the random number engine
+    std::mt19937 rand_gen(rand_rd()); //Standard mersenne_twister_engine seeded with rd()
+    std::uniform_real_distribution<> rand_unif(0, 1.0);  // initialize a uniform distribution between 0 and 1
+    
+    if(p>EPSILON){
+        // return GOAL point.
+        Node rand_randomnode;
+        rand_randomnode.position = this->destination;
+        return rand_randomnode;
+    }
+    else{
+        Point rand_point(rand_unif(rand_gen) * this->world->getWorldWidth(), rand_unif(rand_gen) * this->world->getWorldHeight());//Generate a random point
+        if (rand_point.m_x >= 0 && rand_point.m_x <= this->world->getWorldWidth() && rand_point.m_y >= 0 && rand_point.m_y <= this->world->getWorldHeight()) { //check of the generated point is inside the world!
+            Node rand_randomnode;
+            rand_randomnode.position = rand_point;
+            return rand_randomnode;
+        }
+        return {};
+    }
 
 
-
+}
 
 
 Node RRTSTAR::getRandomNode() {
@@ -191,27 +217,41 @@ Node RRTSTAR::getRandomNode() {
 Node* RRTSTAR::findNearest(const Point point) {
     float fn_minDist = FLT_MAX;//set the minimum distance to the maximum number possible
     Node* fn_closest = NULL;
-
-    #pragma omp parallel for    
-    for (size_t i = 0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
+    int min_index;
+    #ifdef PARALLEL
+    #pragma omp parallel for default(shared) reduction(min:fn_minDist)  
+    #endif
+    for (size_t i=0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
+        #ifdef PARALLEL
         int omp_id = omp_get_thread_num();
-        if(omp_id == 0 && this->getCurrentIterations()%500==0 ){
+        if(omp_id==0)printf("Total: %d of threads\n",omp_get_num_threads());
+        #endif
+        // if(omp_id == 0 && this->getCurrentIterations()%500==0 ){
             // printf("iter: %d, thread %d, Total %d of threads\n",this->getCurrentIterations(), omp_id, omp_get_num_threads());
             // printf("Number of nodes: %d\n", this->nodes.size());
-        }
+        // }
         float fn_dist = this->distance(point, this->nodes[i]->position);
         if (fn_dist < fn_minDist) {
             fn_minDist = fn_dist;
             fn_closest = this->nodes[i];
+            #ifdef PARALLEL
+            printf("t%d pick index: %d, closest_point(%f,%f). Orig_cost:%f, fn_dist:%f\n",omp_id, i, this->nodes[i]->position.m_x, this->nodes[i]->position.m_y, fn_minDist, fn_dist);
+            #endif
+            min_index = i;
         }
     }
-
+    printf("There are %d nodes in the tree.\n", this->nodes.size());
+    printf("nearest neighbor: at (%f,%f)\n",fn_closest->position.m_x, fn_closest->position.m_y);
+    printf("min_index: %d\n\n",min_index);
     // TODO: should modify here since dependencies: 有4個threads的話，要比較4個中最近的neighbor!
     return fn_closest;
 }
 
 // Return several neighbors within the radius. (Multiple Nodes)
 void RRTSTAR::findNearNeighbors(const Point point, const float radius, std::vector<Node*>& neighbor_nodes) { // Find neighbor nodes of the given node within the defined radius
+    #ifdef PARALLEL
+        #pragma omp parallel for
+    #endif
     for (size_t i = 0; i < this->nodes.size(); i++) { //iterate through all nodes to see which ones fall inside the circle with the given radius.
         if (this->distance(point, this->nodes[i]->position) < radius) {
             neighbor_nodes.push_back(this->nodes[i]);

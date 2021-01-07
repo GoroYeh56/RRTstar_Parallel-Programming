@@ -99,6 +99,17 @@ public:
    */
     std::vector<Point> planner();
 
+
+    /**
+    * @brief Generates a random node
+    *        if p > epsilon: random node = goal node (For faster convergence)
+    *        else : not goal node.
+    *        Note: global variable: epsilon ~= 0.85 
+    * @param Void
+    * @return Node Generated node
+        */
+    Node RamdomNode_Epsilon();
+
     /**
     * @brief Generates a random node
     * @param Void
