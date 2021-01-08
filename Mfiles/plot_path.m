@@ -8,9 +8,8 @@ clc
 %% Some parameters to set (Filename, output PNG name)
 
 % YOU NEED TO MODIFY!
-version = '12'
-GIF_SPACE = 5;
-
+version = '15'
+GIF_SPACE = 5; % .gif 間隔多少ii要get_grame()一次
 
 start_x = 425;
 start_y = 475;
@@ -142,6 +141,7 @@ for ii = 1 : edgesRowCount
         end          
          if isfield(Path2,'data')
             p2=plot(Path2.data(:,1),Path2.data(:,2),'bs-', 'linewidth', 1.5);
+        
          end    
             % Set the legends for the plot.
             if exist('p1','var') && exist('p2','var')
@@ -169,6 +169,6 @@ end
 
 %% Save output plot to PNG image file.
 
-saveas(p2,PNG_NAME);
+saveas(h,PNG_NAME);
 
 disp('Done saving the image.');
