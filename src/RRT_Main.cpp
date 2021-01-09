@@ -121,34 +121,18 @@ int main(int argc, char** argv)
     std::cin>>world_width;
     WORLD_HEIGHT = WORLD_WIDTH = atoi(world_width.c_str());
 
+    int input_type;
     std::cout<<"Enter World Type\n";
     std::cout<<"0 -> Free space\n";  
     std::cout<<"1 -> Four Obstacles\n";   
     std::cout<<"2 -> Twelve Obstacles\n";  
     std::cout<<"3 -> Maze\n";  
-    std::cin>>ENV_TYPE ;
-
+    std::cin>>input_type;
+    ENV_TYPE = input_type;
+    std::cout<<"You enter: "<<ENV_TYPE<<std::endl;
     // Read user input
     int K = atoi(argv[1]);
     std::string version = argv[2];
-
-    switch(atoi(argv[4])){
-        case FREE_SPACE:
-            ENV_TYPE = FREE_SPACE;
-        break;
-        case FOUR_OBS:
-            ENV_TYPE = FOUR_OBS;
-        break;
-        case TWELVE_OBS:
-            ENV_TYPE = TWELVE_OBS;
-        break;
-        case MAZE:
-            ENV_TYPE = MAZE;
-        break;
-        default:
-            ENV_TYPE = FREE_SPACE;
-        break;
-    }
 
     std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+ version + ".txt";
     std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+version + ".txt";
@@ -160,24 +144,28 @@ int main(int argc, char** argv)
     /* ---------- Setting Start & Goal location ------------- */
     switch(ENV_TYPE){
         case FREE_SPACE:
+            std::cout<<"choose FREE_SPACE\n";          
             start_x = WORLD_WIDTH/2;
             start_y = WORLD_HEIGHT/2;
             goal_x = 10;
             goal_y = WORLD_HEIGHT-10;
         break;
         case FOUR_OBS: // Start from left top to right down
+            std::cout<<"choose FOUR_OBS\n";          
             start_x = 25;
             start_y = WORLD_HEIGHT-25; 
             goal_x = WORLD_WIDTH-25;
             goal_y = 25;
         break; 
         case TWELVE_OBS:
+            std::cout<<"choose TWELVE_OBS\n";           
             start_x = 25;
             start_y = WORLD_HEIGHT-25; 
             goal_x = WORLD_WIDTH-25;
             goal_y = 25;
         break;
         case MAZE:
+            std::cout<<"choose Maze\n";         
             start_x = WORLD_WIDTH-25;
             start_y = WORLD_HEIGHT-25; 
             goal_x = 25;
