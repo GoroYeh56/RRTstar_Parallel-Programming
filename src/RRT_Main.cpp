@@ -166,10 +166,10 @@ int main(int argc, char** argv)
         break;
         case MAZE:
             std::cout<<"choose Maze\n";         
-            start_x = WORLD_WIDTH-25;
-            start_y = WORLD_HEIGHT-25; 
-            goal_x = 25;
-            goal_y = 25;
+            start_x = WORLD_WIDTH-10;
+            start_y = WORLD_HEIGHT-10; 
+            goal_x = 10;
+            goal_y = 10;
         break;
         default:
             start_x = WORLD_WIDTH/2;
@@ -331,7 +331,7 @@ void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K, std::string OBSTACLES_
 
     for(int row=0; row<num_of_row; row++){
         for(int col=0; col< num_of_col; col++){
-            if(col==0 && row==0) continue;
+            // if(col==0 && row==0) continue;
             left_top_x = (col)*(2*box_width)+box_width/2;
             left_top_y = (row)*(2*box_height)+box_height/2;
             Point left_top(left_top_x, left_top_y);
