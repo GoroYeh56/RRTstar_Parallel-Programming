@@ -9,6 +9,8 @@
 #include "omp.h"
 
 // #define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
+// #define DEBUG_FINDNEAREST
+
 const float EPSILON = 0.9; // epsilon-greedy for faster convergence
 
 Node::Node() {
@@ -240,9 +242,11 @@ Node* RRTSTAR::findNearest(const Point point) {
             min_index = i;
         }
     }
+    #ifdef DEBUG_FINDNEAREST
     printf("There are %d nodes in the tree.\n", this->nodes.size());
     printf("nearest neighbor: at (%f,%f)\n",fn_closest->position.m_x, fn_closest->position.m_y);
     printf("min_index: %d\n\n",min_index);
+    #endif
     // TODO: should modify here since dependencies: 有4個threads的話，要比較4個中最近的neighbor!
     return fn_closest;
 }

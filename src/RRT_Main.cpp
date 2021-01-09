@@ -42,22 +42,27 @@
 *   ---------------------------------------------------------------------------- */
 
 
-
-
 #include"RRTstar.h"
 #include"omp.h"
 #include <string> // string concatination.
+#include <cstdio>
 #define TIME
+
+
+/* -------------- Functions used ------------------ */
+void Initialize_Environment_0(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE);
+void Initialize_Environment_4(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE);
+void Initialize_Environment_12(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE);
+void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE);
+
+std::vector<Point> Generate_First_Path(RRTSTAR* rrtstar, std::string FIRST_PATH_FILE);
+void Generate_Optimized_Path(RRTSTAR* rrtstar, std::string OPTIMIZE_PATH_FILE, std::vector<Point> initial_solution);
+
+
 
 /* ---------- Global Variables (Parameters) --------------- */
 
 // const int K = 1000; // 1000 points.
-
-// Obstacle file name
-// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_4.txt";
-std::string OBSTACLES_FILE = "Mfiles//Obstacles_1500_maze.txt";
-// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_0.txt";
-// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_12.txt";
 
 // World size
 /* 
@@ -74,36 +79,26 @@ std::string OBSTACLES_FILE = "Mfiles//Obstacles_1500_maze.txt";
 
 */
 
-enum Env_Type{
+enum {
     FREE_SPACE, 
     FOUR_OBS, 
     TWELVE_OBS, 
     MAZE
 };
 
-Env_Type ENV_TYPE = MAZE;
 
-const float WORLD_WIDTH = 1500.0;
-const float WORLD_HEIGHT = 1500.0;
+int ENV_TYPE;
+int WORLD_WIDTH, WORLD_HEIGHT;
 
-// start & goal points.
-Point start_pos(0,975);    
-// Point end_pos(475, 25);   
-Point end_pos(850, 120);
+// Obstacle file name
+// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_4.txt";
+// std::string OBSTACLES_FILE = "Mfiles//Obstacles_1500_maze.txt";
+// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_0.txt";
 
 float rrt_radius = 25;  // findNearNeighbors :=> raduis for RRT* algorithm (Within a radius of r, RRT* will find all neighbour nodes of a new node).
                         // This radius is for re-wiring RRT tree (re-assign parent node to minimize path cost (optimizing paths))
 float end_thresh = 10;  // goal_threshold :=> the radius to check if the last node in the tree is close to the end position
 
-
-/* -------------- Functions used ------------------ */
-void Initialize_Environment_0(RRTSTAR* rrtstar, int K);
-void Initialize_Environment_4(RRTSTAR* rrtstar, int K);
-void Initialize_Environment_12(RRTSTAR* rrtstar, int K);
-void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K);
-
-std::vector<Point> Generate_First_Path(RRTSTAR* rrtstar, std::string FIRST_PATH_FILE);
-void Generate_Optimized_Path(RRTSTAR* rrtstar, std::string OPTIMIZE_PATH_FILE, std::vector<Point> initial_solution);
 
 
 int main(int argc, char** argv)
@@ -120,39 +115,108 @@ int main(int argc, char** argv)
         return 0;
     }
 
+    std::string world_width;
+    /* ----------- Read input from user -------- */
+    std::cout<<"Enter World Size (500 / 1500 / 3000) :\n";
+    std::cin>>world_width;
+    WORLD_HEIGHT = WORLD_WIDTH = atoi(world_width.c_str());
+
+    std::cout<<"Enter World Type\n";
+    std::cout<<"0 -> Free space\n";  
+    std::cout<<"1 -> Four Obstacles\n";   
+    std::cout<<"2 -> Twelve Obstacles\n";  
+    std::cout<<"3 -> Maze\n";  
+    std::cin>>ENV_TYPE ;
+
     // Read user input
     int K = atoi(argv[1]);
     std::string version = argv[2];
 
-    std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_v"+ version + ".txt";
-    std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_v" + version + ".txt";
-    std::string AVAILABLE_PATH_FILE =  "Mfiles//AvailablePts/avail_pts_v"+ version + ".txt";
-    std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_v" + version + ".txt";
-
-
-    //instantiate RRTSTAR class
-    RRTSTAR* rrtstar = new RRTSTAR(start_pos,end_pos, rrt_radius, end_thresh);
-
-    switch(ENV_TYPE){
+    switch(atoi(argv[4])){
         case FREE_SPACE:
-            Initialize_Environment_0(rrtstar, K);
+            ENV_TYPE = FREE_SPACE;
         break;
         case FOUR_OBS:
-            Initialize_Environment_4(rrtstar, K);
-        break; 
+            ENV_TYPE = FOUR_OBS;
+        break;
         case TWELVE_OBS:
-            Initialize_Environment_12(rrtstar, K);
+            ENV_TYPE = TWELVE_OBS;
         break;
         case MAZE:
-            Initialize_Environment_Maze(rrtstar, K);
+            ENV_TYPE = MAZE;
         break;
         default:
-            Initialize_Environment_4(rrtstar, K);
+            ENV_TYPE = FREE_SPACE;
+        break;
+    }
 
+    std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+ version + ".txt";
+    std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+version + ".txt";
+    std::string AVAILABLE_PATH_FILE =  "Mfiles//AvailablePts/avail_pts_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+version + ".txt";
+    std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_" + version + ".txt";
+    std::string OBSTACLES_FILE = "Mfiles//Obstacles/Obstacles_"+std::to_string(int(WORLD_WIDTH))+"_" + std::to_string(ENV_TYPE)+".txt";
+
+    int start_x, start_y, goal_x, goal_y;
+    /* ---------- Setting Start & Goal location ------------- */
+    switch(ENV_TYPE){
+        case FREE_SPACE:
+            start_x = WORLD_WIDTH/2;
+            start_y = WORLD_HEIGHT/2;
+            goal_x = 10;
+            goal_y = WORLD_HEIGHT-10;
+        break;
+        case FOUR_OBS: // Start from left top to right down
+            start_x = 25;
+            start_y = WORLD_HEIGHT-25; 
+            goal_x = WORLD_WIDTH-25;
+            goal_y = 25;
+        break; 
+        case TWELVE_OBS:
+            start_x = 25;
+            start_y = WORLD_HEIGHT-25; 
+            goal_x = WORLD_WIDTH-25;
+            goal_y = 25;
+        break;
+        case MAZE:
+            start_x = WORLD_WIDTH-25;
+            start_y = WORLD_HEIGHT-25; 
+            goal_x = 25;
+            goal_y = 25;
+        break;
+        default:
+            start_x = WORLD_WIDTH/2;
+            start_y = WORLD_HEIGHT/2;
+            goal_x = 10;
+            goal_y = WORLD_HEIGHT-10;
+        break;
+    }
+
+    Point start_pos(start_x, start_y);    
+    Point end_pos(goal_y, goal_y);
+
+    /* --------- Instantiate RRTSTAR class ------------- */
+    RRTSTAR* rrtstar = new RRTSTAR(start_pos,end_pos, rrt_radius, end_thresh);
+    
+    /* ---------- Initialize Environment ------------- */
+    switch(ENV_TYPE){
+        case FREE_SPACE:
+            Initialize_Environment_0(rrtstar, K, OBSTACLES_FILE);
+        break;
+        case FOUR_OBS:
+            Initialize_Environment_4(rrtstar, K, OBSTACLES_FILE);
+        break; 
+        case TWELVE_OBS:
+            Initialize_Environment_12(rrtstar, K, OBSTACLES_FILE);
+        break;
+        case MAZE:
+            Initialize_Environment_Maze(rrtstar, K, OBSTACLES_FILE);
+        break;
+        default:
+            Initialize_Environment_4(rrtstar, K, OBSTACLES_FILE);
         break;
 
     }
-    // Initialize_Environment(rrtstar, K);
+   
 
     std::cout << "Starting RRT* Algorithm..." << std::endl;
     
@@ -175,7 +239,7 @@ int main(int argc, char** argv)
 
 
 // 0 Obstacle
-void Initialize_Environment_0(RRTSTAR* rrtstar, int K){
+void Initialize_Environment_0(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE){
     rrtstar->world->setWorldWidth(WORLD_WIDTH);
     rrtstar->world->setWorldHeight(WORLD_HEIGHT);
 
@@ -192,7 +256,7 @@ void Initialize_Environment_0(RRTSTAR* rrtstar, int K){
 }
 
 // 4 Obstacles
-void Initialize_Environment_4(RRTSTAR* rrtstar, int K){
+void Initialize_Environment_4(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE){
     rrtstar->world->setWorldWidth(WORLD_WIDTH);
     rrtstar->world->setWorldHeight(WORLD_HEIGHT);
 
@@ -230,7 +294,7 @@ void Initialize_Environment_4(RRTSTAR* rrtstar, int K){
 }
 
 // 12 Obstacles
-void Initialize_Environment_12(RRTSTAR* rrtstar, int K){
+void Initialize_Environment_12(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE){
     rrtstar->world->setWorldWidth(WORLD_WIDTH);
     rrtstar->world->setWorldHeight(WORLD_HEIGHT);
 
@@ -258,7 +322,7 @@ void Initialize_Environment_12(RRTSTAR* rrtstar, int K){
 }
 
 // Maze
-void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K){
+void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE){
     rrtstar->world->setWorldWidth(WORLD_WIDTH);
     rrtstar->world->setWorldHeight(WORLD_HEIGHT);
 
