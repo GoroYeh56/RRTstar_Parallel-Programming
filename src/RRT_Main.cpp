@@ -134,10 +134,10 @@ int main(int argc, char** argv)
     int K = atoi(argv[1]);
     std::string version = argv[2];
 
-    std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+ version + ".txt";
-    std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+version + ".txt";
-    std::string AVAILABLE_PATH_FILE =  "Mfiles//AvailablePts/avail_pts_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_"+version + ".txt";
-    std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_v_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_" + version + ".txt";
+    std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v"+ version + ".txt";
+    std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v"+version + ".txt";
+    std::string AVAILABLE_PATH_FILE =  "Mfiles//AvailablePts/avail_pts_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v"+version + ".txt";
+    std::string NODES_PATH_FILE = "Mfiles//Nodes/nodes_pts_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v" + version + ".txt";
     std::string OBSTACLES_FILE = "Mfiles//Obstacles/Obstacles_"+std::to_string(int(WORLD_WIDTH))+"_" + std::to_string(ENV_TYPE)+".txt";
 
     int start_x, start_y, goal_x, goal_y;
@@ -329,10 +329,10 @@ void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K, std::string OBSTACLES_
     int num_of_col = WORLD_WIDTH/(2*box_width);
     int num_of_row = WORLD_HEIGHT/(2*box_height);
 
-    for(int row=0; row<num_of_row; row++){
-        for(int col=0; col< num_of_col; col++){
-            left_top_x = col*(2*box_width);
-            left_top_y = row*(2*box_height);
+    for(int row=0; row<num_of_row-1; row++){
+        for(int col=0; col< num_of_col-1; col++){
+            left_top_x = (col+1)*(2*box_width);
+            left_top_y = (row+1)*(2*box_height);
             Point left_top(left_top_x, left_top_y);
             Point right_bottom(left_top_x+box_width, left_top_y+box_height);
             rrtstar->world->addObstacle(left_top, right_bottom);
