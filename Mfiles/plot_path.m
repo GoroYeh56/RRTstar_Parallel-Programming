@@ -6,29 +6,70 @@ clear
 clc
 
 %% Some parameters to set (Filename, output PNG name)
-
 % YOU NEED TO MODIFY!
-version = '15'
+
 GIF_SPACE = 5; % .gif 間隔多少ii要get_grame()一次
 
-start_x = 425;
-start_y = 475;
-goal_x = 25;
-goal_y = 150;
+% The width and height of the world need to be manually set
+version = '28'
+ENV_TYPE = 3
+WORLD_WIDTH = 500;
 
+
+WORLD_HEIGHT = WORLD_WIDTH;
+
+FREE_SPACE = 0;
+FOUR_OBS = 1;
+TWELVE_OBS = 2;
+MAZE = 3;
+
+switch ENV_TYPE
+        case FREE_SPACE   
+            start_x = WORLD_WIDTH/2;
+            start_y = WORLD_HEIGHT/2;
+            goal_x = 10;
+            goal_y = WORLD_HEIGHT-10;
+        case FOUR_OBS % Start from left top to right down       
+            start_x = 25;
+            start_y = WORLD_HEIGHT-25; 
+            goal_x = WORLD_WIDTH-25;
+            goal_y = 25;
+        case TWELVE_OBS 
+            start_x = 25;
+            start_y = WORLD_HEIGHT-25; 
+            goal_x = WORLD_WIDTH-25;
+            goal_y = 25;
+        case MAZE
+            start_x = WORLD_WIDTH-10;
+            start_y = WORLD_HEIGHT-10; 
+            goal_x = 10;
+            goal_y = 10;
+end
+
+%start_x = 425;
+%start_y = 475;
+%goal_x = 25;
+%goal_y = 150;
+
+
+
+%% Automatically done here. (No need to modify)
 % INPUT Files
-OBSTACLE_FILE = 'Obstacles_c4.txt';
-FIRST_PATH = strcat('FirstPath/first_path_v', version, '.txt');
-OPTIMIZE_PATH = strcat('OptPath/opt_path_v' ,version ,'.txt');
-AVAILABLE_POINTS_FILE = strcat('AvailablePts/avail_pts_v', version,'.txt');
-NODES_POINTS_FILE = strcat('Nodes/nodes_pts_v', version, '.txt');
+%OBSTACLE_FILE = 'Obstacles_c4.txt';
+
+path =strcat('_',int2str(WORLD_WIDTH), '_', int2str(ENV_TYPE), '_v')
+
+OBSTACLE_FILE = strcat('Obstacles/Obstacles_', int2str(WORLD_WIDTH),'_',int2str(ENV_TYPE), '.txt');
+FIRST_PATH = strcat('FirstPath/first_path', path, version, '.txt');
+OPTIMIZE_PATH = strcat('OptPath/opt_path' , path,version ,'.txt');
+%AVAILABLE_POINTS_FILE = strcat('AvailablePts/avail_pts_v', path, version,'.txt');
+NODES_POINTS_FILE = strcat('Nodes/nodes_pts', path, version, '.txt');
 
 % OUTPUT Image
+PNG_START_NAME = strcat('Graphs/graph_v',version,'_start.png');
 PNG_NAME = strcat('Graphs/graph_v',version,'.png');
 
-%% The width and height of the world need to be manually set
-WORLD_WIDTH = 500.0;
-WORLD_HEIGHT = 500.0;
+
 
 %% Plot the boundaries of the world!
 
@@ -40,12 +81,17 @@ hold on;
 %% Plot starting & goal location
 start = [start_x, start_y]
 goal = [goal_x, goal_y]
-plot(start_x, start_y,'rs');
-plot(goal_x, goal_y,'go');
+plot(start_x, start_y,'r-h','MarkerFaceColor',[1 0 0],'MarkerSize',12);
+text(start_x+10, start_y+5,'Start','Color','red','FontSize',12);
+
+
+plot(goal_x, goal_y,'g-p', 'MarkerFaceColor',[.2 .9 .2],'MarkerSize',12);
+text(goal_x-25, goal_y-20,'Goal','Color',[.2 .9 .2],'FontSize',12);
+
 
 %% Reads Obstacles.txt file and plot the obstacles.
 %filename = 'Obstacles.txt';
-filename = OBSTACLE_FILE;
+filename = OBSTACLE_FILE
 delimiterIn = '\t';
 headerlinesIn =2 ;
 obs = importdata(filename,delimiterIn,headerlinesIn);
@@ -58,6 +104,7 @@ for i=1:1: size(obs.data,1)
     p3=plot(pgon);
 end
 
+saveas(h,PNG_START_NAME);
 
 %% Reads available point available_c4.txt file and plot reachable workspace
 %filename = 'Path_after_MAX_ITER.txt';
