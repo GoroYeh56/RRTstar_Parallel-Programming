@@ -54,9 +54,35 @@
 // const int K = 1000; // 1000 points.
 
 // Obstacle file name
-std::string OBSTACLES_FILE = "Mfiles//Obstacles_c4.txt";
+// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_4.txt";
+std::string OBSTACLES_FILE = "Mfiles//Obstacles_1500_maze.txt";
+// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_0.txt";
+// std::string OBSTACLES_FILE = "Mfiles//Obstacles_500_12.txt";
 
 // World size
+/* 
+    3 Size here:
+    3000 * 3000
+    1500 * 1500
+     500 *  500
+
+    3 Type of Obstacles;
+    0 Obstacle
+    4 Obstacles
+    12 Obstacles
+    MAZE structure.
+
+*/
+
+enum Env_Type{
+    FREE_SPACE, 
+    FOUR_OBS, 
+    TWELVE_OBS, 
+    MAZE
+};
+
+Env_Type ENV_TYPE = MAZE;
+
 const float WORLD_WIDTH = 1500.0;
 const float WORLD_HEIGHT = 1500.0;
 
@@ -71,7 +97,11 @@ float end_thresh = 10;  // goal_threshold :=> the radius to check if the last no
 
 
 /* -------------- Functions used ------------------ */
-void Initialize_Environment(RRTSTAR* rrtstar, int K);
+void Initialize_Environment_0(RRTSTAR* rrtstar, int K);
+void Initialize_Environment_4(RRTSTAR* rrtstar, int K);
+void Initialize_Environment_12(RRTSTAR* rrtstar, int K);
+void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K);
+
 std::vector<Point> Generate_First_Path(RRTSTAR* rrtstar, std::string FIRST_PATH_FILE);
 void Generate_Optimized_Path(RRTSTAR* rrtstar, std::string OPTIMIZE_PATH_FILE, std::vector<Point> initial_solution);
 
@@ -103,7 +133,26 @@ int main(int argc, char** argv)
     //instantiate RRTSTAR class
     RRTSTAR* rrtstar = new RRTSTAR(start_pos,end_pos, rrt_radius, end_thresh);
 
-    Initialize_Environment(rrtstar, K);
+    switch(ENV_TYPE){
+        case FREE_SPACE:
+            Initialize_Environment_0(rrtstar, K);
+        break;
+        case FOUR_OBS:
+            Initialize_Environment_4(rrtstar, K);
+        break; 
+        case TWELVE_OBS:
+            Initialize_Environment_12(rrtstar, K);
+        break;
+        case MAZE:
+            Initialize_Environment_Maze(rrtstar, K);
+        break;
+        default:
+            Initialize_Environment_4(rrtstar, K);
+
+        break;
+
+    }
+    // Initialize_Environment(rrtstar, K);
 
     std::cout << "Starting RRT* Algorithm..." << std::endl;
     
@@ -124,7 +173,26 @@ int main(int argc, char** argv)
     delete rrtstar;
 }
 
-void Initialize_Environment(RRTSTAR* rrtstar, int K){
+
+// 0 Obstacle
+void Initialize_Environment_0(RRTSTAR* rrtstar, int K){
+    rrtstar->world->setWorldWidth(WORLD_WIDTH);
+    rrtstar->world->setWorldHeight(WORLD_HEIGHT);
+
+    // set step size and max iterations. If the values are not set, the default values are max_iter=5000 and step_size=10.0
+    // rrtstar->setMaxIterations(10000);
+    rrtstar->setMaxIterations(K);
+    // rrtstar->setStepSize(10.0);
+    rrtstar->setStepSize(10.0);
+
+    //Create obstacles
+
+    //Save obstacles to  file;
+    rrtstar->world->saveObsToFile(OBSTACLES_FILE);
+}
+
+// 4 Obstacles
+void Initialize_Environment_4(RRTSTAR* rrtstar, int K){
     rrtstar->world->setWorldWidth(WORLD_WIDTH);
     rrtstar->world->setWorldHeight(WORLD_HEIGHT);
 
@@ -160,6 +228,71 @@ void Initialize_Environment(RRTSTAR* rrtstar, int K){
     //Save obstacles to  file;
     rrtstar->world->saveObsToFile(OBSTACLES_FILE);
 }
+
+// 12 Obstacles
+void Initialize_Environment_12(RRTSTAR* rrtstar, int K){
+    rrtstar->world->setWorldWidth(WORLD_WIDTH);
+    rrtstar->world->setWorldHeight(WORLD_HEIGHT);
+
+    // set step size and max iterations. If the values are not set, the default values are max_iter=5000 and step_size=10.0
+    // rrtstar->setMaxIterations(10000);
+    rrtstar->setMaxIterations(K);
+    // rrtstar->setStepSize(10.0);
+    rrtstar->setStepSize(10.0);
+
+    //Create obstacles
+    int left_top_x, left_top_y;
+    int box_width = 30;
+    int box_height = 30;
+    // Generate 12 (3*4) cubes
+    for(int row=0; row<3; row++){
+        for(int col=0; col<4; col++){
+            left_top_x = col*(WORLD_WIDTH/4);
+            left_top_y = row*(WORLD_HEIGHT/3);
+            Point left_top(left_top_x, left_top_y);
+            Point right_bottom(left_top_x+box_width, left_top_y+box_height);
+            rrtstar->world->addObstacle(left_top, right_bottom);
+        }
+    }
+    rrtstar->world->saveObsToFile(OBSTACLES_FILE);
+}
+
+// Maze
+void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K){
+    rrtstar->world->setWorldWidth(WORLD_WIDTH);
+    rrtstar->world->setWorldHeight(WORLD_HEIGHT);
+
+    // set step size and max iterations. If the values are not set, the default values are max_iter=5000 and step_size=10.0
+    // rrtstar->setMaxIterations(10000);
+    rrtstar->setMaxIterations(K);
+    // rrtstar->setStepSize(10.0);
+    rrtstar->setStepSize(10.0);
+
+    // create a Maze
+    //Create obstacles
+    int left_top_x, left_top_y;
+    int box_width = 50;
+    int box_height = 50;
+    // Generate 12 (3*4) cubes
+    int num_of_col = WORLD_WIDTH/(2*box_width);
+    int num_of_row = WORLD_HEIGHT/(2*box_height);
+
+    for(int row=0; row<num_of_row; row++){
+        for(int col=0; col< num_of_col; col++){
+            left_top_x = col*(2*box_width);
+            left_top_y = row*(2*box_height);
+            Point left_top(left_top_x, left_top_y);
+            Point right_bottom(left_top_x+box_width, left_top_y+box_height);
+            rrtstar->world->addObstacle(left_top, right_bottom);
+        }
+    }
+
+    //Save obstacles to  file;
+    rrtstar->world->saveObsToFile(OBSTACLES_FILE);
+}
+
+
+
 
 //search for the first viable solution
 std::vector<Point> Generate_First_Path(RRTSTAR* rrtstar, std::string FIRST_PATH_FILE){
