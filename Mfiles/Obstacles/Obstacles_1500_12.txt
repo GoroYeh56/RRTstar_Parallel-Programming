@@ -1,0 +1,14 @@
+Obstacles. Obstacles are stored as rectangles. Rectangle is denoted by two points; top left and bottom right.
+Top Left X	Top Left X Y	Bottom Right X	Bottom Right Y
+0	0	30	30
+375	0	405	30
+750	0	780	30
+1125	0	1155	30
+0	500	30	530
+375	500	405	530
+750	500	780	530
+1125	500	1155	530
+0	1000	30	1030
+375	1000	405	1030
+750	1000	780	1030
+1125	1000	1155	1030
