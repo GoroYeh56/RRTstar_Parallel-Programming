@@ -110,29 +110,42 @@ int main(int argc, char** argv)
         starttime = omp_get_wtime();
     #endif
 
-    if(argc != 3){
-        std::cout<<"Error format, :=> ./RRT < K > < version >\n" ;
+    if(argc != 5){
+        std::cout<<"Error format, :=> ./RRT < K > < version > < World Size > < World Type >\n" ;
         return 0;
     }
 
     std::string world_width;
     /* ----------- Read input from user -------- */
-    std::cout<<"Enter World Size (500 / 1500 / 3000) :\n";
-    std::cin>>world_width;
-    WORLD_HEIGHT = WORLD_WIDTH = atoi(world_width.c_str());
+    // std::cout<<"Enter World Size (500 / 1500 / 3000) :\n";
+    // std::cin>>world_width;
+    // WORLD_HEIGHT = WORLD_WIDTH = atoi(world_width.c_str());
+    
+    // std::cin>>world_width;
+    WORLD_HEIGHT = WORLD_WIDTH = atoi(argv[3]);
+    // std::cout<<"World size: "<<WORLD_WIDTH<<"\n";
 
-    int input_type;
-    std::cout<<"Enter World Type\n";
-    std::cout<<"0 -> Free space\n";  
-    std::cout<<"1 -> Four Obstacles\n";   
-    std::cout<<"2 -> Twelve Obstacles\n";  
-    std::cout<<"3 -> Maze\n";  
-    std::cin>>input_type;
-    ENV_TYPE = input_type;
-    std::cout<<"You enter: "<<ENV_TYPE<<std::endl;
+
+    // int input_type;
+    // std::cout<<"Enter World Type\n";
+    // std::cout<<"0 -> Free space\n";  
+    // std::cout<<"1 -> Four Obstacles\n";   
+    // std::cout<<"2 -> Twelve Obstacles\n";  
+    // std::cout<<"3 -> Maze\n";  
+    // std::cin>>input_type;
+    // ENV_TYPE = input_type;
+    ENV_TYPE = atoi(argv[4]);
+    // std::cout<<"You enter: "<<ENV_TYPE<<std::endl;
     // Read user input
     int K = atoi(argv[1]);
     std::string version = argv[2];
+
+    std::cout<<"World size: "<<WORLD_WIDTH<<"\n";
+    std::cout<<"World type: "<<ENV_TYPE<<"\n";
+    std::cout<<"Version: "<<version<<"\n";
+    std::cout<<"K: "<<K<<"\n";
+
+
 
     std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v"+ version + ".txt";
     std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v"+version + ".txt";

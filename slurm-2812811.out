@@ -1,0 +1,9 @@
+World size: 3000
+World type: 1
+Version: 45
+K: 80000
+choose FOUR_OBS
+Starting RRT* Algorithm...
+Exceeded max iterations!
+Error: No solution found
+Execution time: 616.125000 seconds

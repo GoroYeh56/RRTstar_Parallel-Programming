@@ -146,6 +146,7 @@ std::vector<Point> RRTSTAR::planner() {
                         }
                         else {
                             // Havent reach the goal, ??? Why here.
+                            // return the nearest point to the destination(goal)
                             Node* Plan_NearNodeEnd = this->findNearest(this->destination);
                             if (Plan_NearNodeEnd->cost < this->m_cost_bestpath) {
                                 return this->generatePlan(Plan_NearNodeEnd);
@@ -224,9 +225,9 @@ Node* RRTSTAR::findNearest(const Point point) {
     #pragma omp parallel for default(shared) reduction(min:fn_minDist)  
     #endif
     for (size_t i=0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
-        #ifdef PARALLEL
-        int omp_id = omp_get_thread_num();
-        if(omp_id==0)printf("Total: %d of threads\n",omp_get_num_threads());
+        #if (defined DEBUG_FINDNEAREST && defined PARALLEL) 
+            int omp_id = omp_get_thread_num();
+            if(omp_id==0)printf("Total: %d of threads\n",omp_get_num_threads());
         #endif
         // if(omp_id == 0 && this->getCurrentIterations()%500==0 ){
             // printf("iter: %d, thread %d, Total %d of threads\n",this->getCurrentIterations(), omp_id, omp_get_num_threads());
@@ -236,7 +237,7 @@ Node* RRTSTAR::findNearest(const Point point) {
         if (fn_dist < fn_minDist) {
             fn_minDist = fn_dist;
             fn_closest = this->nodes[i];
-            #ifdef PARALLEL
+            #if (defined DEBUG_FINDNEAREST && defined PARALLEL)
             printf("t%d pick index: %d, closest_point(%f,%f). Orig_cost:%f, fn_dist:%f\n",omp_id, i, this->nodes[i]->position.m_x, this->nodes[i]->position.m_y, fn_minDist, fn_dist);
             #endif
             min_index = i;
@@ -252,9 +253,10 @@ Node* RRTSTAR::findNearest(const Point point) {
 }
 
 // Return several neighbors within the radius. (Multiple Nodes)
+// Write ALL near neighbors of "point"(<radius) to vector (neighbor_nodes) shared(neighbor_nodes)
 void RRTSTAR::findNearNeighbors(const Point point, const float radius, std::vector<Node*>& neighbor_nodes) { // Find neighbor nodes of the given node within the defined radius
     #ifdef PARALLEL
-        #pragma omp parallel for
+        #pragma omp parallel for 
     #endif
     for (size_t i = 0; i < this->nodes.size(); i++) { //iterate through all nodes to see which ones fall inside the circle with the given radius.
         if (this->distance(point, this->nodes[i]->position) < radius) {
@@ -283,19 +285,21 @@ Point RRTSTAR::steer(const Node n_rand, const Node* n_nearest) { // Steer from n
     if (this->distance(n_rand.position, n_nearest->position) >this->m_step_size) { //check if the distance between two nodes is larger than the maximum travel step size
         Point steer_p = n_rand.position - n_nearest->position;
         double steer_norm = this->distance(n_rand.position, n_nearest->position);
-        steer_p = steer_p / steer_norm; //normalize the vector
+        steer_p = steer_p / steer_norm; //normalize the vector, make ||steer|| = 1, leave unit vector in steer direction.
         return (n_nearest->position + this->m_step_size * steer_p); //travel in the direction of line between the new node and the near node
     }
     else {
         return  (n_rand.position);
     }
 
-
 }
-
+//(dynamic, 2) 
 Node* RRTSTAR::findParent(std::vector<Node*> v_n_near,Node* n_nearest, Node* n_new) {
-    Node* fp_n_parent = n_nearest; //create new note to find the parent
+    Node* fp_n_parent = n_nearest; //create new note to find the parent(New Parent)
     float fp_cmin = this->getCost(n_nearest) + this->pathCost(n_nearest, n_new); // Update cost of reaching "N_new" from "N_Nearest"
+    #ifdef PARALLEL
+    #pragma omp parallel for default(shared) reduction(min:fp_cmin)
+    #endif    
     for (size_t j = 0; j < v_n_near.size(); j++) { //In all members of "N_near", check if "N_new" can be reached from a different parent node with cost lower than Cmin, and without colliding with the obstacle.
         Node* fp_n_near = v_n_near[j];
         if (!this->world->checkObstacle(fp_n_near->position, n_new->position) &&
@@ -399,11 +403,12 @@ void RRTSTAR::savePlanToFile(const std::vector<Point> path,const std::string fil
 
 
 std::vector<Point> RRTSTAR::generatePlan(Node* n) {// generate shortest path to destination.
+    // CAN I parallelize here? But should first flatten, then.
     while (n != NULL) { // It goes from the given node to the root
         this->path.push_back(n);
         n = n->parent;
     }
-    this->bestpath.clear();
+    this->bestpath.clear();// best path: {last_node, n-1, n-2, ... , root (starting point)}
     this->bestpath = this->path;    //store the current plan as the best plan so far
 
     this->path.clear(); //clear the path as we have stored it in the Bestpath variable.

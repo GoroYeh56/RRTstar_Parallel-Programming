@@ -1,0 +1,176 @@
+World size: 1000
+World type: 1
+Version: 35
+K: 20000
+choose FOUR_OBS
+Starting RRT* Algorithm...
+First Viable Solution Obtained after 12345 iterations
+Cost is 1334.61
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 12473 iterations
+Cost is 1333.56
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 12505 iterations
+Cost is 1331.91
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 12605 iterations
+Cost is 1331.68
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 13460 iterations
+Cost is 1294.32
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 13705 iterations
+Cost is 1293.59
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 13789 iterations
+Cost is 1290.48
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 13835 iterations
+Cost is 1287.78
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 13847 iterations
+Cost is 1286.88
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 13891 iterations
+Cost is 1279.76
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 13947 iterations
+Cost is 1278.21
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 14107 iterations
+Cost is 1277.64
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 14667 iterations
+Cost is 1277.43
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 14832 iterations
+Cost is 1273.32
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 14991 iterations
+Cost is 1273.31
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15007 iterations
+Cost is 1270.81
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15054 iterations
+Cost is 1251.14
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15107 iterations
+Cost is 1249.04
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15256 iterations
+Cost is 1248.29
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15262 iterations
+Cost is 1246.44
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15638 iterations
+Cost is 1246.22
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15770 iterations
+Cost is 1242.01
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 15858 iterations
+Cost is 1239.69
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 16158 iterations
+Cost is 1232.89
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 16387 iterations
+Cost is 1232.78
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 16595 iterations
+Cost is 1226.58
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 16702 iterations
+Cost is 1225.21
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 16783 iterations
+Cost is 1220.76
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 17518 iterations
+Cost is 1220.75
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 17611 iterations
+Cost is 1219.84
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 17682 iterations
+Cost is 1219.77
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 17934 iterations
+Cost is 1219.73
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18011 iterations
+Cost is 1219.4
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18093 iterations
+Cost is 1217.56
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18332 iterations
+Cost is 1217.46
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18433 iterations
+Cost is 1216.42
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18552 iterations
+Cost is 1214.78
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18715 iterations
+Cost is 1214.74
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18906 iterations
+Cost is 1213.82
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 18924 iterations
+Cost is 1212.94
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 19523 iterations
+Cost is 1201.21
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 20000 iterations
+Cost is 1201.21
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+Execution time: 48.125000 seconds
