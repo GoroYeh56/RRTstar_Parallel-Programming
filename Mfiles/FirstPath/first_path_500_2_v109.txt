@@ -1,0 +1,2 @@
+First viable solution . This file contains vector of points of the generated path.
+X	Y

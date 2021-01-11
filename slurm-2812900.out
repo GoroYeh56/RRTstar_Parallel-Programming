@@ -1,0 +1,13 @@
+World size: 1000
+World type: 1
+Version: 106
+K: 20000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Exceeded max iterations!
+Error: No solution found
+Execution time: 23.500000 seconds

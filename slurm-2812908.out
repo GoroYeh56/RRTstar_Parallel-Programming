@@ -1,0 +1,13 @@
+World size: 3000
+World type: 2
+Version: 112
+K: 80000
+Number of cpus: 4
+choose TWELVE_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Exceeded max iterations!
+Error: No solution found
+Execution time: 402.250000 seconds

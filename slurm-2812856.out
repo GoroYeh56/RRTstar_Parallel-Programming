@@ -1,0 +1,8 @@
+World size: 500
+World type: 3
+Version: 113
+K: 8000
+Number of cpus: 4
+choose Maze
+Starting RRT* Algorithm...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)

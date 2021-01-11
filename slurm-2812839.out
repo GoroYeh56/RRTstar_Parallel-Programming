@@ -1,0 +1,48 @@
+World size: 3000
+World type: 0
+Version: 104
+K: 80000
+choose FREE_SPACE
+Starting RRT* Algorithm...
+First Viable Solution Obtained after 72541 iterations
+Cost is 2185.44
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 73164 iterations
+Cost is 2185.21
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 73733 iterations
+Cost is 2184.87
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 73740 iterations
+Cost is 2183.96
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 73931 iterations
+Cost is 2182.26
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 74748 iterations
+Cost is 2181.22
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 74814 iterations
+Cost is 2181.16
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 74818 iterations
+Cost is 2180.67
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 75511 iterations
+Cost is 2174.04
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 80000 iterations
+Cost is 2174.04
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+Execution time: 674.000000 seconds

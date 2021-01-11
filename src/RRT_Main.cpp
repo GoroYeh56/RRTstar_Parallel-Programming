@@ -146,6 +146,10 @@ int main(int argc, char** argv)
     std::cout<<"K: "<<K<<"\n";
 
 
+	cpu_set_t cpuset;
+	sched_getaffinity(0, sizeof(cpuset), &cpuset);
+	unsigned long long ncpus = CPU_COUNT(&cpuset);
+    std::cout<<"Number of cpus: "<<ncpus <<"\n";
 
     std::string FIRST_PATH_FILE = "Mfiles//FirstPath/first_path_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v"+ version + ".txt";
     std::string OPTIMIZE_PATH_FILE =  "Mfiles//OptPath/opt_path_"+std::to_string(int(WORLD_WIDTH))+"_"+ std::to_string(ENV_TYPE) + "_v"+version + ".txt";

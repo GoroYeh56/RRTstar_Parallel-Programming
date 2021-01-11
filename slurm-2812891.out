@@ -1,0 +1,12 @@
+World size: 500
+World type: 0
+Version: 111
+K: 6000
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Exceeded max iterations!
+Error: No solution found
+Execution time: 2.875000 seconds

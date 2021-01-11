@@ -1,0 +1,8 @@
+World size: 500
+World type: 0
+Version: 101
+K: 8000
+Number of cpus: 4
+choose FREE_SPACE
+Starting RRT* Algorithm...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)

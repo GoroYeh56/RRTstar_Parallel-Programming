@@ -1,0 +1,13 @@
+World size: 500
+World type: 3
+Version: 113
+K: 8000
+Number of cpus: 4
+choose Maze
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Exceeded max iterations!
+Error: No solution found
+Execution time: 3.375000 seconds

@@ -1,9 +1,10 @@
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -c 1
+#SBATCH -c 4
 
-srun ./RRT 70000 50 3000 0 # FreeSpace, 3000
+
+# srun ./RRT 70000 50 3000 0 # FreeSpace, 3000
 # srun ./RRT 15000 32 1000 0 # FreeSpace, 1000
 
 # Parallel version:
@@ -18,8 +19,8 @@ srun ./RRT 70000 50 3000 0 # FreeSpace, 3000
 
 # Parallel version:
 # srun ./RRT 8000 105 500 1   # 4-obs 500
-# srun ./RRT 20000 106 1000 1 # 4-obs 1000
-# srun ./RRT 50000 107 1500 1 # 4-obs 1500
+srun ./RRT 60000 106 1000 1 # 4-obs 1000
+# srun ./RRT 80000 107 1500 1 # 4-obs 1500
 # srun ./RRT 80000 108 3000 1 # 4-obs 3000
 
 

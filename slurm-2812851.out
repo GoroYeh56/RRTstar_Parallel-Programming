@@ -1,0 +1,8 @@
+World size: 1000
+World type: 2
+Version: 110
+K: 40000
+Number of cpus: 4
+choose TWELVE_OBS
+Starting RRT* Algorithm...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)

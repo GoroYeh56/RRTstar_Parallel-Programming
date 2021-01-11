@@ -1,0 +1,10 @@
+World size: 1500
+World type: 0
+Version: 103
+K: 50000
+Number of cpus: 4
+choose FREE_SPACE
+Starting RRT* Algorithm...
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+srun: error: apollo33: task 0: Aborted (core dumped)

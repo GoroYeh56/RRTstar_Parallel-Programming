@@ -1,0 +1,10 @@
+World size: 1000
+World type: 1
+Version: 106
+K: 20000
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)

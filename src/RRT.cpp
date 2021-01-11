@@ -8,7 +8,7 @@
 
 #include "omp.h"
 
-// #define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
+#define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
 // #define DEBUG_FINDNEAREST
 
 const float EPSILON = 0.9; // epsilon-greedy for faster convergence
@@ -43,6 +43,11 @@ RRTSTAR::RRTSTAR(Point start_pos, Point end_pos, float radius, float end_thresh)
     m_destination_threshhold = end_thresh;
     m_num_itr = 0;
     m_cost_bestpath = 0;
+
+    #ifdef PARALLEL
+    std::cout<<"\n===== Parallel version RRT*! =====\n\n";
+    #endif
+
 }
 
 //Destructor
@@ -256,7 +261,7 @@ Node* RRTSTAR::findNearest(const Point point) {
 // Write ALL near neighbors of "point"(<radius) to vector (neighbor_nodes) shared(neighbor_nodes)
 void RRTSTAR::findNearNeighbors(const Point point, const float radius, std::vector<Node*>& neighbor_nodes) { // Find neighbor nodes of the given node within the defined radius
     #ifdef PARALLEL
-        #pragma omp parallel for 
+        // #pragma omp parallel for  KEY!!! Error here!!
     #endif
     for (size_t i = 0; i < this->nodes.size(); i++) { //iterate through all nodes to see which ones fall inside the circle with the given radius.
         if (this->distance(point, this->nodes[i]->position) < radius) {
@@ -297,9 +302,9 @@ Point RRTSTAR::steer(const Node n_rand, const Node* n_nearest) { // Steer from n
 Node* RRTSTAR::findParent(std::vector<Node*> v_n_near,Node* n_nearest, Node* n_new) {
     Node* fp_n_parent = n_nearest; //create new note to find the parent(New Parent)
     float fp_cmin = this->getCost(n_nearest) + this->pathCost(n_nearest, n_new); // Update cost of reaching "N_new" from "N_Nearest"
-    #ifdef PARALLEL
+    // #ifdef PARALLEL
     #pragma omp parallel for default(shared) reduction(min:fp_cmin)
-    #endif    
+    // #endif    
     for (size_t j = 0; j < v_n_near.size(); j++) { //In all members of "N_near", check if "N_new" can be reached from a different parent node with cost lower than Cmin, and without colliding with the obstacle.
         Node* fp_n_near = v_n_near[j];
         if (!this->world->checkObstacle(fp_n_near->position, n_new->position) &&
