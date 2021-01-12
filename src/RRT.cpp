@@ -15,7 +15,7 @@
 // Comm time (reduce & pthread_join)
 // Computation time (in main.)
 
-// #define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
+#define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
 // #define DEBUG_FINDNEAREST
 // #define PARALLEL_FINE_PARENT
 

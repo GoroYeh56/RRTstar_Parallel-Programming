@@ -49,8 +49,8 @@
 #define TIME
 
 // #define OPENMP
-// #define Pthread
-#define Sequential
+#define Pthread
+// #define Sequential
 // #define RRT
 
 /* -------------- Functions used ------------------ */

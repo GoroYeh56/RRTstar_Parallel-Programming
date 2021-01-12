@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -c 1
+#SBATCH -c 4
 
 # Plot RRT seq v.s. parallel
-# srun ./RRT 1000 3020 500 1 # 12 -c4 1500
-srun ./RRT 1000 3021 500 1 # 12 -c1 1500
+srun ./RRT 1500 3022 500 1 # 12 -c4 1500
+# srun ./RRT 1000 3021 500 1 # 12 -c1 1500
 
 
 # ----------- Strong scalability --------- 
