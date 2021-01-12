@@ -20,6 +20,7 @@ public:
     Node* parent;
     Point position;
     float cost;
+    float cur_dist;
 
     //Constructor
     Node();
@@ -108,7 +109,7 @@ public:
     * @param Void
     * @return Node Generated node
         */
-    Node RamdomNode_Epsilon();
+    Node RandomNode_Epsilon();
 
     /**
     * @brief Generates a random node

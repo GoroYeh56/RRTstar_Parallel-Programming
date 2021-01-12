@@ -1,0 +1,834 @@
+World size: 500
+World type: 0
+Version: 301
+K: 30
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Iteration: 0
+There are 1 nodes in the tree.
+New node: (255.915, 490.192)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:240.264862, fn_dist:240.264862
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 1
+There are 2 nodes in the tree.
+New node: (481.449, 132.218)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:259.694550, fn_dist:259.694550
+Total: 1 of threads
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 2
+There are 3 nodes in the tree.
+New node: (332.425, 158.324)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:123.281693, fn_dist:123.281693
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:114.007004, fn_dist:114.007004
+nearest neighbor: at (258.912354,245.464615)
+min_index: 2
+
+Iteration: 3
+There are 4 nodes in the tree.
+New node: (245.944, 401.882)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:151.936188, fn_dist:151.936188
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:141.950272, fn_dist:141.950272
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (250.246201,259.996979)
+min_index: 1
+
+Iteration: 4
+There are 5 nodes in the tree.
+New node: (490, 490)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:332.239777, fn_dist:332.239777
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:325.623474, fn_dist:325.623474
+nearest neighbor: at (249.943130,269.992371)
+min_index: 4
+
+Iteration: 5
+There are 6 nodes in the tree.
+New node: (486.843, 380.713)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:270.518677, fn_dist:270.518677
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:265.613007, fn_dist:265.613007
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:265.036530, fn_dist:265.036530
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:263.576233, fn_dist:263.576233
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:261.496582, fn_dist:261.496582
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:251.974915, fn_dist:251.974915
+nearest neighbor: at (257.315338,276.748871)
+min_index: 5
+
+Iteration: 6
+There are 7 nodes in the tree.
+New node: (224.034, 93.0391)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:159.094269, fn_dist:159.094269
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:156.365189, fn_dist:156.365189
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:150.564850, fn_dist:150.564850
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (265.360474,237.821198)
+min_index: 3
+
+Iteration: 7
+There are 8 nodes in the tree.
+New node: (422.312, 6.33735)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:298.434265, fn_dist:298.434265
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:289.622803, fn_dist:289.622803
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:279.675964, fn_dist:279.675964
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:273.364899, fn_dist:273.364899
+nearest neighbor: at (262.615692,228.205261)
+min_index: 7
+
+Iteration: 8
+There are 9 nodes in the tree.
+New node: (97.7806, 93.6699)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:218.196793, fn_dist:218.196793
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:212.768341, fn_dist:212.768341
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:212.396881, fn_dist:212.396881
+nearest neighbor: at (268.457581,220.089081)
+min_index: 8
+
+Iteration: 9
+There are 10 nodes in the tree.
+New node: (235.572, 356.563)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:107.534790, fn_dist:107.534790
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:97.674088, fn_dist:97.674088
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:87.754837, fn_dist:87.754837
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:82.722290, fn_dist:82.722290
+Total: 1 of threads
+t0 pick index: 6, closest_point(266.424469,280.874847). Orig_cost:81.734192, fn_dist:81.734192
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (266.424469,280.874847)
+min_index: 6
+
+Iteration: 10
+There are 11 nodes in the tree.
+New node: (130.386, 433.923)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:219.397644, fn_dist:219.397644
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:211.227051, fn_dist:211.227051
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:202.897247, fn_dist:202.897247
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:202.026978, fn_dist:202.026978
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:195.368378, fn_dist:195.368378
+nearest neighbor: at (262.649780,290.135071)
+min_index: 10
+
+Iteration: 11
+There are 12 nodes in the tree.
+New node: (472.118, 167.793)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:236.842484, fn_dist:236.842484
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:226.912964, fn_dist:226.912964
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:218.294739, fn_dist:218.294739
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:218.038605, fn_dist:218.038605
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:210.267532, fn_dist:210.267532
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (268.457581,220.089081)
+min_index: 8
+
+Iteration: 12
+There are 13 nodes in the tree.
+New node: (218.791, 496.248)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:248.217789, fn_dist:248.217789
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:238.335831, fn_dist:238.335831
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:228.390152, fn_dist:228.390152
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:222.854218, fn_dist:222.854218
+Total: 1 of threads
+t0 pick index: 6, closest_point(266.424469,280.874847). Orig_cost:220.577774, fn_dist:220.577774
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:210.727661, fn_dist:210.727661
+Total: 1 of threads
+t0 pick index: 11, closest_point(255.879807,297.494934). Orig_cost:202.183990, fn_dist:202.183990
+Total: 1 of threads
+nearest neighbor: at (255.879807,297.494934)
+min_index: 11
+
+Iteration: 13
+There are 14 nodes in the tree.
+New node: (138.056, 128.562)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:165.162125, fn_dist:165.162125
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:159.511063, fn_dist:159.511063
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:159.316223, fn_dist:159.316223
+Total: 1 of threads
+t0 pick index: 9, closest_point(260.421814,214.137054). Orig_cost:149.319702, fn_dist:149.319702
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (260.421814,214.137054)
+min_index: 9
+
+Iteration: 14
+There are 15 nodes in the tree.
+New node: (490, 490)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:332.239777, fn_dist:332.239777
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:325.623474, fn_dist:325.623474
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:315.623505, fn_dist:315.623505
+Total: 1 of threads
+t0 pick index: 6, closest_point(266.424469,280.874847). Orig_cost:306.136139, fn_dist:306.136139
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:302.711273, fn_dist:302.711273
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:298.403503, fn_dist:298.403503
+Total: 1 of threads
+nearest neighbor: at (254.045380,307.325226)
+min_index: 13
+
+Iteration: 15
+There are 16 nodes in the tree.
+New node: (490, 490)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:332.239777, fn_dist:332.239777
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:325.623474, fn_dist:325.623474
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:315.623505, fn_dist:315.623505
+Total: 1 of threads
+t0 pick index: 6, closest_point(266.424469,280.874847). Orig_cost:306.136139, fn_dist:306.136139
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:302.711273, fn_dist:302.711273
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:298.403503, fn_dist:298.403503
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 15, closest_point(261.952606,313.446960). Orig_cost:288.403534, fn_dist:288.403534
+nearest neighbor: at (261.952606,313.446960)
+min_index: 15
+
+Iteration: 16
+There are 17 nodes in the tree.
+New node: (204.188, 328.611)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:90.986046, fn_dist:90.986046
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:82.639427, fn_dist:82.639427
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:74.362007, fn_dist:74.362007
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:74.244408, fn_dist:74.244408
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:69.987274, fn_dist:69.987274
+Total: 1 of threads
+t0 pick index: 11, closest_point(255.879807,297.494934). Orig_cost:60.334812, fn_dist:60.334812
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:54.211422, fn_dist:54.211422
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (254.045380,307.325226)
+min_index: 13
+
+Iteration: 17
+There are 18 nodes in the tree.
+New node: (56.4552, 153.717)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:216.171341, fn_dist:216.171341
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 9, closest_point(260.421814,214.137054). Orig_cost:212.727493, fn_dist:212.727493
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 14, closest_point(252.226944,208.406067). Orig_cost:203.267044, fn_dist:203.267044
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (252.226944,208.406067)
+min_index: 14
+
+Iteration: 18
+There are 19 nodes in the tree.
+New node: (494.984, 59.6499)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:310.241974, fn_dist:310.241974
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:300.427521, fn_dist:300.427521
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:290.640228, fn_dist:290.640228
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:287.063934, fn_dist:287.063934
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:277.587341, fn_dist:277.587341
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 12, closest_point(278.143372,217.601974). Orig_cost:268.269440, fn_dist:268.269440
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (278.143372,217.601974)
+min_index: 12
+
+Iteration: 19
+There are 20 nodes in the tree.
+New node: (481.682, 116.288)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:267.499023, fn_dist:267.499023
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:257.513458, fn_dist:257.513458
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:248.124146, fn_dist:248.124146
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:245.999557, fn_dist:245.999557
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:237.148834, fn_dist:237.148834
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 12, closest_point(278.143372,217.601974). Orig_cost:227.360367, fn_dist:227.360367
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 19, closest_point(286.226288,211.714157). Orig_cost:217.507065, fn_dist:217.507065
+nearest neighbor: at (286.226288,211.714157)
+min_index: 19
+
+Iteration: 20
+There are 21 nodes in the tree.
+New node: (59.3588, 342.467)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:211.882645, fn_dist:211.882645
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:207.940720, fn_dist:207.940720
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:203.899490, fn_dist:203.899490
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 11, closest_point(255.879807,297.494934). Orig_cost:201.601135, fn_dist:201.601135
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:197.832855, fn_dist:197.832855
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 17, closest_point(244.848480,311.251648). Orig_cost:188.097961, fn_dist:188.097961
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (244.848480,311.251648)
+min_index: 17
+
+Iteration: 21
+There are 22 nodes in the tree.
+New node: (20.6451, 330.059)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:242.926270, fn_dist:242.926270
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:240.052917, fn_dist:240.052917
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:237.035080, fn_dist:237.035080
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:234.504852, fn_dist:234.504852
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 17, closest_point(244.848480,311.251648). Orig_cost:224.990845, fn_dist:224.990845
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 21, closest_point(234.987152,312.911194). Orig_cost:215.026901, fn_dist:215.026901
+nearest neighbor: at (234.987152,312.911194)
+min_index: 21
+
+Iteration: 22
+There are 23 nodes in the tree.
+New node: (181.264, 127.813)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:140.193848, fn_dist:140.193848
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:138.470337, fn_dist:138.470337
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:129.215790, fn_dist:129.215790
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:126.955154, fn_dist:126.955154
+Total: 1 of threads
+t0 pick index: 9, closest_point(260.421814,214.137054). Orig_cost:117.123085, fn_dist:117.123085
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 14, closest_point(252.226944,208.406067). Orig_cost:107.382469, fn_dist:107.382469
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 18, closest_point(242.595688,205.715546). Orig_cost:99.148346, fn_dist:99.148346
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (242.595688,205.715546)
+min_index: 18
+
+Iteration: 23
+There are 24 nodes in the tree.
+New node: (58.6071, 470.815)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:292.216248, fn_dist:292.216248
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:284.902832, fn_dist:284.902832
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:277.378876, fn_dist:277.378876
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:272.540833, fn_dist:272.540833
+Total: 1 of threads
+t0 pick index: 11, closest_point(255.879807,297.494934). Orig_cost:262.595184, fn_dist:262.595184
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:254.803635, fn_dist:254.803635
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 17, closest_point(244.848480,311.251648). Orig_cost:245.247192, fn_dist:245.247192
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 21, closest_point(234.987152,312.911194). Orig_cost:236.734879, fn_dist:236.734879
+Total: 1 of threads
+t0 pick index: 22, closest_point(225.018997,313.708679). Orig_cost:228.856262, fn_dist:228.856262
+Total: 1 of threads
+nearest neighbor: at (225.018997,313.708679)
+min_index: 22
+
+Iteration: 24
+There are 25 nodes in the tree.
+New node: (37.0496, 484.2)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:316.539642, fn_dist:316.539642
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:309.385895, fn_dist:309.385895
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:302.007294, fn_dist:302.007294
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:297.584442, fn_dist:297.584442
+Total: 1 of threads
+t0 pick index: 11, closest_point(255.879807,297.494934). Orig_cost:287.654846, fn_dist:287.654846
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:279.949493, fn_dist:279.949493
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 17, closest_point(244.848480,311.251648). Orig_cost:270.354187, fn_dist:270.354187
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 21, closest_point(234.987152,312.911194). Orig_cost:261.761353, fn_dist:261.761353
+Total: 1 of threads
+t0 pick index: 22, closest_point(225.018997,313.708679). Orig_cost:253.770889, fn_dist:253.770889
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 24, closest_point(217.747543,320.573517). Orig_cost:243.772964, fn_dist:243.772964
+nearest neighbor: at (217.747543,320.573517)
+min_index: 24
+
+Iteration: 25
+There are 26 nodes in the tree.
+New node: (189.298, 315.673)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:89.429527, fn_dist:89.429527
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:82.549812, fn_dist:82.549812
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:75.924469, fn_dist:75.924469
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 11, closest_point(255.879807,297.494934). Orig_cost:69.018570, fn_dist:69.018570
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:65.283203, fn_dist:65.283203
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 17, closest_point(244.848480,311.251648). Orig_cost:55.726070, fn_dist:55.726070
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 21, closest_point(234.987152,312.911194). Orig_cost:45.772472, fn_dist:45.772472
+Total: 1 of threads
+t0 pick index: 22, closest_point(225.018997,313.708679). Orig_cost:35.774891, fn_dist:35.774891
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 24, closest_point(217.747543,320.573517). Orig_cost:28.868492, fn_dist:28.868492
+Total: 1 of threads
+t0 pick index: 25, closest_point(210.334991,327.285736). Orig_cost:24.029415, fn_dist:24.029415
+nearest neighbor: at (210.334991,327.285736)
+min_index: 25
+
+Iteration: 26
+There are 27 nodes in the tree.
+New node: (240.2, 176.85)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:73.803345, fn_dist:73.803345
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:71.120193, fn_dist:71.120193
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:65.958290, fn_dist:65.958290
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:56.033836, fn_dist:56.033836
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:51.653370, fn_dist:51.653370
+Total: 1 of threads
+t0 pick index: 9, closest_point(260.421814,214.137054). Orig_cost:42.417175, fn_dist:42.417175
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 14, closest_point(252.226944,208.406067). Orig_cost:33.770000, fn_dist:33.770000
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 18, closest_point(242.595688,205.715546). Orig_cost:28.964622, fn_dist:28.964622
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 23, closest_point(236.409836,197.858368). Orig_cost:21.347486, fn_dist:21.347486
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (236.409836,197.858368)
+min_index: 23
+
+Iteration: 27
+There are 28 nodes in the tree.
+New node: (148.826, 170.59)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:128.615845, fn_dist:128.615845
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:127.544197, fn_dist:127.544197
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 9, closest_point(260.421814,214.137054). Orig_cost:119.791023, fn_dist:119.791023
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 14, closest_point(252.226944,208.406067). Orig_cost:110.098755, fn_dist:110.098755
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 18, closest_point(242.595688,205.715546). Orig_cost:100.132362, fn_dist:100.132362
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 23, closest_point(236.409836,197.858368). Orig_cost:91.730209, fn_dist:91.730209
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 27, closest_point(238.185532,188.017288). Orig_cost:91.042725, fn_dist:91.042725
+nearest neighbor: at (238.185532,188.017288)
+min_index: 27
+
+Iteration: 28
+There are 29 nodes in the tree.
+New node: (490, 490)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+Total: 1 of threads
+t0 pick index: 1, closest_point(250.246201,259.996979). Orig_cost:332.239777, fn_dist:332.239777
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 4, closest_point(249.943130,269.992371). Orig_cost:325.623474, fn_dist:325.623474
+Total: 1 of threads
+t0 pick index: 5, closest_point(257.315338,276.748871). Orig_cost:315.623505, fn_dist:315.623505
+Total: 1 of threads
+t0 pick index: 6, closest_point(266.424469,280.874847). Orig_cost:306.136139, fn_dist:306.136139
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 10, closest_point(262.649780,290.135071). Orig_cost:302.711273, fn_dist:302.711273
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 13, closest_point(254.045380,307.325226). Orig_cost:298.403503, fn_dist:298.403503
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 15, closest_point(261.952606,313.446960). Orig_cost:288.403534, fn_dist:288.403534
+Total: 1 of threads
+t0 pick index: 16, closest_point(269.859833,319.568695). Orig_cost:278.403534, fn_dist:278.403534
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (269.859833,319.568695)
+min_index: 16
+
+Iteration: 29
+There are 30 nodes in the tree.
+New node: (255.514, 187.165)
+Total: 1 of threads
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:63.076649, fn_dist:63.076649
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 2, closest_point(258.912354,245.464615). Orig_cost:58.398777, fn_dist:58.398777
+Total: 1 of threads
+t0 pick index: 3, closest_point(265.360474,237.821198). Orig_cost:51.604507, fn_dist:51.604507
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 7, closest_point(262.615692,228.205261). Orig_cost:41.650383, fn_dist:41.650383
+Total: 1 of threads
+t0 pick index: 8, closest_point(268.457581,220.089081). Orig_cost:35.377213, fn_dist:35.377213
+Total: 1 of threads
+t0 pick index: 9, closest_point(260.421814,214.137054). Orig_cost:27.415138, fn_dist:27.415138
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 14, closest_point(252.226944,208.406067). Orig_cost:21.494066, fn_dist:21.494066
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+Total: 1 of threads
+t0 pick index: 27, closest_point(238.185532,188.017288). Orig_cost:17.349295, fn_dist:17.349295
+Total: 1 of threads
+Total: 1 of threads
+nearest neighbor: at (238.185532,188.017288)
+min_index: 27
+
+Exceeded max iterations!
+Error: No solution found
+
+
+Execution time: 0.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

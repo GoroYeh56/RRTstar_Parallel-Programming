@@ -69,6 +69,7 @@ void Generate_Optimized_Path(RRTSTAR* rrtstar, std::string OPTIMIZE_PATH_FILE, s
     3 Size here:
     3000 * 3000
     1500 * 1500
+    1000 * 1000
      500 *  500
 
     3 Type of Obstacles;
@@ -235,7 +236,8 @@ int main(int argc, char** argv)
     #ifdef TIME 
         endtime = omp_get_wtime();
         total_time = endtime - starttime;
-        printf("Execution time: %.6f seconds\n",total_time);
+        printf("\n\nExecution time: %.6f seconds\n",total_time);
+        std::cout<<"\n --------------------------------------------- End------------------------------------------------------\n\n"<<std::endl;
     #endif
 
     //free up the memory
@@ -275,23 +277,51 @@ void Initialize_Environment_4(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FIL
 
     // TODO : read a .txt file
     //        and automatically set obstacles!
+    int ob_1_x, ob_1_y, ob_1_width, ob_1_height;
+    int ob_2_x, ob_2_y, ob_2_width, ob_2_height;
+    int ob_3_x, ob_3_y, ob_3_width, ob_3_height;
+    int ob_4_x, ob_4_y, ob_4_width, ob_4_height;
+
+    ob_1_x = 0;
+    ob_1_y = WORLD_HEIGHT-300;
+    ob_1_width = WORLD_WIDTH/3;
+    ob_1_height = 100;
+
+
+    ob_2_x =  WORLD_WIDTH/2;
+    ob_2_y = WORLD_HEIGHT/2;
+    ob_2_width = WORLD_HEIGHT/6;
+    ob_2_height = WORLD_HEIGHT/6;
+
+
+    ob_3_x = WORLD_WIDTH*2/3;
+    ob_3_y = 350;
+    ob_3_width = WORLD_WIDTH/3;
+    ob_3_height = 200;
+
+
+    ob_4_x = WORLD_WIDTH/5;;
+    ob_4_y = WORLD_HEIGHT/5;
+    ob_4_width = WORLD_WIDTH/8;
+    ob_4_height = WORLD_HEIGHT/4;
+
 
     //Obstacle 1
-    Point ob1_1(0, 400); //position of the top left point of obstacle 1
-    Point ob1_2(350, 350.0); //position of the bottom right point of obstacle 1
+    Point ob1_1( ob_1_x,  ob_1_y); //position of the top left point of obstacle 1
+    Point ob1_2(ob_1_x+ob_1_width,  ob_1_y+ob_1_height); //position of the bottom right point of obstacle 1
     rrtstar->world->addObstacle(ob1_1, ob1_2);//create obstacle 1
     //Obstacle 2;
-    Point ob2_1(150, 150.0); //position of the top left point of obstacle 2
-    Point ob2_2(500, 100.0); //position of the bottom right point of obstacle 2
+    Point ob2_1(ob_2_x,  ob_2_y); //position of the top left point of obstacle 2
+    Point ob2_2(ob_2_x+ob_2_width,  ob_2_y+ob_2_height); //position of the bottom right point of obstacle 2
     rrtstar->world->addObstacle(ob2_1, ob2_2);//create obstacle 2
 
     //Obstacle 3
-    Point ob3_1(30, 30); //position of the top left point of obstacle 3
-    Point ob3_2(60, 60); //position of the bottom right point of obstacle 3
+    Point ob3_1(ob_3_x,  ob_3_y); //position of the top left point of obstacle 3
+    Point ob3_2(ob_3_x+ob_3_width,  ob_3_y+ob_3_height); //position of the bottom right point of obstacle 3
     rrtstar->world->addObstacle(ob3_1, ob3_2);//create obstacle 3
     //Obstacle 4;
-    Point ob4_1(250, 200.0); //position of the top left point of obstacle 4
-    Point ob4_2(350, 300.0); //position of the bottom right point of obstacle 4
+    Point ob4_1(ob_4_x,  ob_4_y); //position of the top left point of obstacle 4
+    Point ob4_2(ob_4_x+ob_4_width,  ob_4_y+ob_4_height); //position of the bottom right point of obstacle 4
 
     rrtstar->world->addObstacle(ob4_1, ob4_2);//create obstacle 4
     //Save obstacles to  file;

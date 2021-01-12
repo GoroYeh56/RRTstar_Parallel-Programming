@@ -1,0 +1,104 @@
+World size: 3000
+World type: 3
+Version: 76
+K: 80000
+Number of cpus: 1
+choose Maze
+Starting RRT* Algorithm...
+First Viable Solution Obtained after 38282 iterations
+Cost is 4736.43
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 40088 iterations
+Cost is 4728.5
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 46203 iterations
+Cost is 4727.98
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 46344 iterations
+Cost is 4727.9
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 47169 iterations
+Cost is 4722.34
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 47807 iterations
+Cost is 4721.76
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 48156 iterations
+Cost is 4717.36
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 48735 iterations
+Cost is 4717.13
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 49180 iterations
+Cost is 4716.99
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 49503 iterations
+Cost is 4706.82
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 49714 iterations
+Cost is 4705.02
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 50397 iterations
+Cost is 4702.16
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 50443 iterations
+Cost is 4701.78
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 51256 iterations
+Cost is 4697.44
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 51635 iterations
+Cost is 4697.23
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 51675 iterations
+Cost is 4697.22
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 51931 iterations
+Cost is 4694.97
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 52032 iterations
+Cost is 4694.91
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 52698 iterations
+Cost is 4694.17
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 53499 iterations
+Cost is 4693.44
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 53715 iterations
+Cost is 4691.76
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 53861 iterations
+Cost is 4691.4
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 53925 iterations
+Cost is 4690.06
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813209 ON apollo32 CANCELLED AT 2021-01-12T11:30:55 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 2813209.0 ON apollo32 CANCELLED AT 2021-01-12T11:30:55 DUE TO TIME LIMIT ***
+srun: error: apollo32: task 0: Terminated

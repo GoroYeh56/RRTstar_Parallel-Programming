@@ -1,0 +1,14 @@
+ Optimized Solution after maximum provided iteration.This file contains vector of points of the generated path.
+X	Y
+386.938	383.371
+381.229	375.717
+369.868	359.71
+359.385	344.552
+344.345	327.039
+329.131	315.645
+315.578	303.83
+302.318	293.897
+291.481	284.75
+272.528	269.59
+264.951	263.228
+250	250

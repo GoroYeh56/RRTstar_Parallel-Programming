@@ -1,0 +1,819 @@
+World size: 500
+World type: 0
+Version: 301
+K: 30
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Iteration: 0
+There are 1 nodes in the tree.
+New node: (77.8546, 321.549)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:186.422394, fn_dist:186.422394
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 1
+There are 2 nodes in the tree.
+New node: (389.297, 11.3509)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:276.327881, fn_dist:276.327881
+I'm t0
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 2
+There are 3 nodes in the tree.
+New node: (14.0955, 360.225)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:260.385376, fn_dist:260.385376
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:250.395081, fn_dist:250.395081
+I'm t0
+nearest neighbor: at (240.765839,253.838013)
+min_index: 1
+
+Iteration: 3
+There are 4 nodes in the tree.
+New node: (65.387, 7.12069)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:305.077545, fn_dist:305.077545
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:302.699799, fn_dist:302.699799
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:301.394043, fn_dist:301.394043
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:301.078766, fn_dist:301.078766
+nearest neighbor: at (231.713333,258.086792)
+min_index: 3
+
+Iteration: 4
+There are 5 nodes in the tree.
+New node: (490, 490)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 5
+There are 6 nodes in the tree.
+New node: (134.454, 181.873)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:134.134888, fn_dist:134.134888
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:128.379028, fn_dist:128.379028
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:123.563431, fn_dist:123.563431
+I'm t0
+t0 pick index: 4, closest_point(226.188995,249.751236). Orig_cost:114.117340, fn_dist:114.117340
+I'm t0
+nearest neighbor: at (226.188995,249.751236)
+min_index: 4
+
+Iteration: 6
+There are 7 nodes in the tree.
+New node: (62.5756, 343.397)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:209.406006, fn_dist:209.406006
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:199.430542, fn_dist:199.430542
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:189.434357, fn_dist:189.434357
+I'm t0
+t0 pick index: 4, closest_point(226.188995,249.751236). Orig_cost:188.517471, fn_dist:188.517471
+I'm t0
+I'm t0
+t0 pick index: 6, closest_point(218.150330,243.803131). Orig_cost:184.722488, fn_dist:184.722488
+nearest neighbor: at (218.150330,243.803131)
+min_index: 6
+
+Iteration: 7
+There are 8 nodes in the tree.
+New node: (152.396, 461.238)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:232.697220, fn_dist:232.697220
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:225.441666, fn_dist:225.441666
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:218.086227, fn_dist:218.086227
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (231.713333,258.086792)
+min_index: 3
+
+Iteration: 8
+There are 9 nodes in the tree.
+New node: (434.469, 225.426)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:186.098923, fn_dist:186.098923
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:180.134735, fn_dist:180.134735
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (255.041016,241.363556)
+min_index: 2
+
+Iteration: 9
+There are 10 nodes in the tree.
+New node: (311.514, 420.66)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:181.408249, fn_dist:181.408249
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:181.204361, fn_dist:181.204361
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:181.103104, fn_dist:181.103104
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:172.410858, fn_dist:172.410858
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (257.071075,257.071075)
+min_index: 5
+
+Iteration: 10
+There are 11 nodes in the tree.
+New node: (368.686, 306.561)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:131.474304, fn_dist:131.474304
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:131.018555, fn_dist:131.018555
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:122.094734, fn_dist:122.094734
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:115.598747, fn_dist:115.598747
+nearest neighbor: at (260.228821,266.559418)
+min_index: 10
+
+Iteration: 11
+There are 12 nodes in the tree.
+New node: (224.959, 405.979)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:157.976456, fn_dist:157.976456
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:152.960083, fn_dist:152.960083
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:148.046524, fn_dist:148.046524
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 8, closest_point(228.076340,267.401947). Orig_cost:138.612274, fn_dist:138.612274
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (228.076340,267.401947)
+min_index: 8
+
+Iteration: 12
+There are 13 nodes in the tree.
+New node: (451.102, 321.152)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:213.318100, fn_dist:213.318100
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:211.674515, fn_dist:211.674515
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:204.338821, fn_dist:204.338821
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 9, closest_point(265.001801,240.478821). Orig_cost:202.833542, fn_dist:202.833542
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:198.526825, fn_dist:198.526825
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:188.556244, fn_dist:188.556244
+I'm t0
+nearest neighbor: at (269.611023,270.019775)
+min_index: 11
+
+Iteration: 13
+There are 14 nodes in the tree.
+New node: (207.628, 384.952)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:141.447556, fn_dist:141.447556
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:135.236740, fn_dist:135.236740
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:129.131195, fn_dist:129.131195
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 8, closest_point(228.076340,267.401947). Orig_cost:119.315262, fn_dist:119.315262
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 12, closest_point(227.851425,277.399414). Orig_cost:109.437332, fn_dist:109.437332
+I'm t0
+nearest neighbor: at (227.851425,277.399414)
+min_index: 12
+
+Iteration: 14
+There are 15 nodes in the tree.
+New node: (490, 490)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:329.411255, fn_dist:329.411255
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:320.500366, fn_dist:320.500366
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:311.388184, fn_dist:311.388184
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:302.699371, fn_dist:302.699371
+I'm t0
+nearest neighbor: at (279.236298,272.731567)
+min_index: 13
+
+Iteration: 15
+There are 16 nodes in the tree.
+New node: (490, 490)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:329.411255, fn_dist:329.411255
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:320.500366, fn_dist:320.500366
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:311.388184, fn_dist:311.388184
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:302.699371, fn_dist:302.699371
+I'm t0
+I'm t0
+t0 pick index: 15, closest_point(286.199097,279.909271). Orig_cost:292.699371, fn_dist:292.699371
+nearest neighbor: at (286.199097,279.909271)
+min_index: 15
+
+Iteration: 16
+There are 17 nodes in the tree.
+New node: (491.076, 493.458)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:342.621307, fn_dist:342.621307
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:332.621429, fn_dist:332.621429
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:323.687073, fn_dist:323.687073
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:314.597076, fn_dist:314.597076
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:305.934875, fn_dist:305.934875
+I'm t0
+I'm t0
+t0 pick index: 15, closest_point(286.199097,279.909271). Orig_cost:295.935028, fn_dist:295.935028
+I'm t0
+t0 pick index: 16, closest_point(293.161896,287.086975). Orig_cost:285.935211, fn_dist:285.935211
+nearest neighbor: at (293.161896,287.086975)
+min_index: 16
+
+Iteration: 17
+There are 18 nodes in the tree.
+New node: (433.716, 73.693)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:254.628433, fn_dist:254.628433
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:245.026703, fn_dist:245.026703
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 9, closest_point(265.001801,240.478821). Orig_cost:237.238098, fn_dist:237.238098
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (265.001801,240.478821)
+min_index: 9
+
+Iteration: 18
+There are 19 nodes in the tree.
+New node: (436.285, 190.047)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:195.695129, fn_dist:195.695129
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:188.369003, fn_dist:188.369003
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 9, closest_point(265.001801,240.478821). Orig_cost:178.553665, fn_dist:178.553665
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:177.485641, fn_dist:177.485641
+I'm t0
+I'm t0
+t0 pick index: 15, closest_point(286.199097,279.909271). Orig_cost:174.931778, fn_dist:174.931778
+I'm t0
+t0 pick index: 16, closest_point(293.161896,287.086975). Orig_cost:172.919357, fn_dist:172.919357
+I'm t0
+t0 pick index: 17, closest_point(300.083527,294.304382). Orig_cost:171.524261, fn_dist:171.524261
+I'm t0
+t0 pick index: 18, closest_point(272.113403,233.448502). Orig_cost:169.811966, fn_dist:169.811966
+nearest neighbor: at (272.113403,233.448502)
+min_index: 18
+
+Iteration: 19
+There are 20 nodes in the tree.
+New node: (154.967, 377.422)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:158.957474, fn_dist:158.957474
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:150.446976, fn_dist:150.446976
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:141.882889, fn_dist:141.882889
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 7, closest_point(209.728256,249.194656). Orig_cost:139.430695, fn_dist:139.430695
+I'm t0
+t0 pick index: 8, closest_point(228.076340,267.401947). Orig_cost:132.095642, fn_dist:132.095642
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 12, closest_point(227.851425,277.399414). Orig_cost:123.759987, fn_dist:123.759987
+I'm t0
+I'm t0
+t0 pick index: 14, closest_point(226.003464,287.227173). Orig_cost:114.809288, fn_dist:114.809288
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (226.003464,287.227173)
+min_index: 14
+
+Iteration: 20
+There are 21 nodes in the tree.
+New node: (400.609, 453.538)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:253.201248, fn_dist:253.201248
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:243.315567, fn_dist:243.315567
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:233.811172, fn_dist:233.811172
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:225.476120, fn_dist:225.476120
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:217.766785, fn_dist:217.766785
+I'm t0
+I'm t0
+t0 pick index: 15, closest_point(286.199097,279.909271). Orig_cost:207.934189, fn_dist:207.934189
+I'm t0
+t0 pick index: 16, closest_point(293.161896,287.086975). Orig_cost:198.118362, fn_dist:198.118362
+I'm t0
+t0 pick index: 17, closest_point(300.083527,294.304382). Orig_cost:188.310318, fn_dist:188.310318
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (300.083527,294.304382)
+min_index: 17
+
+Iteration: 21
+There are 22 nodes in the tree.
+New node: (495.948, 232.913)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:246.540878, fn_dist:246.540878
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:241.055206, fn_dist:241.055206
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:240.095428, fn_dist:240.095428
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 9, closest_point(265.001801,240.478821). Orig_cost:231.070145, fn_dist:231.070145
+I'm t0
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:229.358566, fn_dist:229.358566
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:220.339478, fn_dist:220.339478
+I'm t0
+I'm t0
+t0 pick index: 15, closest_point(286.199097,279.909271). Orig_cost:214.949432, fn_dist:214.949432
+I'm t0
+t0 pick index: 16, closest_point(293.161896,287.086975). Orig_cost:209.897644, fn_dist:209.897644
+I'm t0
+t0 pick index: 17, closest_point(300.083527,294.304382). Orig_cost:205.260300, fn_dist:205.260300
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 21, closest_point(305.421814,302.760315). Orig_cost:202.925766, fn_dist:202.925766
+nearest neighbor: at (305.421814,302.760315)
+min_index: 21
+
+Iteration: 22
+There are 23 nodes in the tree.
+New node: (38.1231, 462.448)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:300.043274, fn_dist:300.043274
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:290.830170, fn_dist:290.830170
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:281.497192, fn_dist:281.497192
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 7, closest_point(209.728256,249.194656). Orig_cost:273.724884, fn_dist:273.724884
+I'm t0
+t0 pick index: 8, closest_point(228.076340,267.401947). Orig_cost:272.259399, fn_dist:272.259399
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 12, closest_point(227.851425,277.399414). Orig_cost:265.027924, fn_dist:265.027924
+I'm t0
+I'm t0
+t0 pick index: 14, closest_point(226.003464,287.227173). Orig_cost:256.907288, fn_dist:256.907288
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 20, closest_point(219.816147,295.083191). Orig_cost:247.029022, fn_dist:247.029022
+I'm t0
+I'm t0
+nearest neighbor: at (219.816147,295.083191)
+min_index: 20
+
+Iteration: 23
+There are 24 nodes in the tree.
+New node: (415.022, 180.35)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:179.118591, fn_dist:179.118591
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:171.221069, fn_dist:171.221069
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 9, closest_point(265.001801,240.478821). Orig_cost:161.621826, fn_dist:161.621826
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 18, closest_point(272.113403,233.448502). Orig_cost:152.454559, fn_dist:152.454559
+I'm t0
+t0 pick index: 19, closest_point(281.781250,230.892624). Orig_cost:142.505173, fn_dist:142.505173
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (281.781250,230.892624)
+min_index: 19
+
+Iteration: 24
+There are 25 nodes in the tree.
+New node: (340.96, 348.128)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:133.801666, fn_dist:133.801666
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:123.809425, fn_dist:123.809425
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:114.765015, fn_dist:114.765015
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:105.790459, fn_dist:105.790459
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:97.439651, fn_dist:97.439651
+I'm t0
+I'm t0
+t0 pick index: 15, closest_point(286.199097,279.909271). Orig_cost:87.479111, fn_dist:87.479111
+I'm t0
+t0 pick index: 16, closest_point(293.161896,287.086975). Orig_cost:77.528732, fn_dist:77.528732
+I'm t0
+t0 pick index: 17, closest_point(300.083527,294.304382). Orig_cost:67.586258, fn_dist:67.586258
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 21, closest_point(305.421814,302.760315). Orig_cost:57.630013, fn_dist:57.630013
+I'm t0
+t0 pick index: 22, closest_point(314.810791,299.318298). Orig_cost:55.373276, fn_dist:55.373276
+I'm t0
+I'm t0
+nearest neighbor: at (314.810791,299.318298)
+min_index: 22
+
+Iteration: 25
+There are 26 nodes in the tree.
+New node: (85.5071, 122.062)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:208.389282, fn_dist:208.389282
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:203.642426, fn_dist:203.642426
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:199.697403, fn_dist:199.697403
+I'm t0
+t0 pick index: 4, closest_point(226.188995,249.751236). Orig_cost:189.989426, fn_dist:189.989426
+I'm t0
+I'm t0
+t0 pick index: 6, closest_point(218.150330,243.803131). Orig_cost:180.042145, fn_dist:180.042145
+I'm t0
+t0 pick index: 7, closest_point(209.728256,249.194656). Orig_cost:177.746033, fn_dist:177.746033
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (209.728256,249.194656)
+min_index: 7
+
+Iteration: 26
+There are 27 nodes in the tree.
+New node: (276.894, 250.54)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:26.899714, fn_dist:26.899714
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:23.701862, fn_dist:23.701862
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:20.871286, fn_dist:20.871286
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 9, closest_point(265.001801,240.478821). Orig_cost:15.577704, fn_dist:15.577704
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (265.001801,240.478821)
+min_index: 9
+
+Iteration: 27
+There are 28 nodes in the tree.
+New node: (225.559, 338.475)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:91.789024, fn_dist:91.789024
+I'm t0
+t0 pick index: 1, closest_point(240.765839,253.838013). Orig_cost:85.992455, fn_dist:85.992455
+I'm t0
+I'm t0
+t0 pick index: 3, closest_point(231.713333,258.086792). Orig_cost:80.623642, fn_dist:80.623642
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 8, closest_point(228.076340,267.401947). Orig_cost:71.117813, fn_dist:71.117813
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 12, closest_point(227.851425,277.399414). Orig_cost:61.118786, fn_dist:61.118786
+I'm t0
+I'm t0
+t0 pick index: 14, closest_point(226.003464,287.227173). Orig_cost:51.249943, fn_dist:51.249943
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 20, closest_point(219.816147,295.083191). Orig_cost:43.770367, fn_dist:43.770367
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 23, closest_point(212.461014,301.858307). Orig_cost:38.888958, fn_dist:38.888958
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (212.461014,301.858307)
+min_index: 23
+
+Iteration: 28
+There are 29 nodes in the tree.
+New node: (490, 490)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 5, closest_point(257.071075,257.071075). Orig_cost:329.411255, fn_dist:329.411255
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 10, closest_point(260.228821,266.559418). Orig_cost:320.500366, fn_dist:320.500366
+I'm t0
+t0 pick index: 11, closest_point(269.611023,270.019775). Orig_cost:311.388184, fn_dist:311.388184
+I'm t0
+I'm t0
+t0 pick index: 13, closest_point(279.236298,272.731567). Orig_cost:302.699371, fn_dist:302.699371
+I'm t0
+I'm t0
+t0 pick index: 15, closest_point(286.199097,279.909271). Orig_cost:292.699371, fn_dist:292.699371
+I'm t0
+t0 pick index: 16, closest_point(293.161896,287.086975). Orig_cost:282.699371, fn_dist:282.699371
+I'm t0
+t0 pick index: 17, closest_point(300.083527,294.304382). Orig_cost:272.699554, fn_dist:272.699554
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 21, closest_point(305.421814,302.760315). Orig_cost:262.921661, fn_dist:262.921661
+I'm t0
+t0 pick index: 22, closest_point(314.810791,299.318298). Orig_cost:258.941650, fn_dist:258.941650
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 25, closest_point(319.533142,308.133026). Orig_cost:249.268021, fn_dist:249.268021
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (319.533142,308.133026)
+min_index: 25
+
+Iteration: 29
+There are 30 nodes in the tree.
+New node: (237.968, 120.755)
+I'm t0
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:129.803635, fn_dist:129.803635
+I'm t0
+I'm t0
+t0 pick index: 2, closest_point(255.041016,241.363556). Orig_cost:121.810753, fn_dist:121.810753
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+t0 pick index: 18, closest_point(272.113403,233.448502). Orig_cost:117.752609, fn_dist:117.752609
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+I'm t0
+nearest neighbor: at (272.113403,233.448502)
+min_index: 18
+
+Exceeded max iterations!
+Error: No solution found
+
+
+Execution time: 0.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

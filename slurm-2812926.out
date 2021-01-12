@@ -1,0 +1,68 @@
+World size: 1000
+World type: 1
+Version: 116
+K: 20000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+First Viable Solution Obtained after 8046 iterations
+Cost is 1800.26
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 8079 iterations
+Cost is 1800.19
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 8234 iterations
+Cost is 1799.84
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 8297 iterations
+Cost is 1799.23
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 8299 iterations
+Cost is 1444.39
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 9241 iterations
+Cost is 1344.9
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 9413 iterations
+Cost is 615.759
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 20000 iterations
+Cost is 615.759
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+Execution time: 23.875000 seconds
+World size: 1500
+World type: 1
+Version: 117
+K: 50000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+First Viable Solution Obtained after 18638 iterations
+Cost is 2190.31
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 20113 iterations
+Cost is 1437.97
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 50000 iterations
+Cost is 1437.97
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+Execution time: 150.875000 seconds

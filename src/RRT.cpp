@@ -9,7 +9,7 @@
 #include "omp.h"
 
 #define PARALLEL  // if define parallel, accelerate! using OpenMP or MPI?
-// #define DEBUG_FINDNEAREST
+#define DEBUG_FINDNEAREST
 
 const float EPSILON = 0.9; // epsilon-greedy for faster convergence
 
@@ -120,8 +120,14 @@ std::vector<Point> RRTSTAR::planner() {
     // while iter < MAX_Iterations
     while (this->m_num_itr<this->m_max_iter)
     {
+        #ifdef DEBUG_FINDNEAREST
+        std::cout<<"Iteration: "<<this->m_num_itr<<std::endl;
+        #endif
+        
+
         this->m_num_itr++;
-        Node plan_n_rand = this->getRandomNode(); //Pick a random node
+        // Node plan_n_rand = this->getRandomNode(); //Pick a random node
+        Node plan_n_rand = this->RandomNode_Epsilon();
         if (plan_n_rand.position.m_x!=0 && plan_n_rand.position.m_y!=0) {
             
             Node* plan_n_nearest = this->findNearest(plan_n_rand.position);  //Find the closest node to the new random node.
@@ -129,12 +135,17 @@ std::vector<Point> RRTSTAR::planner() {
             if (!this->world->checkObstacle(plan_p_new, plan_n_nearest->position)) { // Check if an obstacle is between new node and nearest nod.
                     Node* plan_n_new = new Node; //create new node to store the position of the steered node.
                     plan_n_new->position = plan_p_new; //create new node from the streered new point
+                    
+                    /* ------------------ Re selecting parents ----------*/
                     std::vector<Node*> plan_v_n_near; //create a vector for neighbor nodes
                     this->findNearNeighbors(plan_n_new->position, this->m_rrstar_radius, plan_v_n_near); // Find nearest neighbors with a given radius from new node.
+                    
                     // ESSENCE of RRT* 1 :=> Re-assign edges (re assign the parent of a node)
                     Node* plan_n_parent=this->findParent(plan_v_n_near,plan_n_nearest,plan_n_new); //Find the parent of the given node (the node that is near and has the lowest path cost)
+                    
                     // Re-allocate this edge (from parent->child(new_node))
                     this->insertNode(plan_n_parent, plan_n_new);//Add N_new to node list.
+                    
                     // ESSENCE of RRT* 2 :=> Re-wire the RRT Tree!
                     this->reWire(plan_n_new, plan_v_n_near); //rewire the tree
 
@@ -178,7 +189,7 @@ std::vector<Point> RRTSTAR::planner() {
 }
 
 
-Node RRTSTAR::RamdomNode_Epsilon() {
+Node RRTSTAR::RandomNode_Epsilon() {
 
     float p = (float) rand()/RAND_MAX;
 
@@ -222,16 +233,47 @@ Node RRTSTAR::getRandomNode() {
 }
 
 // Return the nearest node (ONLY ONE)
+
+// Make a map to map 
+/*
+    min distance 's index: => 
+    {
+        Node*
+
+    }
+
+*/
+
+#pragma omp declare reduction(mindisNode : Node* :              \
+omp_out = omp_in->cur_dist > omp_out->cur_dist ? omp_out : omp_in) 
+    // initializer (omp_priv=NULL)
+
+#pragma omp declare reduction (merge : std::vector<int> \
+  : omp_out.insert(omp_out.end(), omp_in.begin(), omp_in.end()))
+
 Node* RRTSTAR::findNearest(const Point point) {
     float fn_minDist = FLT_MAX;//set the minimum distance to the maximum number possible
     Node* fn_closest = NULL;
+    
+
+    #ifdef DEBUG_FINDNEAREST
+    printf("There are %d nodes in the tree.\n", this->nodes.size());
+    std::cout<<"New node: ("<<point.m_x<<", "<<point.m_y<<")\n";
+    #endif
+
     int min_index;
     #ifdef PARALLEL
-    #pragma omp parallel for default(shared) reduction(min:fn_minDist)  
+
+    #pragma omp parallel for reduction(mindisNode : fn_closest)  
+    // #pragma omp parallel for default(shared) reduction(min:fn_minDist)  
+    
     #endif
     for (size_t i=0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
-        #if (defined DEBUG_FINDNEAREST && defined PARALLEL) 
+        
+        #ifdef DEBUG_FINDNEAREST
+        // #if (defined DEBUG_FINDNEAREST && defined PARALLEL) 
             int omp_id = omp_get_thread_num();
+            // std::cout<<"I'm t"<<omp_id<<"\n";
             if(omp_id==0)printf("Total: %d of threads\n",omp_get_num_threads());
         #endif
         // if(omp_id == 0 && this->getCurrentIterations()%500==0 ){
@@ -239,9 +281,11 @@ Node* RRTSTAR::findNearest(const Point point) {
             // printf("Number of nodes: %d\n", this->nodes.size());
         // }
         float fn_dist = this->distance(point, this->nodes[i]->position);
+        
         if (fn_dist < fn_minDist) {
             fn_minDist = fn_dist;
             fn_closest = this->nodes[i];
+            fn_closest->cur_dist = fn_dist;
             #if (defined DEBUG_FINDNEAREST && defined PARALLEL)
             printf("t%d pick index: %d, closest_point(%f,%f). Orig_cost:%f, fn_dist:%f\n",omp_id, i, this->nodes[i]->position.m_x, this->nodes[i]->position.m_y, fn_minDist, fn_dist);
             #endif
@@ -249,13 +293,16 @@ Node* RRTSTAR::findNearest(const Point point) {
         }
     }
     #ifdef DEBUG_FINDNEAREST
-    printf("There are %d nodes in the tree.\n", this->nodes.size());
+    // printf("There are %d nodes in the tree.\n", this->nodes.size());
     printf("nearest neighbor: at (%f,%f)\n",fn_closest->position.m_x, fn_closest->position.m_y);
     printf("min_index: %d\n\n",min_index);
     #endif
     // TODO: should modify here since dependencies: 有4個threads的話，要比較4個中最近的neighbor!
     return fn_closest;
 }
+
+
+
 
 // Return several neighbors within the radius. (Multiple Nodes)
 // Write ALL near neighbors of "point"(<radius) to vector (neighbor_nodes) shared(neighbor_nodes)
@@ -298,12 +345,15 @@ Point RRTSTAR::steer(const Node n_rand, const Node* n_nearest) { // Steer from n
     }
 
 }
-//(dynamic, 2) 
+//(dynamic, 2)
+
+
+// Answer's parent is not the root. why?
 Node* RRTSTAR::findParent(std::vector<Node*> v_n_near,Node* n_nearest, Node* n_new) {
     Node* fp_n_parent = n_nearest; //create new note to find the parent(New Parent)
     float fp_cmin = this->getCost(n_nearest) + this->pathCost(n_nearest, n_new); // Update cost of reaching "N_new" from "N_Nearest"
     // #ifdef PARALLEL
-    #pragma omp parallel for default(shared) reduction(min:fp_cmin)
+    // #pragma omp parallel for default(shared) reduction(min:fp_cmin)
     // #endif    
     for (size_t j = 0; j < v_n_near.size(); j++) { //In all members of "N_near", check if "N_new" can be reached from a different parent node with cost lower than Cmin, and without colliding with the obstacle.
         Node* fp_n_near = v_n_near[j];
@@ -409,13 +459,14 @@ void RRTSTAR::savePlanToFile(const std::vector<Point> path,const std::string fil
 
 std::vector<Point> RRTSTAR::generatePlan(Node* n) {// generate shortest path to destination.
     // CAN I parallelize here? But should first flatten, then.
-    while (n != NULL) { // It goes from the given node to the root
+    while (n != NULL) { // It goes from the last_node to the root
         this->path.push_back(n);
         n = n->parent;
     }
     this->bestpath.clear();// best path: {last_node, n-1, n-2, ... , root (starting point)}
     this->bestpath = this->path;    //store the current plan as the best plan so far
 
+    // Every time we update bestpath, clear the 'path' container. For next path
     this->path.clear(); //clear the path as we have stored it in the Bestpath variable.
     this->m_cost_bestpath = this->bestpath[0]->cost; //store the cost of the generated path
     return this->planFromBestPath();
