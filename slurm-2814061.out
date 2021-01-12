@@ -1,0 +1,26 @@
+World size: 500
+World type: 1
+Version: 3021
+K: 1000
+Number of cpus: 1
+choose FOUR_OBS
+Starting RRT* Algorithm...
+Sequential version...
+Exceeded max iterations!
+Error: No solution found
+
+
+Total Execution time: 0.000000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 0.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

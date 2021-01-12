@@ -50,8 +50,8 @@
 
 // #define OPENMP
 // #define Pthread
-// #define Sequential
-#define RRT
+#define Sequential
+// #define RRT
 
 /* -------------- Functions used ------------------ */
 void Initialize_Environment_0(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE);
