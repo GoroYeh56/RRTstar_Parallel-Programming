@@ -1,0 +1,19 @@
+World size: 500
+World type: 1
+Version: 505
+K: 8000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 296 iterations
+Cost is 610.545
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813525 ON apollo32 CANCELLED AT 2021-01-12T17:18:22 ***
+slurmstepd: error: *** STEP 2813525.0 ON apollo32 CANCELLED AT 2021-01-12T17:18:22 ***

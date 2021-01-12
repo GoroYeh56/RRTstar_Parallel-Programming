@@ -1,0 +1,25 @@
+World size: 3000
+World type: 3
+Version: 136
+K: 40000
+Number of cpus: 1
+choose Maze
+Starting RRT* Algorithm...
+Exceeded max iterations!
+Error: No solution found
+
+
+Total Execution time: 113.750000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 113.625000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

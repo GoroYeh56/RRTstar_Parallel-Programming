@@ -13,10 +13,11 @@ add_executable(RRTstar src/Main.cpp src/RRTstar.cpp src/World.cpp)
 add_executable(RRT src/RRT_Main.cpp src/RRT.cpp src/World.cpp) 
 
 
-# Link OpenMP library
+
+# Link OpenMP Pthread library
 find_package(OpenMP REQUIRED)
-target_link_libraries(RRTstar PRIVATE OpenMP::OpenMP_CXX)
-target_link_libraries(RRT PRIVATE OpenMP::OpenMP_CXX)
+target_link_libraries(RRTstar PRIVATE OpenMP::OpenMP_CXX pthread)
+target_link_libraries(RRT PRIVATE OpenMP::OpenMP_CXX pthread)
 
 #target_link_libraries(RRTstar PRIVATE "${OpenMP_CXX_FLAGS}")
 #target_link_libraries(RRT PRIVATE "${OpenMP_CXX_FLAGS}")

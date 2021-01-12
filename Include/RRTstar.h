@@ -40,7 +40,7 @@ private:
     Point destination;
     std::vector<Node*> path;
     std::vector<Node*> bestpath;
-    std::vector<Node*> nodes; // can I traverse this vector?
+    // std::vector<Node*> nodes; // can I traverse this vector?
 
     // TODO: Add one more vector to record 'reachable workspace'
     std::vector<Point> Available_Points;
@@ -53,7 +53,14 @@ private:
     float m_step_size;
 
 public:
+
+    // Time.
+    float IO_time, IO_starttime, IO_endtime;
+    float Comm_time;
+    float Compute_time;
+
     // public Data Members 
+    std::vector<Node*> nodes;
     World* world;
     Node* lastnode;
     float m_cost_bestpath;
@@ -99,7 +106,12 @@ public:
    * @return std::vector<Point>  path vector of nodes
    */
     std::vector<Point> planner();
-
+    
+   /**
+   * @brief Pthread version: Main algorithm of RRT*
+   * @return std::vector<Point>  path vector of nodes
+   */    
+    std::vector<Point> planner_pthread();
 
     /**
     * @brief Generates a random node

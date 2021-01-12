@@ -1,0 +1,48 @@
+World size: 500
+World type: 3
+Version: 613
+K: 8000
+Number of cpus: 4
+choose Maze
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 1453 iterations
+Cost is 720.328
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1485 iterations
+Cost is 719.893
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1629 iterations
+Cost is 719.319
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1802 iterations
+Cost is 716.784
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2839 iterations
+Cost is 715.604
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2943 iterations
+Cost is 715.506
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 4600 iterations
+Cost is 714.93
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 5101 iterations
+Cost is 709.796
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813529 ON apollo33 CANCELLED AT 2021-01-12T17:30:30 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 2813529.0 ON apollo33 CANCELLED AT 2021-01-12T17:30:30 DUE TO TIME LIMIT ***
+srun: error: apollo33: task 0: Terminated

@@ -1,0 +1,13 @@
+World size: 500
+World type: 3
+Version: 513
+K: 8000
+Number of cpus: 4
+choose Maze
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813527 ON apollo33 CANCELLED AT 2021-01-12T17:18:25 ***
+slurmstepd: error: *** STEP 2813527.0 ON apollo33 CANCELLED AT 2021-01-12T17:18:25 ***

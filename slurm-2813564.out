@@ -1,0 +1,69 @@
+World size: 500
+World type: 1
+Version: 85
+K: 8000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+Exceeded max iterations!
+Error: No solution found
+
+
+Total Execution time: 631.625000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 6.625000 seconds
+
+
+Computation time: 625.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1000
+World type: 1
+Version: 86
+K: 30000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 591 iterations
+Cost is 1219.67
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 746 iterations
+Cost is 1219.29
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 754 iterations
+Cost is 1218.27
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 870 iterations
+Cost is 1215.07
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 961 iterations
+Cost is 1093.16
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2769 iterations
+Cost is 950
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813564 ON apollo33 CANCELLED AT 2021-01-12T18:22:00 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 2813564.1 ON apollo33 CANCELLED AT 2021-01-12T18:22:00 DUE TO TIME LIMIT ***
+srun: error: apollo33: task 0: Terminated

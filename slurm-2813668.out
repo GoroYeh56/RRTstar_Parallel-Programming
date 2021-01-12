@@ -1,0 +1,104 @@
+World size: 500
+World type: 0
+Version: 1001
+K: 5000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+
+
+Total Execution time: 0.500000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 0.375000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1000
+World type: 0
+Version: 1002
+K: 10000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+
+
+Total Execution time: 1.625000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 1.500000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1500
+World type: 0
+Version: 1003
+K: 15000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+
+
+Total Execution time: 3.125000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 3.125000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 3000
+World type: 0
+Version: 1004
+K: 40000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+
+
+Total Execution time: 20.375000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 20.250000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

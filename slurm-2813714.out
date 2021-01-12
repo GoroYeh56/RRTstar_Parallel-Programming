@@ -1,0 +1,92 @@
+World size: 500
+World type: 1
+Version: 2005
+K: 5000
+Number of cpus: 1
+choose FOUR_OBS
+RRT exploring...
+
+
+Total Execution time: 1.125000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 1.125000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1000
+World type: 1
+Version: 2006
+K: 10000
+Number of cpus: 1
+choose FOUR_OBS
+RRT exploring...
+
+
+Total Execution time: 4.375000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 4.375000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1500
+World type: 1
+Version: 2007
+K: 15000
+Number of cpus: 1
+choose FOUR_OBS
+RRT exploring...
+
+
+Total Execution time: 10.250000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 10.125000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 3000
+World type: 1
+Version: 2008
+K: 40000
+Number of cpus: 1
+choose FOUR_OBS
+RRT exploring...
+
+
+Total Execution time: 72.375000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 72.250000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

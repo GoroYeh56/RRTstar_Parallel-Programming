@@ -1,0 +1,20 @@
+World size: 1000
+World type: 2
+Version: 3017
+K: 10000
+Number of cpus: 3
+choose TWELVE_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 718 iterations
+Cost is 945.691
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 2813805.0 ON apollo32 CANCELLED AT 2021-01-12T21:03:31 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 2813805 ON apollo32 CANCELLED AT 2021-01-12T21:03:31 DUE TO TIME LIMIT ***
+srun: error: apollo32: task 0: Terminated

@@ -1,0 +1,13 @@
+World size: 500
+World type: 0
+Version: 301
+K: 30
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+Iteration: 0
+srun: error: apollo32: task 0: Segmentation fault (core dumped)

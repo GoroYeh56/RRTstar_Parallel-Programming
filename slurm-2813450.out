@@ -1,0 +1,741 @@
+World size: 500
+World type: 0
+Version: 301
+K: 30
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+Iteration: 0
+There are 1 nodes in the tree.
+New node: (136.532, 242.023)
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+
+ Nearest neighbor: (250, 250) 
+Iteration: 1
+There are 2 nodes in the tree.
+New node: (303.485, 319.763)
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+
+ Nearest neighbor: (250, 250) 
+Iteration: 2
+There are 3 nodes in the tree.
+New node: (350.093, 374.489)
+nearest neighbor: at (256.084351,257.936035)
+min_index: 2
+
+
+ Nearest neighbor: (256.084, 257.936) 
+Iteration: 3
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 1, total 4nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 1 to 2, total 4nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:271.430725, fn_dist:271.430725
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 2 to 3, total 4nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 3 to 4, total 4nodes
+t2 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:261.502869, fn_dist:261.502869
+t1 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:277.250916, fn_dist:277.250916
+t3 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:251.615189, fn_dist:251.615189
+
+ Nearest neighbor: (262.362, 265.72) 
+Iteration: 4
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 2, total 5nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 2 to 3, total 5nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 3 to 4, total 5nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+t1 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:329.499939, fn_dist:329.499939
+t2 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:319.563019, fn_dist:319.563019
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 4 to 5, total 5nodes
+t3 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:309.928650, fn_dist:309.928650
+
+ Nearest neighbor: (267.381, 274.369) 
+Iteration: 5
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 3, total 6nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 3 to 4, total 6nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 4 to 5, total 6nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:283.614441, fn_dist:283.614441
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:277.628693, fn_dist:277.628693
+t1 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:303.552155, fn_dist:303.552155
+t2 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:313.531555, fn_dist:313.531555
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 5 to 6, total 6nodes
+t3 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:323.313751, fn_dist:323.313751
+
+ Nearest neighbor: (274.564, 281.326) 
+Iteration: 6
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 4, total 7nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+tt0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:238.716248, fn_dist:238.716248
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:234.038849, fn_dist:234.038849
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:229.478973, fn_dist:229.478973
+1 pick from 4 to 5, total 7nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 5 to 6, total t1 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:226.713089, fn_dist:226.713089
+7nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 6 to 7, total 7nodes
+t2 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:221.784622, fn_dist:221.784622
+t3 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:224.848373, fn_dist:224.848373
+
+ Nearest neighbor: (268.955, 273.048) 
+Iteration: 7
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 2, total 8nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 2 to 4, total 8nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 4 to 6, total 8nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 6 to 8, total 8nodes
+t3 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:223.558716, fn_dist:223.558716
+t2 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:221.767181, fn_dist:221.767181
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:210.898483, fn_dist:210.898483
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:201.659576, fn_dist:201.659576
+t1 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:214.447906, fn_dist:214.447906
+
+ Nearest neighbor: (268.955, 273.048) 
+Iteration: 8
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 3, total 9nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 3 to 5, total 9nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 5 to 7, total 9nodes
+ thread_INFO[3] id: 3
+t1 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:212.503784, fn_dist:212.503784
+t2 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:193.575409, fn_dist:193.575409
+t1 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:203.427597, fn_dist:203.427597
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:231.775970, fn_dist:231.775970
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:222.156723, fn_dist:222.156723
+ thread_INFO[].rrtstar
+t3 pick from 7 to 9, total 9nodes
+t3 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:196.621094, fn_dist:196.621094
+
+ Nearest neighbor: (278.612, 270.449) 
+Iteration: 9
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 4, total 10nodes
+ thread_INFO[1] id: 1
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:140.695587, fn_dist:140.695587
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:130.696152, fn_dist:130.696152
+ thread_INFO[].rrtstar
+t1 pick from 4 to 6, total 10nodes
+ thread_INFO[2] id: 2
+t1 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:161.199554, fn_dist:161.199554
+ thread_INFO[].rrtstar
+t2 pick from 6 to 8, total 10nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 8 to 10, total 10nodes
+t2 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:162.479355, fn_dist:162.479355
+t3 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:153.252945, fn_dist:153.252945
+
+ Nearest neighbor: (259.133, 274.924) 
+Iteration: 10
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 5, total 11nodes
+ thread_INFO[1] id: 1
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:199.246994, fn_dist:199.246994
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:190.234299, fn_dist:190.234299
+ thread_INFO[].rrtstar
+t1 pick from 5 to 7, total 11nodes
+ thread_INFO[2] id: 2
+t1 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:236.441650, fn_dist:236.441650
+t1 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:227.275131, fn_dist:227.275131
+ thread_INFO[].rrtstar
+t2 pick from 7 to 9, total 11nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 9 to 11, total 11nodes
+t2 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:234.223618, fn_dist:234.223618
+t2 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:220.023163, fn_dist:220.023163
+t3 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:244.147461, fn_dist:244.147461
+t3 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:210.718414, fn_dist:210.718414
+
+ Nearest neighbor: (249.373, 272.746) 
+Iteration: 11
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 3, total 12nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 3 to 6, total 12nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 6 to 9, total 12nodes
+ thread_INFO[3] id: 3
+t2 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:271.395844, fn_dist:271.395844
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:276.232544, fn_dist:276.232544
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:270.745880, fn_dist:270.745880
+t2 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:263.251434, fn_dist:263.251434
+ thread_INFO[].rrtstar
+t3 pick from t1 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:272.207947, fn_dist:272.207947
+t1 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:269.350983, fn_dist:269.350983
+9 to 12, total 12nodes
+t3 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:281.634247, fn_dist:281.634247
+t3 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:258.318207, fn_dist:258.318207
+t3 pick index: 11, closest_point(241.137863,267.073242). Orig_cost:257.357971, fn_dist:257.357971
+
+ Nearest neighbor: (241.138, 267.073) 
+Iteration: 12
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 4, total 13nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 4 to 7, total 13nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 7 to 10, total 13nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:219.458344, fn_dist:219.458344
+t2 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:189.201523, fn_dist:189.201523
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:212.528778, fn_dist:212.528778
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:205.667572, fn_dist:205.667572
+t2 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:181.097458, fn_dist:181.097458
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 10 to 13, total 13nodes
+t3 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:218.352417, fn_dist:218.352417
+t1 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:200.313431, fn_dist:200.313431
+t1 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:193.125381, fn_dist:193.125381
+
+ Nearest neighbor: (249.373, 272.746) 
+Iteration: 13
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 5, total 14nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 5 to 8, total 14nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 8 to 11, total 14nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 11 to 14, total 14nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:73.431145, fn_dist:73.431145
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:63.780533, fn_dist:63.780533
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:54.341427, fn_dist:54.341427
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:44.616840, fn_dist:44.616840
+t2 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:46.951977, fn_dist:46.951977
+t2 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:41.592957, fn_dist:41.592957
+t1 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:36.377186, fn_dist:36.377186
+t3 pick index: 11, closest_point(241.137863,267.073242). Orig_cost:63.053524, fn_dist:63.053524
+t3 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:61.402500, fn_dist:61.402500
+t3 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:48.614544, fn_dist:48.614544
+
+ Nearest neighbor: (259.37, 272.988) 
+Iteration: 14
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 6, total 15nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 6 to 9, total 15nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 9 to 12, total 15nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:329.499939, fn_dist:329.499939
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:319.563019, fn_dist:319.563019
+ thread_INFO[t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:309.928650, fn_dist:309.928650
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:299.928650, fn_dist:299.928650
+3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 12 to 15, total 15nodes
+t1 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:309.724274, fn_dist:309.724274
+t1 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:304.774628, fn_dist:304.774628
+t2 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:294.896942, fn_dist:294.896942
+t3 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:333.754578, fn_dist:333.754578
+t3 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:316.677032, fn_dist:316.677032
+t3 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:307.482941, fn_dist:307.482941
+
+ Nearest neighbor: (263.428, 282.128) 
+Iteration: 15
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 4, total 16nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 4 to 8, total 16nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 8 to 12, total 16nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:329.499939, fn_dist:329.499939
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:319.563019, fn_dist:319.563019
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 12 to 16, total 16nodes
+t1 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:309.928650, fn_dist:309.928650
+t1 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:299.928650, fn_dist:299.928650
+t3 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:333.754578, fn_dist:333.754578
+t3 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:316.677032, fn_dist:316.677032
+t3 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:307.482941, fn_dist:307.482941
+t3 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:297.482971, fn_dist:297.482971
+t2 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:315.526917, fn_dist:315.526917
+t2 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:294.896942, fn_dist:294.896942
+
+ Nearest neighbor: (270.797, 288.888) 
+Iteration: 16
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 5, total 17nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 5 to 9, total 17nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:205.854462, fn_dist:205.854462
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:203.936462, fn_dist:203.936462
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:200.129272, fn_dist:200.129272
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:194.961746, fn_dist:194.961746
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:188.880798, fn_dist:188.880798
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 9 to 13, total 17nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 13 to 17, total 17nodes
+t1 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:185.620270, fn_dist:185.620270
+t1 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:185.212830, fn_dist:185.212830
+t2 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:195.483627, fn_dist:195.483627
+t2 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:183.954147, fn_dist:183.954147
+t2 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:177.890961, fn_dist:177.890961
+t3 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:187.103012, fn_dist:187.103012
+t3 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:180.188751, fn_dist:180.188751
+t3 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:177.171799, fn_dist:177.171799
+t3 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:174.675995, fn_dist:174.675995
+
+ Nearest neighbor: (278.165, 295.649) 
+Iteration: 17
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 6, total 18nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 6 to 10, total 18nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 10 to 14, total 18nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:125.991875, fn_dist:125.991875
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:116.988365, fn_dist:116.988365
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:108.042595, fn_dist:108.042595
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:100.177399, fn_dist:100.177399
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:91.139328, fn_dist:91.139328
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 14 to 18, total 18nodes
+t1 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:99.166504, fn_dist:99.166504
+t1 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:91.276077, fn_dist:91.276077
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:81.543159, fn_dist:81.543159
+t2 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:117.745918, fn_dist:117.745918
+t2 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:108.187523, fn_dist:108.187523
+t3 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:101.606667, fn_dist:101.606667
+t3 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:92.843750, fn_dist:92.843750
+t3 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:84.356438, fn_dist:84.356438
+
+ Nearest neighbor: (278.165, 295.649) 
+Iteration: 18
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 7, total 19nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 7 to 11, total 19nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 11 to 15, total 19nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:267.043427, fn_dist:267.043427
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:257.479767, fn_dist:257.479767
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:248.029709, fn_dist:248.029709
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:238.210846, fn_dist:238.210846
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:229.340408, fn_dist:229.340408
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 15 to 19, total 19nodes
+t1 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:238.562103, fn_dist:238.562103
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:230.612900, fn_dist:230.612900
+t2 pick index: 11, closest_point(241.137863,267.073242). Orig_cost:254.635696, fn_dist:254.635696
+t2 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:250.254639, fn_dist:250.254639
+t2 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:242.226868, fn_dist:242.226868
+t2 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:232.243942, fn_dist:232.243942
+t3 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:223.375214, fn_dist:223.375214
+t3 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:214.605957, fn_dist:214.605957
+t3 pick index: 17, closest_point(273.215820,304.337921). Orig_cost:208.016525, fn_dist:208.016525
+
+ Nearest neighbor: (273.216, 304.338) 
+Iteration: 19
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 5, total 20nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 5 to 10, total 20nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 10 to 15, total 20nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:202.348694, fn_dist:202.348694
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:193.708908, fn_dist:193.708908
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:185.076111, fn_dist:185.076111
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:177.514343, fn_dist:177.514343
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 15 to 20, total 20nodes
+t1 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:168.593842, fn_dist:168.593842
+t1 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:168.193436, fn_dist:168.193436
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:158.649490, fn_dist:158.649490
+t3 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:170.267868, fn_dist:170.267868
+t3 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:161.583344, fn_dist:161.583344
+t3 pick index: 18, closest_point(288.045929,297.188202). Orig_cost:151.598862, fn_dist:151.598862
+t2 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:195.187027, fn_dist:195.187027
+t2 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:185.564835, fn_dist:185.564835
+t2 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:179.089691, fn_dist:179.089691
+
+ Nearest neighbor: (288.046, 297.188) 
+Iteration: 20
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 6, total 21nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 6 to 11, total 21nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 11 to 16, total 21nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:147.262878, fn_dist:147.262878
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:137.809982, fn_dist:137.809982
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 16 to 21, total 21nodes
+t2 pick index: 11, closest_point(241.137863,267.073242). Orig_cost:146.836624, fn_dist:146.836624
+t1 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:174.144516, fn_dist:174.144516
+t3 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:193.284317, fn_dist:193.284317
+t2 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:145.598679, fn_dist:145.598679
+t1 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:166.363617, fn_dist:166.363617
+t1 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:156.805832, fn_dist:156.805832
+
+ Nearest neighbor: (278.165, 295.649) 
+Iteration: 21
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 7, total 22nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 7 to 12, total 22nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 12 to 17, total 22nodes
+ thread_INFO[t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:253.354614, fn_dist:253.354614
+3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 17 to 22, total 22nodes
+t1 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:246.031906, fn_dist:246.031906
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:245.130829, fn_dist:245.130829
+t2 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:280.859924, fn_dist:280.859924
+t2 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:261.422668, fn_dist:261.422668
+t3 pick index: 17, closest_point(273.215820,304.337921). Orig_cost:274.986084, fn_dist:274.986084
+t3 pick index: 18, closest_point(288.045929,297.188202). Orig_cost:260.123047, fn_dist:260.123047
+t3 pick index: 20, closest_point(297.821899,299.293121). Orig_cost:255.918457, fn_dist:255.918457
+
+ Nearest neighbor: (297.822, 299.293) 
+Iteration: 22
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 8, total 23nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 8 to 13, total 23nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 13 to 18, total 23nodes
+ thread_INFO[3] id: t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:121.159889, fn_dist:121.159889
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:112.011162, fn_dist:112.011162
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:102.911240, fn_dist:102.911240
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:94.827271, fn_dist:94.827271
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:85.638496, fn_dist:85.638496
+3
+ thread_INFO[].rrtstar
+t3 pick from 18 to 23, total 23nodes
+t1 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:102.326546, fn_dist:102.326546
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:76.421638, fn_dist:76.421638
+t2 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:102.785034, fn_dist:102.785034
+t2 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:95.968491, fn_dist:95.968491
+t2 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:87.061691, fn_dist:87.061691
+t2 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:78.418892, fn_dist:78.418892
+t3 pick index: 18, closest_point(288.045929,297.188202). Orig_cost:68.423882, fn_dist:68.423882
+t3 pick index: 20, closest_point(297.821899,299.293121). Orig_cost:58.427158, fn_dist:58.427158
+t3 pick index: 22, closest_point(303.700195,291.203278). Orig_cost:54.879166, fn_dist:54.879166
+
+ Nearest neighbor: (303.7, 291.203) 
+Iteration: 23
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 6, total 24nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 6 to 12, total 24nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 12 to 18, total 24nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:246.807892, fn_dist:246.807892
+ thread_INFO[3t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:242.414261, fn_dist:242.414261
+] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 18 to 24, total 24nodes
+t1 pick index: 6, closest_point(268.955231,273.047607). Orig_cost:275.570862, fn_dist:275.570862
+t1 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:273.320557, fn_dist:273.320557
+t1 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:267.654755, fn_dist:267.654755
+t1 pick index: 11, closest_point(241.137863,267.073242). Orig_cost:259.463196, fn_dist:259.463196
+t2 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:264.785339, fn_dist:264.785339
+t3 pick index: 18, closest_point(288.045929,297.188202). Orig_cost:305.581787, fn_dist:305.581787
+t3 pick index: 21, closest_point(269.664673,290.381561). Orig_cost:291.675201, fn_dist:291.675201
+
+ Nearest neighbor: (269.665, 290.382) 
+Iteration: 24
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 7, total 25nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 7 to 13, total 25nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 13 to 19, total 25nodes
+ thread_INFO[t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:232.071762, fn_dist:232.071762
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:223.936630, fn_dist:223.936630
+3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 19 to 25, total 25nodes
+t1 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:248.268906, fn_dist:248.268906
+t1 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:228.640732, fn_dist:228.640732
+t1 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:220.719284, fn_dist:220.719284
+t1 pick index: 11, closest_point(241.137863,267.073242). Orig_cost:215.952271, fn_dist:215.952271
+t1 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:206.777527, fn_dist:206.777527
+t3 pick index: 19, closest_point(276.659485,313.726288). Orig_cost:232.604263, fn_dist:232.604263
+t3 pick index: 24, closest_point(265.672058,281.213196). Orig_cost:232.170731, fn_dist:232.170731
+t2 pick index: 13, closest_point(259.369995,272.988129). Orig_cost:229.658539, fn_dist:229.658539
+
+ Nearest neighbor: (265.672, 281.213) 
+Iteration: 25
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 8, total 26nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 8 to 14, total 26nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 14 to 20, total 26nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 20 to 26, total 26nodes
+t1 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:234.523483, fn_dist:234.523483
+t1 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:233.813614, fn_dist:233.813614
+t1 pick index: 12, closest_point(234.849258,274.848419). Orig_cost:228.319489, fn_dist:228.319489
+t2 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:229.071976, fn_dist:229.071976
+t2 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:225.337952, fn_dist:225.337952
+t2 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:221.991913, fn_dist:221.991913
+t2 pick index: 17, closest_point(273.215820,304.337921). Orig_cost:212.039551, fn_dist:212.039551
+t2 pick index: 19, closest_point(276.659485,313.726288). Orig_cost:204.974472, fn_dist:204.974472
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:255.965042, fn_dist:255.965042
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:254.386780, fn_dist:254.386780
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:249.888489, fn_dist:249.888489
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:244.275055, fn_dist:244.275055
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:237.707077, fn_dist:237.707077
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:233.759033, fn_dist:233.759033
+t3 pick index: 20, closest_point(297.821899,299.293121). Orig_cost:227.555435, fn_dist:227.555435
+t3 pick index: 21, closest_point(269.664673,290.381561). Orig_cost:223.531708, fn_dist:223.531708
+
+ Nearest neighbor: (269.665, 290.382) 
+Iteration: 26
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 9, total 27nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 9 to 15, total 27nodes
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:251.037827, fn_dist:251.037827
+t0 pick index: 1, closest_point(240.024628,249.298721). Orig_cost:248.563644, fn_dist:248.563644
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 15 to 21, total 27nodes
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:285.896240, fn_dist:285.896240
+t1 pick index: 10, closest_point(249.372910,272.746338). Orig_cost:273.258270, fn_dist:273.258270
+t1 pick index: 11, closest_point(241.137863,267.073242). Orig_cost:266.293488, fn_dist:266.293488
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 21 to 27, total 27nodes
+t2 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:293.546509, fn_dist:293.546509
+t3 pick index: 21, closest_point(269.664673,290.381561). Orig_cost:294.728088, fn_dist:294.728088
+t3 pick index: 24, closest_point(265.672058,281.213196). Orig_cost:284.882996, fn_dist:284.882996
+
+ Nearest neighbor: (265.672, 281.213) 
+Iteration: 27
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 7, total 28nodes
+ thread_INFO[1] id: 1
+ thread_INFO[].rrtstar
+t1 pick from 7 to 14, total t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:213.313293, fn_dist:213.313293
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:203.851013, fn_dist:203.851013
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:194.531082, fn_dist:194.531082
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:184.801743, fn_dist:184.801743
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:176.167252, fn_dist:176.167252
+28nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 14 to 21t1 pick index: 7, closest_point(278.611725,270.449158). Orig_cost:185.769287, fn_dist:185.769287
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:178.224014, fn_dist:178.224014
+, total 28nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 21 to 28, total 28nodes
+t2 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:178.576294, fn_dist:178.576294
+t2 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:169.911179, fn_dist:169.911179
+t2 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:161.400497, fn_dist:161.400497
+t2 pick index: 17, closest_point(273.215820,304.337921). Orig_cost:154.432037, fn_dist:154.432037
+t2 pick index: 19, closest_point(276.659485,313.726288). Orig_cost:144.443604, fn_dist:144.443604
+t3 pick index: 21, closest_point(269.664673,290.381561). Orig_cost:168.812546, fn_dist:168.812546
+t3 pick index: 22, closest_point(303.700195,291.203278). Orig_cost:161.223785, fn_dist:161.223785
+t3 pick index: 23, closest_point(313.095245,294.628662). Orig_cost:157.147583, fn_dist:157.147583
+
+ Nearest neighbor: (313.095, 294.629) 
+Iteration: 28
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 8, total 29nodes
+ thread_INFO[1] id: 1
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:339.411255, fn_dist:339.411255
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:329.499939, fn_dist:329.499939
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:319.563019, fn_dist:319.563019
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:309.928650, fn_dist:309.928650
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:299.928650, fn_dist:299.928650
+ thread_INFO[].rrtstar
+t1 pick from 8 to 15, total 29nodes
+ thread_INFO[2] id: 2
+t1 pick index: 8, closest_point(259.132874,274.924194). Orig_cost:315.526917, fn_dist:315.526917
+t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:294.896942, fn_dist:294.896942
+ thread_INFO[].rrtstar
+t2 pick from 15 to 22, total 29nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 22 to 29, total 29nodes
+t2 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:297.482971, fn_dist:297.482971
+t2 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:287.482971, fn_dist:287.482971
+t2 pick index: 17, closest_point(273.215820,304.337921). Orig_cost:285.422119, fn_dist:285.422119
+t2 pick index: 18, closest_point(288.045929,297.188202). Orig_cost:279.216461, fn_dist:279.216461
+t2 pick index: 19, closest_point(276.659485,313.726288). Orig_cost:276.742828, fn_dist:276.742828
+t2 pick index: 20, closest_point(297.821899,299.293121). Orig_cost:270.742554, fn_dist:270.742554
+t3 pick index: 22, closest_point(303.700195,291.203278). Orig_cost:272.447693, fn_dist:272.447693
+t3 pick index: 23, closest_point(313.095245,294.628662). Orig_cost:263.562622, fn_dist:263.562622
+t3 pick index: 28, closest_point(313.508698,304.620117). Orig_cost:255.958740, fn_dist:255.958740
+
+ Nearest neighbor: (313.509, 304.62) 
+Iteration: 29
+Creating threads...
+ thread_INFO[0] id: 0
+ thread_INFO[].rrtstar
+t0 pick from 0 to 9, total 30nodes
+ thread_INFO[1] id: 1
+t0 pick index: 0, closest_point(250.000000,250.000000). Orig_cost:243.631638, fn_dist:243.631638
+t0 pick index: 2, closest_point(256.084351,257.936035). Orig_cost:234.957016, fn_dist:234.957016
+t0 pick index: 3, closest_point(262.362427,265.719696). Orig_cost:226.524017, fn_dist:226.524017
+t0 pick index: 4, closest_point(267.381439,274.368958). Orig_cost:217.457932, fn_dist:217.457932
+t0 pick index: 5, closest_point(274.564331,281.326385). Orig_cost:210.048691, fn_dist:210.048691
+ thread_INFO[].rrtstar
+t1 pick from 9 to 16, total 30nodes
+ thread_INFO[2] id: 2
+ thread_INFO[].rrtstar
+t2 pick from 16 to 23t1 pick index: 9, closest_point(286.570435,276.503815). Orig_cost:214.624313, fn_dist:214.624313
+t1 pick index: 14, closest_point(263.427979,282.127747). Orig_cost:210.092102, fn_dist:210.092102
+t1 pick index: 15, closest_point(270.796570,288.888184). Orig_cost:202.723282, fn_dist:202.723282
+, total 30nodes
+ thread_INFO[3] id: 3
+ thread_INFO[].rrtstar
+t3 pick from 23 to 30, total 30nodes
+t2 pick index: 16, closest_point(278.165161,295.648621). Orig_cost:195.588272, fn_dist:195.588272
+t2 pick index: 17, closest_point(273.215820,304.337921). Orig_cost:187.147568, fn_dist:187.147568
+t2 pick index: 19, closest_point(276.659485,313.726288). Orig_cost:177.585693, fn_dist:177.585693
+t3 pick index: 23, closest_point(313.095245,294.628662). Orig_cost:198.507889, fn_dist:198.507889
+t3 pick index: 26, closest_point(265.974182,299.675659). Orig_cost:192.377335, fn_dist:192.377335
+t3 pick index: 28, closest_point(313.508698,304.620117). Orig_cost:188.685486, fn_dist:188.685486
+t3 pick index: 29, closest_point(320.403992,311.862671). Orig_cost:182.744324, fn_dist:182.744324
+
+ Nearest neighbor: (320.404, 311.863) 
+Exceeded max iterations!
+Error: No solution found
+
+
+Execution time: 0.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

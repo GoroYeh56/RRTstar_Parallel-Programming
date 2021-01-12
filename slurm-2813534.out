@@ -1,0 +1,46 @@
+World size: 500
+World type: 2
+Version: 609
+K: 8000
+Number of cpus: 4
+choose TWELVE_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 383 iterations
+Cost is 456.654
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 716 iterations
+Cost is 450.097
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 842 iterations
+Cost is 450.019
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 925 iterations
+Cost is 448.576
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1013 iterations
+Cost is 445.268
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1790 iterations
+Cost is 444.685
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 4435 iterations
+Cost is 442.823
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813534 ON apollo33 CANCELLED AT 2021-01-12T17:43:00 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 2813534.0 ON apollo33 CANCELLED AT 2021-01-12T17:43:00 DUE TO TIME LIMIT ***
+srun: error: apollo33: task 0: Terminated
+srun: error: Slurm job 2813534 has expired
+srun: Check SLURM_JOB_ID environment variable. Expired or invalid job 2813534

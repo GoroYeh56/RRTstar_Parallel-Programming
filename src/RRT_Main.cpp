@@ -48,6 +48,10 @@
 #include <cstdio>
 #define TIME
 
+// #define OPENMP
+#define Pthread
+// #define Sequential
+// #define RRT
 
 /* -------------- Functions used ------------------ */
 void Initialize_Environment_0(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE);
@@ -108,6 +112,9 @@ int main(int argc, char** argv)
     #ifdef TIME 
         float total_time = 0;
         float starttime, endtime;
+        float IO_time =0 ;
+        float IO_starttime = 0;
+        float IO_endtime = 0;
         starttime = omp_get_wtime();
     #endif
 
@@ -224,6 +231,8 @@ int main(int argc, char** argv)
     }
    
 
+
+    #ifndef RRT
     std::cout << "Starting RRT* Algorithm..." << std::endl;
     
     /* --------- First Path ------------- */
@@ -231,12 +240,31 @@ int main(int argc, char** argv)
     /* --------- Optimize Path ------------- */
     Generate_Optimized_Path(rrtstar, OPTIMIZE_PATH_FILE, initial_solution);
     /* --------- Save RRT Tree(nodes) ------------- */
-    rrtstar->savePlanToFile(rrtstar->get_nodes_points(), NODES_PATH_FILE, "Saved a vector of rrt <nodes> points.");
+    #endif
+
+    #ifdef RRT
+     std::cout << "RRT exploring..." << std::endl;
+    std::vector<Point> reachable_points = rrtstar->RRT_Explore(K);
+    #endif
+
+    #ifndef RRT
+    std::vector<Point> reachable_points = rrtstar->get_nodes_points();
+    #endif
+
+    rrtstar->IO_starttime = omp_get_wtime();
+    rrtstar->savePlanToFile(reachable_points, NODES_PATH_FILE, "Saved a vector of rrt <nodes> points.");
+    rrtstar->IO_endtime = omp_get_wtime();
+    rrtstar->IO_time += rrtstar->IO_endtime - rrtstar->IO_starttime;
 
     #ifdef TIME 
         endtime = omp_get_wtime();
         total_time = endtime - starttime;
-        printf("\n\nExecution time: %.6f seconds\n",total_time);
+        printf("\n\nTotal Execution time: %.6f seconds\n",total_time);
+
+        printf("\n\nIO time: %.6f seconds\n",rrtstar->IO_time);
+        printf("\n\nComm time: %.6f seconds\n",rrtstar->Comm_time);
+        printf("\n\nComputation time: %.6f seconds\n",total_time - rrtstar->IO_time - rrtstar->Comm_time);
+
         std::cout<<"\n --------------------------------------------- End------------------------------------------------------\n\n"<<std::endl;
     #endif
 
@@ -290,7 +318,7 @@ void Initialize_Environment_4(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FIL
 
     ob_2_x =  WORLD_WIDTH/2;
     ob_2_y = WORLD_HEIGHT/2;
-    ob_2_width = WORLD_HEIGHT/6;
+    ob_2_width = WORLD_WIDTH/6;
     ob_2_height = WORLD_HEIGHT/6;
 
 
@@ -308,20 +336,20 @@ void Initialize_Environment_4(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FIL
 
     //Obstacle 1
     Point ob1_1( ob_1_x,  ob_1_y); //position of the top left point of obstacle 1
-    Point ob1_2(ob_1_x+ob_1_width,  ob_1_y+ob_1_height); //position of the bottom right point of obstacle 1
+    Point ob1_2(ob_1_x+ob_1_width,  ob_1_y-ob_1_height); //position of the bottom right point of obstacle 1
     rrtstar->world->addObstacle(ob1_1, ob1_2);//create obstacle 1
     //Obstacle 2;
     Point ob2_1(ob_2_x,  ob_2_y); //position of the top left point of obstacle 2
-    Point ob2_2(ob_2_x+ob_2_width,  ob_2_y+ob_2_height); //position of the bottom right point of obstacle 2
+    Point ob2_2(ob_2_x+ob_2_width,  ob_2_y-ob_2_height); //position of the bottom right point of obstacle 2
     rrtstar->world->addObstacle(ob2_1, ob2_2);//create obstacle 2
 
     //Obstacle 3
     Point ob3_1(ob_3_x,  ob_3_y); //position of the top left point of obstacle 3
-    Point ob3_2(ob_3_x+ob_3_width,  ob_3_y+ob_3_height); //position of the bottom right point of obstacle 3
+    Point ob3_2(ob_3_x+ob_3_width,  ob_3_y-ob_3_height); //position of the bottom right point of obstacle 3
     rrtstar->world->addObstacle(ob3_1, ob3_2);//create obstacle 3
     //Obstacle 4;
     Point ob4_1(ob_4_x,  ob_4_y); //position of the top left point of obstacle 4
-    Point ob4_2(ob_4_x+ob_4_width,  ob_4_y+ob_4_height); //position of the bottom right point of obstacle 4
+    Point ob4_2(ob_4_x+ob_4_width,  ob_4_y-ob_4_height); //position of the bottom right point of obstacle 4
 
     rrtstar->world->addObstacle(ob4_1, ob4_2);//create obstacle 4
     //Save obstacles to  file;
@@ -391,7 +419,7 @@ void Initialize_Environment_Maze(RRTSTAR* rrtstar, int K, std::string OBSTACLES_
     rrtstar->world->saveObsToFile(OBSTACLES_FILE);
 }
 
-
+#ifndef RRT
 
 
 //search for the first viable solution
@@ -399,8 +427,24 @@ std::vector<Point> Generate_First_Path(RRTSTAR* rrtstar, std::string FIRST_PATH_
 
     /* --------- First Path ------------- */
     //search for the first viable solution
+    #ifdef Sequential
+    std::cout<<"Sequential version...\n";
     std::vector<Point> initial_solution =rrtstar->planner();
+    #endif    
+    
+    #ifdef OPENMP
+    std::vector<Point> initial_solution =rrtstar->planner();
+    #endif
+    #ifdef Pthread
+    std::cout<<"Pthread version...\n";
+    std::vector<Point> initial_solution =rrtstar->planner_pthread();
+    #endif
+
+    rrtstar->IO_starttime = omp_get_wtime();
     rrtstar->savePlanToFile(initial_solution, FIRST_PATH_FILE, "First viable solution . This file contains vector of points of the generated path.");
+    rrtstar->IO_endtime = omp_get_wtime();
+    rrtstar->IO_time += rrtstar->IO_endtime - rrtstar->IO_starttime;    
+    
     if (!initial_solution.empty()) {
         std::cout << "First Viable Solution Obtained after " << rrtstar->getCurrentIterations() << " iterations" << std::endl;
         std::cout << "Cost is " << rrtstar->lastnode->cost << std::endl;
@@ -419,20 +463,39 @@ void Generate_Optimized_Path(RRTSTAR* rrtstar, std::string OPTIMIZE_PATH_FILE, s
     {
         std::cout << "=========================================================================" << std::endl;
         std::cout << "The algorithm continues iterating on the current plan to improve the plan" << std::endl;
+        
+        #ifdef Sequential
+        std::vector<Point> initial_solution =rrtstar->planner();
+        #endif         
+        #ifdef OPENMP 
         optimized_solution = rrtstar->planner();
+        #endif
+        #ifdef Pthread
+        
+        optimized_solution = rrtstar->planner_pthread();
+        #endif        
+        // optimized_solution = rrtstar->planner();
         std::cout << "More optimal solution has obtained after " << rrtstar->getCurrentIterations() << " iterations" << std::endl;
         std::cout << "Cost is " << rrtstar->m_cost_bestpath << std::endl;
     }
     //save optimized solution
     // "Mfiles//Path_after_MAX_ITER.txt"
+    rrtstar->IO_starttime = omp_get_wtime();
     rrtstar->savePlanToFile(optimized_solution, OPTIMIZE_PATH_FILE, " Optimized Solution after maximum provided iteration.This file contains vector of points of the generated path.");
+    rrtstar->IO_endtime = omp_get_wtime();
+    rrtstar->IO_time += rrtstar->IO_endtime - rrtstar->IO_starttime;        
+    
+    
     if (!optimized_solution.empty()) {
         std::cout << "Exceeded max iterations!" << std::endl;
         std::cout << "Saving the generated plan (vector of points)" << std::endl;
     }
 
+
+
 }
 
+#endif
 
     // NOT USED  BELOW
 

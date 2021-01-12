@@ -1,0 +1,25 @@
+World size: 3000
+World type: 3
+Version: 136
+K: 20000
+Number of cpus: 1
+choose Maze
+
+===== Parallel version RRT*! =====
+
+
+
+Total Execution time: 16.625000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 16.500000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

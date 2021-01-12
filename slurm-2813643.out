@@ -1,0 +1,44 @@
+World size: 500
+World type: 1
+Version: 1005
+K: 5000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)
+World size: 1000
+World type: 1
+Version: 1006
+K: 10000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)
+World size: 1500
+World type: 1
+Version: 1007
+K: 15000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)
+World size: 3000
+World type: 1
+Version: 1008
+K: 20000
+Number of cpus: 4
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+RRT exploring...
+srun: error: apollo33: task 0: Segmentation fault (core dumped)

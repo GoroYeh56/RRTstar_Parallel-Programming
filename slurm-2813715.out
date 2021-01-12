@@ -1,0 +1,92 @@
+World size: 500
+World type: 2
+Version: 2009
+K: 5000
+Number of cpus: 1
+choose TWELVE_OBS
+RRT exploring...
+
+
+Total Execution time: 1.375000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 1.375000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1000
+World type: 2
+Version: 2010
+K: 10000
+Number of cpus: 1
+choose TWELVE_OBS
+RRT exploring...
+
+
+Total Execution time: 5.250000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 5.250000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1500
+World type: 2
+Version: 2011
+K: 15000
+Number of cpus: 1
+choose TWELVE_OBS
+RRT exploring...
+
+
+Total Execution time: 11.500000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 11.500000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 3000
+World type: 2
+Version: 2012
+K: 40000
+Number of cpus: 1
+choose TWELVE_OBS
+RRT exploring...
+
+
+Total Execution time: 80.000000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 79.875000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

@@ -1,0 +1,92 @@
+World size: 500
+World type: 0
+Version: 2001
+K: 5000
+Number of cpus: 1
+choose FREE_SPACE
+RRT exploring...
+
+
+Total Execution time: 1.250000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 1.250000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1000
+World type: 0
+Version: 2002
+K: 10000
+Number of cpus: 1
+choose FREE_SPACE
+RRT exploring...
+
+
+Total Execution time: 5.250000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 5.250000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1500
+World type: 0
+Version: 2003
+K: 15000
+Number of cpus: 1
+choose FREE_SPACE
+RRT exploring...
+
+
+Total Execution time: 11.500000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 11.375000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 3000
+World type: 0
+Version: 2004
+K: 40000
+Number of cpus: 1
+choose FREE_SPACE
+RRT exploring...
+
+
+Total Execution time: 79.500000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 79.375000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

@@ -1,0 +1,199 @@
+World size: 500
+World type: 0
+Version: 301
+K: 30
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Iteration: 0
+There are 1 nodes in the tree.
+New node: (95.5196, 286.898)
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 1
+There are 2 nodes in the tree.
+New node: (163.635, 344.979)
+nearest neighbor: at (240.273590,252.323151)
+min_index: 1
+
+Iteration: 2
+There are 3 nodes in the tree.
+New node: (316.758, 113.462)
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 3
+There are 4 nodes in the tree.
+New node: (159.6, 194.834)
+nearest neighbor: at (233.899994,260.028809)
+min_index: 2
+
+Iteration: 4
+There are 5 nodes in the tree.
+New node: (490, 490)
+nearest neighbor: at (250.000000,250.000000)
+min_index: 0
+
+Iteration: 5
+There are 6 nodes in the tree.
+New node: (328.291, 101.491)
+nearest neighbor: at (254.392395,241.016296)
+min_index: 3
+
+Iteration: 6
+There are 7 nodes in the tree.
+New node: (328.422, 386.968)
+nearest neighbor: at (257.071075,257.071075)
+min_index: 5
+
+Iteration: 7
+There are 8 nodes in the tree.
+New node: (444.669, 123.796)
+nearest neighbor: at (259.072876,232.179260)
+min_index: 6
+
+Iteration: 8
+There are 9 nodes in the tree.
+New node: (260.193, 2.61732)
+nearest neighbor: at (267.708252,227.136414)
+min_index: 8
+
+Iteration: 9
+There are 10 nodes in the tree.
+New node: (22.0753, 405.89)
+nearest neighbor: at (226.383377,253.433319)
+min_index: 4
+
+Iteration: 10
+There are 11 nodes in the tree.
+New node: (234.299, 457.977)
+nearest neighbor: at (261.885468,265.835876)
+min_index: 7
+
+Iteration: 11
+There are 12 nodes in the tree.
+New node: (101.718, 195.293)
+nearest neighbor: at (218.368820,259.413849)
+min_index: 10
+
+Iteration: 12
+There are 13 nodes in the tree.
+New node: (353.874, 167.018)
+nearest neighbor: at (267.373718,217.142014)
+min_index: 9
+
+Iteration: 13
+There are 14 nodes in the tree.
+New node: (120.074, 189.353)
+nearest neighbor: at (209.605515,254.596756)
+min_index: 12
+
+Iteration: 14
+There are 15 nodes in the tree.
+New node: (490, 490)
+nearest neighbor: at (260.464264,275.734375)
+min_index: 11
+
+Iteration: 15
+There are 16 nodes in the tree.
+New node: (490, 490)
+nearest neighbor: at (267.774292,282.558105)
+min_index: 15
+
+Iteration: 16
+There are 17 nodes in the tree.
+New node: (366.259, 429.671)
+nearest neighbor: at (275.084320,289.381836)
+min_index: 16
+
+Iteration: 17
+There are 18 nodes in the tree.
+New node: (421.523, 142.094)
+nearest neighbor: at (276.026031,212.128281)
+min_index: 13
+
+Iteration: 18
+There are 19 nodes in the tree.
+New node: (333.439, 40.5752)
+nearest neighbor: at (285.036530,207.791138)
+min_index: 18
+
+Iteration: 19
+There are 20 nodes in the tree.
+New node: (233.094, 342.372)
+nearest neighbor: at (280.533630,297.766663)
+min_index: 17
+
+Iteration: 20
+There are 21 nodes in the tree.
+New node: (240.961, 205.301)
+nearest neighbor: at (267.373718,217.142014)
+min_index: 9
+
+Iteration: 21
+There are 22 nodes in the tree.
+New node: (293.27, 315.907)
+nearest neighbor: at (280.533630,297.766663)
+min_index: 17
+
+Iteration: 22
+There are 23 nodes in the tree.
+New node: (205.135, 136.824)
+nearest neighbor: at (258.248718,213.051254)
+min_index: 21
+
+Iteration: 23
+There are 24 nodes in the tree.
+New node: (454.411, 51.3077)
+nearest neighbor: at (287.816986,198.185455)
+min_index: 19
+
+Iteration: 24
+There are 25 nodes in the tree.
+New node: (53.5458, 14.303)
+nearest neighbor: at (252.531815,204.846558)
+min_index: 23
+
+Iteration: 25
+There are 26 nodes in the tree.
+New node: (314.331, 69.4939)
+nearest neighbor: at (295.317963,191.572189)
+min_index: 24
+
+Iteration: 26
+There are 27 nodes in the tree.
+New node: (79.7322, 75.599)
+nearest neighbor: at (245.309189,197.930374)
+min_index: 25
+
+Iteration: 27
+There are 28 nodes in the tree.
+New node: (461.061, 99.7995)
+nearest neighbor: at (296.856842,181.691315)
+min_index: 26
+
+Iteration: 28
+There are 29 nodes in the tree.
+New node: (490, 490)
+nearest neighbor: at (286.279846,305.950867)
+min_index: 22
+
+Iteration: 29
+There are 30 nodes in the tree.
+New node: (377.763, 454.784)
+nearest neighbor: at (293.700073,312.654602)
+min_index: 29
+
+Exceeded max iterations!
+Error: No solution found
+
+
+Execution time: 0.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

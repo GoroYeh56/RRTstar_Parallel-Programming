@@ -1,0 +1,92 @@
+World size: 500
+World type: 3
+Version: 2013
+K: 5000
+Number of cpus: 1
+choose Maze
+RRT exploring...
+
+
+Total Execution time: 1.125000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 1.125000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1000
+World type: 3
+Version: 2014
+K: 10000
+Number of cpus: 1
+choose Maze
+RRT exploring...
+
+
+Total Execution time: 4.250000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 4.250000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1500
+World type: 3
+Version: 2015
+K: 15000
+Number of cpus: 1
+choose Maze
+RRT exploring...
+
+
+Total Execution time: 9.125000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 9.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 3000
+World type: 3
+Version: 2016
+K: 40000
+Number of cpus: 1
+choose Maze
+RRT exploring...
+
+
+Total Execution time: 63.375000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.000000 seconds
+
+
+Computation time: 63.375000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

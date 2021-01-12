@@ -1,0 +1,115 @@
+World size: 500
+World type: 0
+Version: 3001
+K: 5000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 169 iterations
+Cost is 334.921
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 235 iterations
+Cost is 330.034
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 3491 iterations
+Cost is 329.923
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 5000 iterations
+Cost is 329.923
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+
+
+Total Execution time: 97.125000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 8.250000 seconds
+
+
+Computation time: 88.875000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1000
+World type: 0
+Version: 3002
+K: 8000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 503 iterations
+Cost is 690.647
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1053 iterations
+Cost is 686.295
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2100 iterations
+Cost is 685.686
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 8000 iterations
+Cost is 685.686
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+
+
+Total Execution time: 253.875000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 19.125000 seconds
+
+
+Computation time: 234.625000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 1500
+World type: 0
+Version: 3003
+K: 12000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 654 iterations
+Cost is 1041.77
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1806 iterations
+Cost is 909.528
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 4888 iterations
+Cost is 433.031
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813785 ON apollo34 CANCELLED AT 2021-01-12T20:38:42 ***
+slurmstepd: error: *** STEP 2813785.2 ON apollo34 CANCELLED AT 2021-01-12T20:38:42 ***

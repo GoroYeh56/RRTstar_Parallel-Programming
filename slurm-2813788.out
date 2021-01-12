@@ -1,0 +1,28 @@
+World size: 1000
+World type: 0
+Version: 3005
+K: 15000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 369 iterations
+Cost is 689.073
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2669 iterations
+Cost is 683.027
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 3697 iterations
+Cost is 424.049
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813788 ON apollo33 CANCELLED AT 2021-01-12T20:41:01 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 2813788.0 ON apollo33 CANCELLED AT 2021-01-12T20:41:01 DUE TO TIME LIMIT ***
+srun: error: apollo33: task 0: Terminated

@@ -1,0 +1,20 @@
+World size: 500
+World type: 3
+Version: 123
+K: 5000
+Number of cpus: 4
+choose Maze
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 1223 iterations
+Cost is 703.052
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1485 iterations
+Cost is 678.823
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
