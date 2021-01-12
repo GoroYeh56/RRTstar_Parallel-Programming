@@ -1,0 +1,168 @@
+World size: 500
+World type: 0
+Version: 3001
+K: 1000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 179 iterations
+Cost is 339.018
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 299 iterations
+Cost is 338.981
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 344 iterations
+Cost is 330.304
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 539 iterations
+Cost is 300.43
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1000 iterations
+Cost is 300.43
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+
+
+Total Execution time: 2.125000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 1.250000 seconds
+
+
+Computation time: 0.875000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 500
+World type: 0
+Version: 3002
+K: 1500
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 142 iterations
+Cost is 332.013
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 334 iterations
+Cost is 325.825
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1500 iterations
+Cost is 325.825
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+
+
+Total Execution time: 4.625000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 1.625000 seconds
+
+
+Computation time: 3.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 500
+World type: 0
+Version: 3003
+K: 2000
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 165 iterations
+Cost is 336.915
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 244 iterations
+Cost is 329.604
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2000 iterations
+Cost is 329.604
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+
+
+Total Execution time: 8.500000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 2.375000 seconds
+
+
+Computation time: 6.125000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
+World size: 500
+World type: 0
+Version: 3004
+K: 2500
+Number of cpus: 4
+choose FREE_SPACE
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 144 iterations
+Cost is 332.516
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2179 iterations
+Cost is 330.712
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2500 iterations
+Cost is 330.712
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+
+
+Total Execution time: 14.625000 seconds
+
+
+IO time: 0.125000 seconds
+
+
+Comm time: 3.375000 seconds
+
+
+Computation time: 11.125000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+

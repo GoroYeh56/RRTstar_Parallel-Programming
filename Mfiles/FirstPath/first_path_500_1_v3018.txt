@@ -1,0 +1,11 @@
+First viable solution . This file contains vector of points of the generated path.
+X	Y
+30.2673	24.0637
+40.113	22.3136
+49.9586	20.5636
+74.5667	37.608
+251.101	305.685
+355.761	347.765
+350.351	402.352
+219.113	433.523
+25	475

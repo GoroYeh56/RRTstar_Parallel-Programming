@@ -1,4 +1,4 @@
 First viable solution . This file contains vector of points of the generated path.
 X	Y
-489.793	489.651
+488.266	488.204
 250	250

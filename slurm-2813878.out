@@ -1,0 +1,72 @@
+World size: 500
+World type: 3
+Version: 123
+K: 5000
+Number of cpus: 4
+choose Maze
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+First Viable Solution Obtained after 871 iterations
+Cost is 743.319
+Saving the generated plan (vector of points)
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1287 iterations
+Cost is 741.726
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1328 iterations
+Cost is 727.686
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1354 iterations
+Cost is 726.69
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1434 iterations
+Cost is 710.974
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1473 iterations
+Cost is 706.329
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1496 iterations
+Cost is 705.512
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1503 iterations
+Cost is 705.278
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1532 iterations
+Cost is 704.503
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 1859 iterations
+Cost is 704.186
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2061 iterations
+Cost is 703.911
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2066 iterations
+Cost is 703.911
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2074 iterations
+Cost is 702.43
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 2077 iterations
+Cost is 678.823
+=========================================================================
+The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 2813878 ON apollo32 CANCELLED AT 2021-01-12T22:01:31 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 2813878.0 ON apollo32 CANCELLED AT 2021-01-12T22:01:31 DUE TO TIME LIMIT ***
+srun: error: apollo32: task 0: Terminated

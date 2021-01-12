@@ -133,6 +133,7 @@ std::vector<Point> RRTSTAR::get_nodes_points(){
 
 const int num_threads = 4;
 const int DIST_MAX = 100000;
+
 typedef struct thread_info{
     /*  Basic components */
 	int thread_id;
@@ -166,9 +167,7 @@ void* findNearest_thread(void* my_thread){
 
     float fn_minDist = FLT_MAX;//set the minimum distance to the maximum number possible
     Node* fn_closest = NULL;
-
     int min_index;
-    
     // from start to end
     for (size_t i=start; i < end; i++) { //iterate through all nodes of the tree to find the closest to the new node
     // for (size_t i=0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
@@ -227,10 +226,7 @@ void* findParent_thread(void* my_thread) {
     Node* n_new = thread_t->n_new;
     Node* fp_n_parent = thread_t->n_nearest;
     std::vector<Node*> v_n_near = thread_t->v_n_near;   
-    // Original parent: 
-
-    // Node* fp_n_parent = n_nearest; //create new note to find the parent(New Parent)
-    // Original min cost (cmin)
+ 
     float fp_cmin = rrtstar->getCost(fp_n_parent) + rrtstar->pathCost(fp_n_parent, n_new); // Update cost of reaching "N_new" from "N_Nearest"
 
     for (size_t j = start; j < end; j++) { //In all members of "N_near", check if "N_new" can be reached from a different parent node with cost lower than Cmin, and without colliding with the obstacle.
@@ -243,7 +239,6 @@ void* findParent_thread(void* my_thread) {
 
         }
     }
-    // return fp_n_parent;
     new_Parent_threads[id] = fp_n_parent ;
 	pthread_exit(NULL);
 }
@@ -637,28 +632,23 @@ Node RRTSTAR::getRandomNode() {
 // #pragma omp declare reduction(mindisNode : Node* :              \
 // omp_out = omp_in->cur_dist > omp_out->cur_dist ? omp_out : omp_in) 
 //     // initializer (omp_priv=NULL)
-
+    // #pragma omp parallel for default(shared) reduction(min:fn_minDist)  
 // #pragma omp declare reduction (merge : std::vector<int> \
 //   : omp_out.insert(omp_out.end(), omp_in.begin(), omp_in.end()))
 
 Node* RRTSTAR::findNearest(const Point point) {
     float fn_minDist = FLT_MAX;//set the minimum distance to the maximum number possible
     Node* fn_closest = NULL;
-    
-
     #ifdef DEBUG_FINDNEAREST
     printf("There are %d nodes in the tree.\n", this->nodes.size());
     std::cout<<"New node: ("<<point.m_x<<", "<<point.m_y<<")\n";
     #endif
-
     int min_index;
 
     #ifdef PARALLEL
      #pragma omp parallel for // reduction(mindisNode : fn_closest)  
-    // #pragma omp parallel for default(shared) reduction(min:fn_minDist)  
-    
-    #endif
 
+    #endif
     for (size_t i=0; i < this->nodes.size(); i++) { //iterate through all nodes of the tree to find the closest to the new node
         
         #ifdef DEBUG_FINDNEAREST

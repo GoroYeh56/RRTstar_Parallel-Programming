@@ -1,13 +1,17 @@
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -c 4
+#SBATCH -c 1
+
+# Plot RRT seq v.s. parallel
+# srun ./RRT 1000 3020 500 1 # 12 -c4 1500
+srun ./RRT 1000 3021 500 1 # 12 -c1 1500
 
 
 # ----------- Strong scalability --------- 
-# srun ./RRT 10000 3016 1000 2  # 12 -c2 500
-# srun ./RRT 10000 3017 1000 2 # 12 -c3  1000
-# srun ./RRT 10000 3018 1000 2 # 12 -c4 1500
+# srun ./RRT 3000 3016 1000 2  # 12 -c2 500
+# srun ./RRT 3000 3017 1000 2 # 12 -c3  1000
+# srun ./RRT 3000 3018 500 1 # 12 -c4 1500
 
 #  ----------- Try parallel for(K) RRT ------------------- #
 
@@ -114,10 +118,11 @@
 
 # Variable : K
 
-# srun ./RRT 5000 3001 1500 0   # maze 500
-# srun ./RRT 8000 3002 1500 0 # maze 1000
-# srun ./RRT 12000 3003 1500 0 # maze 1500
-# srun ./RRT 18000 3004 1500 0 # maze 3000
+# srun ./RRT 1000 3001 500 0   # maze 500
+# srun ./RRT 1500 3002 500 0 # maze 1000
+# srun ./RRT 2000 3003 500 0 # maze 1500
+# srun ./RRT 2500 3004 500 0 # maze 3000
+
 # srun ./RRT 5000 3005 500 0   # maze 500
 # srun ./RRT 5000 3006 500 1 # maze 1000
 # srun ./RRT 5000 3007 500 2 # maze 1500
@@ -154,7 +159,7 @@
 # srun ./RRT 40000 121 1500 2 # 12-obs 1500
 # srun ./RRT 60000 802 3000 2 # 12-obs 3000
 
-srun ./RRT 5000 123 500 3   # maze 500
-srun ./RRT 6000 124 1000 3 # maze 1000
-srun ./RRT 10000 125 1500 3 # maze 1500
-srun ./RRT 20000 127 3000 3 # maze 3000
+# srun ./RRT 5000 123 500 3   # maze 500
+# srun ./RRT 6000 124 1000 3 # maze 1000
+# srun ./RRT 10000 125 1500 3 # maze 1500
+# srun ./RRT 20000 127 3000 3 # maze 3000

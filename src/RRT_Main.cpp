@@ -49,9 +49,9 @@
 #define TIME
 
 // #define OPENMP
-#define Pthread
+// #define Pthread
 // #define Sequential
-// #define RRT
+#define RRT
 
 /* -------------- Functions used ------------------ */
 void Initialize_Environment_0(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FILE);
@@ -311,27 +311,26 @@ void Initialize_Environment_4(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FIL
     int ob_4_x, ob_4_y, ob_4_width, ob_4_height;
 
     ob_1_x = 0;
-    ob_1_y = WORLD_HEIGHT-300;
-    ob_1_width = WORLD_WIDTH/3;
-    ob_1_height = 100;
+    ob_1_y = 400; //WORLD_HEIGHT-300;
+    ob_1_width = 350; //WORLD_WIDTH/3;
+    ob_1_height = 50;//100;
+
+    ob_2_x =  150; //WORLD_WIDTH/2;
+    ob_2_y = 150;//WORLD_HEIGHT/2;
+    ob_2_width = 350;//WORLD_WIDTH/6;
+    ob_2_height = 50;//WORLD_HEIGHT/6;
 
 
-    ob_2_x =  WORLD_WIDTH/2;
-    ob_2_y = WORLD_HEIGHT/2;
-    ob_2_width = WORLD_WIDTH/6;
-    ob_2_height = WORLD_HEIGHT/6;
+    ob_3_x = 30;//WORLD_WIDTH*2/3;
+    ob_3_y = 60;//350;
+    ob_3_width = 30;//WORLD_WIDTH/3;
+    ob_3_height = 30;//200;
 
 
-    ob_3_x = WORLD_WIDTH*2/3;
-    ob_3_y = 350;
-    ob_3_width = WORLD_WIDTH/3;
-    ob_3_height = 200;
-
-
-    ob_4_x = WORLD_WIDTH/5;;
-    ob_4_y = WORLD_HEIGHT/5;
-    ob_4_width = WORLD_WIDTH/8;
-    ob_4_height = WORLD_HEIGHT/4;
+    ob_4_x = 250;//WORLD_WIDTH/5;;
+    ob_4_y = 300;//WORLD_HEIGHT/5;
+    ob_4_width = 100;//WORLD_WIDTH/8;
+    ob_4_height = 100;//WORLD_HEIGHT/4;
 
 
     //Obstacle 1
@@ -374,13 +373,14 @@ void Initialize_Environment_12(RRTSTAR* rrtstar, int K, std::string OBSTACLES_FI
     // Generate 12 (3*4) cubes
     for(int row=0; row<3; row++){
         for(int col=0; col<4; col++){
-            left_top_x = col*(WORLD_WIDTH/4);
-            left_top_y = row*(WORLD_HEIGHT/3);
+            left_top_x = col*(WORLD_WIDTH/4)+box_width/2;
+            left_top_y = row*(WORLD_HEIGHT/3)+box_height/2;
             Point left_top(left_top_x, left_top_y);
             Point right_bottom(left_top_x+box_width, left_top_y+box_height);
             rrtstar->world->addObstacle(left_top, right_bottom);
         }
     }
+
     rrtstar->world->saveObsToFile(OBSTACLES_FILE);
 }
 

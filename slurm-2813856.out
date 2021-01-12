@@ -18,3 +18,7 @@ More optimal solution has obtained after 1485 iterations
 Cost is 678.823
 =========================================================================
 The algorithm continues iterating on the current plan to improve the plan
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 2813856.0 ON apollo32 CANCELLED AT 2021-01-12T21:31:01 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 2813856 ON apollo32 CANCELLED AT 2021-01-12T21:31:01 DUE TO TIME LIMIT ***
+srun: error: apollo32: task 0: Terminated

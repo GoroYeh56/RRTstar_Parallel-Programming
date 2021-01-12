@@ -1,0 +1,29 @@
+World size: 500
+World type: 1
+Version: 3018
+K: 1000
+Number of cpus: 1
+choose FOUR_OBS
+
+===== Parallel version RRT*! =====
+
+Starting RRT* Algorithm...
+Pthread version...
+Exceeded max iterations!
+Error: No solution found
+
+
+Total Execution time: 1.875000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 0.375000 seconds
+
+
+Computation time: 1.500000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
