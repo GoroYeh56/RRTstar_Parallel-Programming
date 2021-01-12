@@ -26,3 +26,23 @@ More optimal solution has obtained after 855 iterations
 Cost is 450
 =========================================================================
 The algorithm continues iterating on the current plan to improve the plan
+More optimal solution has obtained after 3000 iterations
+Cost is 450
+Exceeded max iterations!
+Saving the generated plan (vector of points)
+
+
+Total Execution time: 62.125000 seconds
+
+
+IO time: 0.000000 seconds
+
+
+Comm time: 2.125000 seconds
+
+
+Computation time: 60.000000 seconds
+
+ --------------------------------------------- End------------------------------------------------------
+
+
