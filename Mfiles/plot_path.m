@@ -7,17 +7,19 @@ clc
 
 %% Some parameters to set (Filename, output PNG name)
 % YOU NEED TO MODIFY!
+version = '28'
+WORLD_WIDTH = 500;
+ENV_TYPE = 3
 
-GIF_SPACE = 5; % .gif 間隔多少ii要get_grame()一次
+RRTstar = 1
+GIF = 1
+
+GIF_SPACE = 5; % .gif get_frame() period.
 
 % The width and height of the world need to be manually set
-version = '28'
-ENV_TYPE = 3
-WORLD_WIDTH = 500;
-
-
 WORLD_HEIGHT = WORLD_WIDTH;
 
+% Env Type Definition
 FREE_SPACE = 0;
 FOUR_OBS = 1;
 TWELVE_OBS = 2;
@@ -69,6 +71,7 @@ NODES_POINTS_FILE = strcat('Nodes/nodes_pts', path, version, '.txt');
 PNG_START_NAME = strcat('Graphs/graph_v',version,'_start.png');
 PNG_NAME = strcat('Graphs/graph_v',version,'.png');
 
+PNG_TEST_NAME = strcat('Graphs/graph_test_v',version,'.png');
 
 
 %% Plot the boundaries of the world!
@@ -96,12 +99,13 @@ delimiterIn = '\t';
 headerlinesIn =2 ;
 obs = importdata(filename,delimiterIn,headerlinesIn);
 
-
-for i=1:1: size(obs.data,1)
-    ob_1=[obs.data(i,1),obs.data(i,2)];
-    ob_2=[obs.data(i,3),obs.data(i,4)];
-    pgon = polyshape([ob_1(1) ob_1(1) ob_2(1) ob_2(1)],[ob_1(2) ob_2(2) ob_2(2) ob_1(2)]);
-    p3=plot(pgon);
+if ENV_TYPE ~= FREE_SPACE
+    for i=1:1: size(obs.data,1)
+        ob_1=[obs.data(i,1),obs.data(i,2)];
+        ob_2=[obs.data(i,3),obs.data(i,4)];
+        pgon = polyshape([ob_1(1) ob_1(1) ob_2(1) ob_2(1)],[ob_1(2) ob_2(2) ob_2(2) ob_1(2)]);
+        p3=plot(pgon);
+    end  
 end
 
 saveas(h,PNG_START_NAME);
@@ -119,25 +123,33 @@ saveas(h,PNG_START_NAME);
 
 %% Reads first_viable_path.txt file and plot the first viable path that RRT* has generated
 %filename = 'first_viable_path.txt';
+
 filename = FIRST_PATH;
 delimiterIn = '\t';
 headerlinesIn =2 ;
+if RRTstar
 Path1 = importdata(filename,delimiterIn,headerlinesIn);
-%if isfield(Path1,'data')
-%    p1=plot(Path1.data(:,1),Path1.data(:,2),'r+--', 'linewidth', 1.5);
-%end
+end
+if ~GIF
+if isfield(Path1,'data')
+    p1=plot(Path1.data(:,1),Path1.data(:,2),'r+--', 'linewidth', 1.5);
+end
+end
 
 %% Reads Path_after_MAX_ITER.txt file and plot the optimized path after maximum iteration
 %filename = 'Path_after_MAX_ITER.txt';
 filename = OPTIMIZE_PATH;
 delimiterIn = '\t';
 headerlinesIn =2 ;
+if RRTstar
 Path2 = importdata(filename,delimiterIn,headerlinesIn);
-    
-%if isfield(Path2,'data')
-%    p2=plot(Path2.data(:,1),Path2.data(:,2),'bs-', 'linewidth', 1.5);
-%end
+end
 
+if ~GIF
+if isfield(Path2,'data')
+    p2=plot(Path2.data(:,1),Path2.data(:,2),'bs-', 'linewidth', 1.5);
+end
+end
 
 
 %% Reads nodes point .txt file and plot reachable workspace
@@ -152,7 +164,9 @@ nodes_pts = importdata(filename,delimiterIn,headerlinesIn);
 %end
 
 [edgesRowCount,~] = size(nodes_pts.data)
-  
+
+%edgesRowCount = 3000
+
 vertices = nodes_pts.data;
 
 %% Plot RRT .gif
@@ -161,8 +175,10 @@ axis tight manual % this ensures that getframe() returns a consistent size
 GIF_NAME = strcat('Graphs/graph_v',version,'.gif');
 filename = GIF_NAME;
 %edgesRowCount
+
+if GIF
 for ii = 1 : edgesRowCount
-  plot(vertices(ii, 1), vertices(ii, 2), 'g--*', 'linewidth', 1);
+  plot(vertices(ii, 1), vertices(ii, 2), 'Color', 	'#EDB120','Marker','*', 'linewidth', 1);  %#0072BD
   drawnow 
       % Capture the plot as an image 
 %      frame = getframe(h); 
@@ -182,23 +198,24 @@ for ii = 1 : edgesRowCount
           X = sprintf('frame %d drawn',ii);
           disp(X)
       elseif ii == edgesRowCount-1
-       
-        if isfield(Path1,'data')
-            p1=plot(Path1.data(:,1),Path1.data(:,2),'r+--', 'linewidth', 1.5);
-        end          
-         if isfield(Path2,'data')
-            p2=plot(Path2.data(:,1),Path2.data(:,2),'bs-', 'linewidth', 1.5);
-        
-         end    
-            % Set the legends for the plot.
-            if exist('p1','var') && exist('p2','var')
-                legend([p1 p2],{'First viable path','Path after MAX\_ITER'},'Location','best')
-                %legend([p1,p2,p3],{'First viable path','Path after MAX\_ITER','Reachable points after RRT* exploration'},'Location','best')
-            elseif exist('p1','var')&& ~exist('p2','var')
-                legend(p1,{'First viable path'},'Location','best')
-            elseif ~exist('p1','var')&& exist('p2','var')
-                legend(p2,{'Path after MAX\_ITER'},'Location','best')
-            end         
+        if RRTstar
+            if isfield(Path1,'data')
+                p1=plot(Path1.data(:,1),Path1.data(:,2),'r+--', 'linewidth', 1.5);
+            end          
+             if isfield(Path2,'data')
+                p2=plot(Path2.data(:,1),Path2.data(:,2),'bs-', 'linewidth', 1.5);
+
+             end    
+                % Set the legends for the plot.
+                if exist('p1','var') && exist('p2','var')
+                    legend([p1 p2],{'First viable path','Path after MAX\_ITER'},'Location','best')
+                    %legend([p1,p2,p3],{'First viable path','Path after MAX\_ITER','Reachable points after RRT* exploration'},'Location','best')
+                elseif exist('p1','var')&& ~exist('p2','var')
+                    legend(p1,{'First viable path'},'Location','best')
+                elseif ~exist('p1','var')&& exist('p2','var')
+                    legend(p2,{'Path after MAX\_ITER'},'Location','best')
+                end   
+        end
        
           frame = getframe(h); 
           im = frame2im(frame); 
@@ -213,9 +230,28 @@ end
 
 %legend(p5,{'nodes points after RRT exploration'},'Location','best')
 
-
+end % end plot gif
 %% Save output plot to PNG image file.
 
+if ~GIF
+                    % Set the legends for the plot.
+                if exist('p1','var') && exist('p2','var')
+                    legend([p1 p2],{'First viable path','Path after MAX\_ITER'},'Location','best')
+                    %legend([p1,p2,p3],{'First viable path','Path after MAX\_ITER','Reachable points after RRT* exploration'},'Location','best')
+                elseif exist('p1','var')&& ~exist('p2','var')
+                    legend(p1,{'First viable path'},'Location','best')
+                elseif ~exist('p1','var')&& exist('p2','var')
+                    legend(p2,{'Path after MAX\_ITER'},'Location','best')
+                end 
+end
+
 saveas(h,PNG_NAME);
+
+
+%if isfield(nodes_pts,'data')
+%    p5=plot(nodes_pts.data(:,1),nodes_pts.data(:,2),'b--*'); %g--o
+%end
+
+%saveas(p5, PNG_TEST_NAME);
 
 disp('Done saving the image.');
